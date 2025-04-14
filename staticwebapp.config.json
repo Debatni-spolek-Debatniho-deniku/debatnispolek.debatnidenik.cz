@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {
+            "route": "*",
+            "redirect": "https://linktr.ee/debatnispolekdebatnihodeniku",
+            "statusCode": 301
+        }
+    ]
+}
