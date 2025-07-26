@@ -1,12 +1,38 @@
 {
   "name": "dsdd-webove-stranky",
+
+  "private": true,
+
   "scripts": {
-    "deploy": "swa deploy ./public --env production",
-    "build": "echo \"No build step required\""
+    "start:swa": "swa start ./public",
+
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
   "author": "Lukáš Procházka",
   "license": "MIT",
   "devDependencies": {
-    "@azure/static-web-apps-cli": "^2.0.5"
+    "@azure/static-web-apps-cli": "^2.0.5",
+    "gatsby-cli": "^5.14.0"
+  },
+  "dependencies": {
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3",
+    "@mdx-js/react": "^3.1.0",
+    "gatsby": "^5.14.1",
+    "gatsby-plugin-image": "^3.14.0",
+    "gatsby-plugin-mdx": "^5.14.1",
+    "gatsby-plugin-sharp": "^5.14.0",
+    "gatsby-plugin-sitemap": "^6.14.0",
+    "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-transformer-sharp": "^5.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
