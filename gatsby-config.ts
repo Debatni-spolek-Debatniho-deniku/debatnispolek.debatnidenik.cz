@@ -11,25 +11,28 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
+      },
+    },
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: "index",
+        path: "./src/content/index.md",
       },
-      __key: "images",
+      __key: "index",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "clubs",
+        path: "./src/content/clubs",
       },
-      __key: "pages",
+      __key: "clubs",
     },
   ],
 };
