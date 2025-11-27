@@ -1,19 +1,19 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
+import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
-const Generic = ({ data }:any) => {
-  const page = data.markdownRemark
+const Generic = (props: any) => {
+  const page = props.data.markdownRemark;
 
   return (
     <div>
-      <h1>{page.frontmatter.title}</h1>
-
+      <h1>{page.frontmatter.title}</h1>V url je :id hodnoty {props.params.id}
       <div dangerouslySetInnerHTML={{ __html: page.html }} />
     </div>
-  )
-}
+  );
+};
+
 export const query = graphql`
-query GenericPage($id: String!) {
+  query GenericPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         template
@@ -23,7 +23,8 @@ query GenericPage($id: String!) {
       html
     }
   }
-`
-console.log("THIS IS A QUERY", query) //kde je kurva tohle
+`;
+
+console.log("THIS IS A QUERY", query); //kde je kurva tohle
 
 export default Generic;
