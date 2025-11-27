@@ -15,18 +15,8 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "index",
-        path: "./src/content/index.md",
+        path: "./src/content",
       },
-      __key: "index",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "clubs",
-        path: "./src/content/clubs",
-      },
-      __key: "clubs",
     },
   ],
 };

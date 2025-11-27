@@ -21,7 +21,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
           }
           parent {
             ... on File {
-              sourceInstanceName
+              name
             }
           }
         }
@@ -29,44 +29,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   `);
 
-  const indexPageNode = createPagesQuery.data!.allMarkdownRemark!.nodes.find(
-    (node) =>
-      "sourceInstanceName" in node.parent! &&
-      node.parent.sourceInstanceName == "index"
-  )!;
-
-  const clubPageNodes =
-    createPagesQuery.data!.allMarkdownRemark!.nodes.filter(
-      (node) =>
-        "sourceInstanceName" in node.parent! &&
-        node.parent.sourceInstanceName == "clubs"
-    )! ?? [];
-
-  createPage({
-    path: `/`,
-    component: path.resolve("./src/templates/generic.tsx"),
-    context: {
-      id: indexPageNode.id,
-    },
-  });
-
-  for (const clubNode of clubPageNodes) {
+  createPagesQuery!.data!.allMarkdownRemark.nodes.forEach((node) => {
     createPage({
-      path: clubNode.frontmatter!.path!,
-      component: path.resolve("./src/templates/clubs.tsx"),
-      context: {
-        id: clubNode.id,
-        navTitle: clubNode.frontmatter!.title,
-      },
-    });
-  }
-    createPagesQuery.data.allMarkdownRemark.nodes.forEach(node => {
-    createPage({
-      path: node.fields.slug,
+      path: node!.frontmatter!.path!,
       component: path.resolve("./src/templates/Generic.tsx"),
       context: {
         id: node.id, // IMPORTANT
+        jsemFaktGay: "name" in node.parent! ? node.parent.name! : "nejsem gay",
       },
-    })
+    });
   });
 };
