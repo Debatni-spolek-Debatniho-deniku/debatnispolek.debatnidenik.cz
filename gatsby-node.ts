@@ -9,12 +9,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const createPagesQuery = await graphql<Queries.CreatePagesQuery>(`
     query CreatePages {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { frontmatter: { template: { eq: "generic" } } }
+      ) {
         nodes {
           id
           frontmatter {
             title
             path
+            template
           }
           parent {
             ... on File {
@@ -41,7 +44,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   createPage({
     path: `/`,
-    component: path.resolve("./src/templates/index.tsx"),
+    component: path.resolve("./src/templates/generic.tsx"),
     context: {
       id: indexPageNode.id,
     },
@@ -57,4 +60,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
       },
     });
   }
+    createPagesQuery.data.allMarkdownRemark.nodes.forEach(node => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve("./src/templates/Generic.tsx"),
+      context: {
+        id: node.id, // IMPORTANT
+      },
+    })
+  });
 };
