@@ -1,21 +1,32 @@
+import { graphql, PageProps } from "gatsby";
 import React from "react";
-import "../styles/bootstrap.css";
+import { assert } from "../helpers";
 
 const klubiky = ["Praha", "Brno", "Ostrava", "Plzeň", "Liberec"];
 
-const Home: React.FC = () => {
+const Home: React.FC<PageProps<Queries.IndexPageQuery>> = (props) => {
+  assert(props?.data?.allSitePage?.nodes, "Nodes not set!");
+
+  console.log(props?.data?.allSitePage?.nodes);
+
   return (
     <>
-      <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
-            <h1 class="sitename">Learner</h1>
+      <header
+        id="header"
+        className="header d-flex align-items-center sticky-top"
+      >
+        <div className="container-fluid container-xl position-relative d-flex align-items-center">
+          <a
+            href="index.html"
+            className="logo d-flex align-items-center me-auto"
+          >
+            <h1 className="sitename">Learner</h1>
           </a>
 
-          <nav id="navmenu" class="navmenu">
+          <nav id="navmenu" className="navmenu">
             <ul>
               <li>
-                <a href="index.html" class="active">
+                <a href="index.html" className="active">
                   Home
                 </a>
               </li>
@@ -34,10 +45,10 @@ const Home: React.FC = () => {
               <li>
                 <a href="blog.html">Blog</a>
               </li>
-              <li class="dropdown">
+              <li className="dropdown">
                 <a href="#">
                   <span>Klubikyyyyyyy</span>{" "}
-                  <i class="bi bi-chevron-down toggle-dropdown"></i>
+                  <i className="bi bi-chevron-down toggle-dropdown"></i>
                 </a>
                 <ul>
                   {klubiky.map((klub, index) => (
@@ -48,19 +59,19 @@ const Home: React.FC = () => {
                 </ul>
               </li>
 
-              <li class="dropdown">
+              <li className="dropdown">
                 <a href="#">
                   <span>Dropdown</span>{" "}
-                  <i class="bi bi-chevron-down toggle-dropdown"></i>
+                  <i className="bi bi-chevron-down toggle-dropdown"></i>
                 </a>
                 <ul>
                   <li>
                     <a href="#">Dropdown 1</a>
                   </li>
-                  <li class="dropdown">
+                  <li className="dropdown">
                     <a href="#">
                       <span>Deep Dropdown</span>{" "}
-                      <i class="bi bi-chevron-down toggle-dropdown"></i>
+                      <i className="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
                       <li>
@@ -95,15 +106,15 @@ const Home: React.FC = () => {
                 <a href="contact.html">Contact</a>
               </li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
 
-          <a class="btn-getstarted" href="enroll.html">
+          <a className="btn-getstarted" href="enroll.html">
             Enroll Now
           </a>
         </div>
       </header>
-      <div class="container-luid">
+      <div className="container-luid">
         <div className="row pt-5 pb-5 bg-light-blue">
           <div className="col-10 offset-1 row">
             <div className="offset-1 col-3 mt-5">
@@ -122,17 +133,17 @@ const Home: React.FC = () => {
               </div>
               <div className="row mt-5 col-12">
                 <div className="col-2">
-                  <button type="button" class="btn btn-primary btn-lg">
+                  <button type="button" className="btn btn-primary btn-lg">
                     Primary
                   </button>
                 </div>
                 <div className="col-2 offset-2">
-                  <button type="button" class="btn btn-primary btn-lg">
+                  <button type="button" className="btn btn-primary btn-lg">
                     Primary
                   </button>
                 </div>
                 <div className="col-2 offset-2">
-                  <button type="button" class="btn btn-primary btn-lg">
+                  <button type="button" className="btn btn-primary btn-lg">
                     Primary
                   </button>
                 </div>
@@ -140,7 +151,7 @@ const Home: React.FC = () => {
             </div>
             <div className="col-6 offset-2 mt-5">
               <img
-                class="img-fluid"
+                className="img-fluid"
                 src="https://d8-a.sdn.cz/d_8/c_imgrestricted_od_A/nO2tpF5hUICLbyDwFET256W/c727/charlie-kirk.jpeg?fl=cro,0,532,2453,1379%7Cres,1200,,1"
                 alt=""
               />
@@ -352,5 +363,17 @@ const Home: React.FC = () => {
     </>
   );
 };
+
+export const query = graphql`
+  query IndexPage {
+    allSitePage {
+      nodes {
+        path
+        id
+        pageContext
+      }
+    }
+  }
+`;
 
 export default Home;

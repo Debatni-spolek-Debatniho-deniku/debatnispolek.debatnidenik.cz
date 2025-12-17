@@ -1,5 +1,6 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
+import { assert } from "./src/helpers";
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -9,34 +10,39 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const createPagesQuery = await graphql<Queries.CreatePagesQuery>(`
     query CreatePages {
-      allMarkdownRemark(
-        filter: { frontmatter: { template: { eq: "generic" } } }
-      ) {
+      allMarkdownRemark {
         nodes {
           id
           frontmatter {
-            title
             path
             template
-          }
-          parent {
-            ... on File {
-              name
-            }
           }
         }
       }
     }
   `);
 
-  createPagesQuery!.data!.allMarkdownRemark.nodes.forEach((node) => {
+  assert(createPagesQuery.data, "Data was not loaded!");
+
+  createPagesQuery.data.allMarkdownRemark.nodes.forEach((node) => {
+    assert(node?.frontmatter?.path, "Path is not set!");
+    assert(node?.frontmatter?.template, "Template is not set!");
+
     createPage({
-      path: node!.frontmatter!.path!,
-      component: path.resolve("./src/templates/Generic.tsx"),
+      path: node.frontmatter.path,
+      component: getTemplateFileFromTemplateName(node.frontmatter.template),
       context: {
-        id: node.id, // IMPORTANT
-        jsemFaktGay: "name" in node.parent! ? node.parent.name! : "nejsem gay",
+        markdownId: node.id, // IMPORTANT
       },
     });
   });
+};
+
+const getTemplateFileFromTemplateName = (templateName: string) => {
+  switch (templateName) {
+    case "generic":
+      return path.resolve("./src/templates/Generic.tsx");
+    default:
+      throw new Error(`Unknown template ${templateName}!`);
+  }
 };

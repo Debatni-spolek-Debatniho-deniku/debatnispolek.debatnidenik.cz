@@ -1,30 +1,25 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, PageProps } from "gatsby";
+import { assert } from "../helpers";
 
-const Generic = (props: any) => {
+const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
   const page = props.data.markdownRemark;
 
-  return (
-    <div>
-      <h1>{page.frontmatter.title}</h1>V url je :id hodnoty {props.params.id}
-      <div dangerouslySetInnerHTML={{ __html: page.html }} />
-    </div>
-  );
+  assert(page?.frontmatter, "Front matter is not set.");
+  assert(page?.html, "Html is not set.");
+
+  return <main dangerouslySetInnerHTML={{ __html: page.html }} />;
 };
 
 export const query = graphql`
-  query GenericPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query GenericPage($markdownId: String!) {
+    markdownRemark(id: { eq: $markdownId }) {
       frontmatter {
-        template
         title
-        # …whatever else you need
       }
       html
     }
   }
 `;
-
-console.log("THIS IS A QUERY", query); //kde je kurva tohle
 
 export default Generic;
