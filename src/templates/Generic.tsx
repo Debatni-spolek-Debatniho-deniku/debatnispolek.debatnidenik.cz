@@ -2,7 +2,6 @@ import * as React from "react";
 import { useEffect, useRef } from "react";
 import { graphql, PageProps } from "gatsby";
 import { assert } from "../helpers";
-import * as atlas from "azure-maps-control";
 import Layout from "../components/Layout";
 
 const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
@@ -15,50 +14,46 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
   assert(page?.html, "Html is not set.");
 
   useEffect(() => {
-    if (typeof window === "undefined" || mapRef.current) return; // Ensure we're on the client side and map not already created
+    if (typeof window === "undefined" || mapRef.current) return;
 
-    // Initialize the map
-    const map = new atlas.Map("map", {
-      center: [lon, lat],
-      zoom: 15,
-      language: "en-US",
-      showFeedbackLink: false,
-      showLogo: false,
-      enableAccessibility: false,
-      authOptions: {
-        authType: "subscriptionKey",
-        subscriptionKey:
-          "61zGn9NwDmytXArWxCihG8wLV38pnagNC5XzekdUqUWo70eUdqE6JQQJ99BLAC5RqLJ3Wae9AAAgAZMP2Bye", // Replace with your actual Azure Maps subscription key
-      },
-    });
+    (async () => {
+      const atlas = await import("azure-maps-control");
 
-    mapRef.current = map;
+      const map = new atlas.Map("map", {
+        center: [lon, lat],
+        zoom: 15,
+        language: "en-US",
+        showFeedbackLink: false,
+        showLogo: false,
+        enableAccessibility: false,
+        authOptions: {
+          authType: "subscriptionKey",
+          subscriptionKey:
+            "61zGn9NwDmytXArWxCihG8wLV38pnagNC5XzekdUqUWo70eUdqE6JQQJ99BLAC5RqLJ3Wae9AAAgAZMP2Bye",
+        },
+      });
 
-    // Add event listener for when the map is ready
-    map.events.add("ready", () => {
-      console.log("Map is ready");
-      // Create a data source and add it to the map.
-      const datasource = new atlas.source.DataSource();
-      map.sources.add(datasource);
+      mapRef.current = map;
 
-      // Create a symbol layer using the data source and add it to the map
-      const symbolLayer = new atlas.layer.SymbolLayer(
-        datasource,
-        "symbol-layer"
-      );
-      map.layers.add(symbolLayer);
+      map.events.add("ready", () => {
+        console.log("Map is ready");
+        const datasource = new atlas.source.DataSource();
+        map.sources.add(datasource);
 
-      // Create a point feature, add it to the data source
-      const point = new atlas.data.Feature(new atlas.data.Point([lon, lat]));
-      datasource.add(point);
-    });
+        const symbolLayer = new atlas.layer.SymbolLayer(
+          datasource,
+          "symbol-layer"
+        );
+        map.layers.add(symbolLayer);
 
-    // Add error event listener
-    map.events.add("error", (e) => {
-      console.error("Map error occurred:", e);
-      if (e.message) console.error("Error message:", e.message);
-      if (e.type) console.error("Error type:", e.type);
-    });
+        const point = new atlas.data.Feature(new atlas.data.Point([lon, lat]));
+        datasource.add(point);
+      });
+
+      map.events.add("error", (e) => {
+        console.error("Map error occurred:", e);
+      });
+    })();
 
     return () => {
       if (mapRef.current) {
