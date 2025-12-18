@@ -15,10 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className="header d-flex align-items-center sticky-top"
       >
         <div className="container-fluid container-xl position-relative d-flex align-items-center">
-          <a
-            href="index.html"
-            className="logo d-flex align-items-center me-auto"
-          >
+          <a href="/" className="logo d-flex align-items-center me-auto">
             <h1 className="sitename">Learner</h1>
           </a>
 
