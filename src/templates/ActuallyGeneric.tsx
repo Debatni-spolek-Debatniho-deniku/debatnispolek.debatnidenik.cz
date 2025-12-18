@@ -7,9 +7,6 @@ import Layout from "../components/Layout";
 
 const ActuallyGeneric = (props: PageProps<Queries.GenericPageQuery>) => {
   const page = props.data.markdownRemark;
-  const mapRef = useRef<atlas.Map | null>(null);
-  const lat = page.frontmatter?.lat;
-  const lon = page.frontmatter?.lon;
 
   assert(page?.frontmatter, "Front matter is not set.");
   assert(page?.html, "Html is not set.");
