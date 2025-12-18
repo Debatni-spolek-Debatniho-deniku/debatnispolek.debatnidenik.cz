@@ -42,6 +42,8 @@ const getTemplateFileFromTemplateName = (templateName: string) => {
   switch (templateName) {
     case "generic":
       return path.resolve("./src/templates/Generic.tsx");
+    case "genericactually":
+      return path.resolve("./src/templates/ActuallyGeneric.tsx");
     default:
       throw new Error(`Unknown template ${templateName}!`);
   }
