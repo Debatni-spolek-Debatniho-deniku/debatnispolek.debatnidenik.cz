@@ -72,21 +72,27 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
     <Layout>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-7 offset-1 pt-5">
+          <div className="col-6 offset-1 pt-5">
             {page.frontmatter?.title && <h1>{page.frontmatter.title}</h1>}
             <main dangerouslySetInnerHTML={{ __html: page.html }} />
           </div>
-          <div className="col-3 bg-light-blue pt-5">
+          <div className="col-4 bg-light-blue pt-5">
             <div className="row flex-column">
-              <h3 className="pt-3 pb-3">Mapa lol</h3>
-              {page.frontmatter?.address && <h5>{page.frontmatter.address}</h5>}
+              <h3 className="pt-3 pb-3">Informace o klubu</h3>
+              {page.frontmatter?.info && (
+                <h5>
+                  {page.frontmatter.info.map((informace, index) => (
+                    <span key={index}>{informace}</span>
+                  ))}
+                </h5>
+              )}
               <div
                 id="map"
                 className="col-12 pb-5"
                 style={{ height: "200px", overflow: "hidden" }}
               ></div>
               <div className="col-12">
-                <h3 className="mt-3">Odpovědná osoba</h3>
+                <h3 className="mt-5">Odpovědná osoba</h3>
                 <div className="row">
                   {page.frontmatter?.owner &&
                     page.frontmatter.owner.map((person, index) => (
@@ -96,7 +102,10 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
                           style={{ backgroundColor: "transparent" }}
                         >
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"
+                            src={
+                              person.image ||
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"
+                            }
                             className="rounded-circle mx-auto d-block mt-3"
                             alt={person.name || "..."}
                             style={{
@@ -131,10 +140,11 @@ export const query = graphql`
         title
         lat
         lon
-        address
+        info
         owner {
           name
           email
+          image
         }
       }
       html
