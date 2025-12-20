@@ -8,8 +8,24 @@ const WhyDebateSection: React.FC = () => {
           <div className="row">
             <h2>Proč debatovat</h2>
           </div>
-          <div className="row justify-content-evenly">
-            <div className="col-3 mt-5">
+          <div className="row justify-content-between">
+            <div className="col-2 mt-5">
+              <div className="card">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"
+                  className="card-img-top"
+                  alt="..."
+                ></img>
+                <div className="card-body">
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.Some quick example text to
+                    build on the card title and make up the bulk of the card's
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-2 mt-5">
               <div className="card">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"
@@ -24,22 +40,7 @@ const WhyDebateSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="col-3 mt-5">
-              <div className="card">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"
-                  className="card-img-top"
-                  alt="..."
-                ></img>
-                <div className="card-body">
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-3 mt-5">
+            <div className="col-2 mt-5">
               <div className="card">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfallQFU-QIL1eceAPBD99gmKLPTox8C5a3g&s"

@@ -68,6 +68,18 @@
   scroll-behavior: smooth;
 }
 
+/* Reserve vertical scrollbar space to prevent header layout shift
+   between pages with and without scrolling content */
+html {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll; /* fallback: always show vertical scrollbar */
+  }
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -242,7 +254,7 @@ h6 {
 
   .navmenu>ul>li {
     white-space: nowrap;
-    padding: 15px 14px;
+    padding: 15px 20px;
   }
 
   .navmenu>ul>li:last-child {
@@ -264,6 +276,14 @@ h6 {
     position: relative;
   }
 
+  /* Baseline dimensions for top-level items to prevent layout shift */
+  .navmenu > ul > li > a {
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 6px 10px; /* keep pill padding constant */
+    box-sizing: border-box;
+  }
+
   .navmenu a i,
   .navmenu a:focus i {
     font-size: 12px;
@@ -278,15 +298,15 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--nav-hover-color);
+    background-color: #e61a2c; /* match nav active color */
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
   }
 
-  .navmenu a:hover:before,
-  .navmenu li:hover>a:before,
-  .navmenu .active:before {
+  /* show underline only for non-active top-level items */
+  .navmenu>ul>li:not(.active) a:hover:before,
+  .navmenu>ul>li:not(.active):hover>a:before {
     visibility: visible;
     width: 100%;
   }
@@ -295,6 +315,14 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+  }
+
+  /* style only top-level active nav items (do not affect dropdown children) */
+  .navmenu > ul > li.active > a {
+    border: 2px solid #e61a2c;
+    border-radius: 6px;
+    color: #e61a2c;
+    background: transparent;
   }
 
   .navmenu .dropdown ul {
@@ -641,6 +669,22 @@ h6 {
 .bg-dark-blue {
   background-color: rgba(132, 199, 208, 0.2)
 }
+#map{
+  width: 98% !important;
+}
+
+.club-blue{
+  background-color: #1f9ed9 !important;
+}
+.club-blue-btn{
+  border-color: #1f9ed9 !important;
+  color: #1f9ed9 !important;
+}
+.club-blue-btn:hover{
+  background-color: #1f9ed9 !important;
+  color: white !important;
+}
+
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/

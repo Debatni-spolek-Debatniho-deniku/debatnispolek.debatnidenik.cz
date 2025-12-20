@@ -14,7 +14,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 Stanování
               </button>
@@ -22,7 +22,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 Mrdky krtky
               </button>
@@ -30,7 +30,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
@@ -38,7 +38,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
@@ -48,7 +48,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
@@ -56,7 +56,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
@@ -64,7 +64,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
@@ -72,7 +72,7 @@ const RulesSection: React.FC = () => {
             <div className="col-3">
               <button
                 type="button"
-                className="btn btn-outline-primary btn-lg col-12"
+                className="btn btn-outline-primary btn-lg col-12 club-blue-btn"
               >
                 #FREESOCHOR
               </button>
