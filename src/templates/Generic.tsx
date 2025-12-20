@@ -3,15 +3,26 @@ import { useEffect, useRef } from "react";
 import { graphql, PageProps } from "gatsby";
 import { assert } from "../helpers";
 import Layout from "../components/Layout";
+import type { AuthenticationType } from "azure-maps-control";
+import type atlas from "azure-maps-control";
 
 const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
   const page = props.data.markdownRemark;
   const mapRef = useRef<atlas.Map | null>(null);
-  const lat = page.frontmatter?.lat;
-  const lon = page.frontmatter?.lon;
 
+  // Byl to typecheck error
   assert(page?.frontmatter, "Front matter is not set.");
   assert(page?.html, "Html is not set.");
+
+  const lat = page.frontmatter.lat;
+  const lon = page.frontmatter.lon;
+
+  // Byl to typecheck error
+  assert(lat, "Lat not set.");
+  assert(lon, "Lat not set.");
+
+  // Byl to typecheck error
+  assert(page.frontmatter.owner, "Owner not set");
 
   useEffect(() => {
     if (typeof window === "undefined" || mapRef.current) return;
@@ -27,7 +38,7 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
         showLogo: false,
         enableAccessibility: false,
         authOptions: {
-          authType: "subscriptionKey",
+          authType: "subscriptionKey" as AuthenticationType,
           subscriptionKey:
             "61zGn9NwDmytXArWxCihG8wLV38pnagNC5XzekdUqUWo70eUdqE6JQQJ99BLAC5RqLJ3Wae9AAAgAZMP2Bye",
         },
@@ -89,8 +100,10 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
               <div className="col-12">
                 <h3 className="mt-5">Odpovědná osoba</h3>
                 <div className="row">
-                  {page.frontmatter?.owner &&
-                    page.frontmatter.owner.map((person, index) => (
+                  {page.frontmatter.owner.map((person, index) => {
+                    assert(person, "person is not set");
+
+                    return (
                       <div key={index} className="col-6">
                         <div
                           className="card mb-3 border-0 pt-3"
@@ -118,7 +131,8 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
                           </div>
                         </div>
                       </div>
-                    ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>
