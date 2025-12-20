@@ -1,13 +1,12 @@
 import * as React from "react";
-import { useEffect, useRef } from "react";
 import { graphql, PageProps } from "gatsby";
 import { assert } from "../helpers";
-import * as atlas from "azure-maps-control";
 import Layout from "../components/Layout";
 
 const ActuallyGeneric = (props: PageProps<Queries.GenericPageQuery>) => {
   const page = props.data.markdownRemark;
 
+  // Byl to typecheck error
   assert(page?.frontmatter, "Front matter is not set.");
   assert(page?.html, "Html is not set.");
 

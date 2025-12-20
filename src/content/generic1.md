@@ -19,3 +19,7 @@ owner:
 # Tohle je tralelero nadpis
 
 This is generic 1 md
+
+![Charlie Kirk from  static folder](/charlie.jpg)
+
+![Charlie Kirk from image markdown plugin](./local_charlie.jpg)

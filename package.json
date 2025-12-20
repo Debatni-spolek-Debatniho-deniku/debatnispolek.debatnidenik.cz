@@ -5,7 +5,7 @@
     "start:swa": "swa start ./public",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "npm run typecheck && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
@@ -14,7 +14,9 @@
   "license": "MIT",
   "devDependencies": {
     "@azure/static-web-apps-cli": "^2.0.5",
-    "gatsby-cli": "^5.14.0"
+    "gatsby-cli": "^5.14.0",
+    "gatsby-plugin-sharp": "^5.15.0",
+    "gatsby-remark-images": "^7.15.0"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
@@ -27,7 +29,6 @@
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-mdx-source-name": "^1.0.1",
-    "gatsby-plugin-sharp": "^5.14.0",
     "gatsby-source-filesystem": "^5.14.0",
     "gatsby-transformer-remark": "^6.14.0",
     "react": "^18.2.0",
