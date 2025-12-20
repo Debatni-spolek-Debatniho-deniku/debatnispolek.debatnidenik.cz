@@ -65,13 +65,13 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
 
   return (
     <Layout>
-      <div className="container-fluid">
+      <div className="container-xl">
         <div className="row">
-          <div className="col-6 offset-1 pt-5">
+          <div className="col-12 col-lg-6 offset-lg-1 order-2 order-lg-1 pt-5">
             {page.frontmatter?.title && <h1>{page.frontmatter.title}</h1>}
             <main dangerouslySetInnerHTML={{ __html: page.html }} />
           </div>
-          <div className="col-4 bg-light-blue pt-5">
+          <div className="col-12 col-lg-4 bg-light-blue order-1 order-lg-2 pt-5">
             <div className="row flex-column">
               <h3 className="pt-3 pb-3">Informace o klubu</h3>
               {page.frontmatter?.info && (
@@ -107,6 +107,7 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
                               width: "100px",
                               height: "100px",
                               objectFit: "cover",
+                              border: "2px solid #ccc",
                             }}
                           />
                           <div className="card-body text-center p-2">

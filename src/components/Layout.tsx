@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "@reach/router";
 import navData from "../pages/nav.json";
 
 interface LayoutProps {
@@ -6,13 +7,19 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const location = useLocation();
+  const normalizePath = (p: string) => {
+    const trimmed = p.replace(/\/$/, "");
+    return trimmed === "" ? "/" : trimmed;
+  };
+  const currentPath = normalizePath(location.pathname);
   return (
     <div
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <header
         id="header"
-        className="header d-flex align-items-center sticky-top"
+        className="header d-flex align-items-center sticky-top club-blue"
       >
         <div className="container-fluid container-xl position-relative d-flex align-items-center">
           <a href="/" className="logo d-flex align-items-center me-auto">
@@ -26,8 +33,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 const value = item[key as keyof typeof item];
 
                 if (Array.isArray(value)) {
+                  const isActive = value.some((child) => {
+                    const childKey = Object.keys(child)[0];
+                    const childUrl = child[childKey as keyof typeof child];
+                    return normalizePath(childUrl) === currentPath;
+                  });
                   return (
-                    <li key={index} className="dropdown">
+                    <li
+                      key={index}
+                      className={`dropdown ${isActive ? "active" : ""}`}
+                    >
                       <a href="#">
                         <span>{key}</span>{" "}
                         <i className="bi bi-chevron-down toggle-dropdown"></i>
@@ -47,8 +62,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </li>
                   );
                 } else {
+                  const isActive =
+                    normalizePath(value as string) === currentPath;
                   return (
-                    <li key={index}>
+                    <li key={index} className={isActive ? "active" : ""}>
                       <a href={value}>{key}</a>
                     </li>
                   );
