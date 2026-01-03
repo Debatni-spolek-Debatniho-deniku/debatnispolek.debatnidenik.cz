@@ -1,6 +1,6 @@
 ---
-title: Debatní turnaje
-path: /tournaments
+title: Založení debatního klubu
+path: /clubs/start-your-own-club
 template: generic
 ---
 

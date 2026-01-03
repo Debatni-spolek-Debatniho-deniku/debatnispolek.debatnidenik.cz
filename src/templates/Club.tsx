@@ -15,10 +15,7 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
   return (
     <Layout>
       <article className="row">
-        <div
-          className="col-md-8"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className="col-md-8" dangerouslySetInnerHTML={{ __html: html }} />
         <aside className="col-md-4">
           <div className="card">
             <div className="card-body">
@@ -27,17 +24,19 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
                 invariant(location, "location is required");
                 return (
                   <div key={index} className={index > 0 ? "mt-4" : ""}>
-                    <h5 className="card-title">{location.name}</h5>
+                    <h6 className="card-title">{location.name}</h6>
                     {location.info && (
                       <ul className="list-unstyled mb-3">
                         {location.info.map((line, lineIndex) => (
-                          <li key={lineIndex}>{line}</li>
+                          <li key={lineIndex} className="small text-muted">
+                            {line}
+                          </li>
                         ))}
                       </ul>
                     )}
                     {location.map && (
                       <div
-                        className="ratio ratio-4x3"
+                        className="club-map"
                         dangerouslySetInnerHTML={{ __html: location.map }}
                       />
                     )}
@@ -48,21 +47,32 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
               {/* Owners Section */}
               <div className="mt-4">
                 <hr />
-                <div className="d-flex flex-wrap justify-content-center gap-3">
-                  {owners.map((owner, index) => {
-                    invariant(owner?.picture?.publicURL, "owner picture is required");
+                <h5 className="mb-3">Odpovědné osoby</h5>
+                <div className="d-flex flex-wrap justify-content-around gap-4">
+                  {owners.map((owner) => {
+                    invariant(owner?.name, "owner name is required");
+                    invariant(
+                      owner?.image?.publicURL,
+                      "owner image is required"
+                    );
+                    invariant(owner?.email, "owner email is required");
                     return (
-                      <div key={index} className="text-center">
+                      <div
+                        key={owner.name}
+                        className="text-center small club-owner"
+                      >
                         <img
-                          src={owner.picture.publicURL}
+                          src={owner.image.publicURL}
                           alt={owner.name ?? ""}
-                          className="rounded-circle mb-2"
-                          style={{ width: "80px", height: "80px", objectFit: "cover" }}
+                          className="rounded-circle mb-2 club-owner-profile-picture"
                         />
                         <div className="fw-bold">{owner.name}</div>
-                        {owner.email && (
-                          <a href={`mailto:${owner.email}`}>{owner.email}</a>
-                        )}
+                        <a
+                          href={`mailto:${owner.email}`}
+                          className="d-block text-truncate"
+                        >
+                          {owner.email}
+                        </a>
                       </div>
                     );
                   })}
@@ -93,7 +103,7 @@ export const query = graphql`
         owners {
           name
           email
-          picture {
+          image {
             publicURL
           }
         }

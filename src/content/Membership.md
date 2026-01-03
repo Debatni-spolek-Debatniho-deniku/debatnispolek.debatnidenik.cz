@@ -1,6 +1,6 @@
 ---
-title: Činnost spolku
-path: /activities
+title: Členství ve spolku
+path: /membership
 template: generic
 ---
 
