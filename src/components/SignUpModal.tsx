@@ -4,7 +4,7 @@ import invariant from "tiny-invariant";
 import SmartAnchor from "./SmartAnchor";
 
 const CardButton: React.FC<{
-  imageSrc?: string | null;
+  imageSrc: string;
   title: string;
   href: string;
 }> = ({ imageSrc, title, href }) => {
@@ -14,20 +14,14 @@ const CardButton: React.FC<{
       className="btn btn-outline-secondary d-flex align-items-center mb-2 text-start"
       style={{ textDecoration: "none" }}
     >
-      {imageSrc && (
+      <div className="signup-modal-image-container">
         <img
           src={imageSrc}
           alt={title}
-          className="rounded-start"
-          style={{
-            maxWidth: 64,
-            maxHeight: 48,
-            objectFit: "cover",
-            flexShrink: 0,
-          }}
+          className="rounded-start signup-modal-image"
         />
-      )}
-      {!imageSrc && <div style={{ width: 64, height: 48 }}></div>}
+      </div>
+
       <div className="ms-4 flex-grow-1">
         <h6 className="mb-0">{title}</h6>
       </div>
@@ -91,12 +85,6 @@ const SignUpModal: React.FC<{
   const clubs = data.allAvailableClubsYaml.nodes;
   invariant(clubs, "clubs are required");
 
-  const availableClubs = clubs.filter((club, originalIndex) => {
-    if (!club.availability) return true;
-
-    return isAvailable(club.availability);
-  });
-
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       setShow(false);
@@ -112,7 +100,7 @@ const SignUpModal: React.FC<{
         }`}
         onClick={() => setShow(true)}
       >
-        Přihlásit se na debatu
+        Přihlaš se na debatu
       </button>
 
       {show && (
@@ -129,7 +117,7 @@ const SignUpModal: React.FC<{
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="signUpModalLabel">
-                    Přihlásit se na debatu
+                    Vyber si debatní klub
                   </h5>
                   <button
                     type="button"
@@ -140,19 +128,29 @@ const SignUpModal: React.FC<{
                 </div>
                 <div className="modal-body">
                   <div className="list-group">
-                    {availableClubs.map((club) => {
-                      invariant(club.label, "club label is required");
-                      invariant(club.form, "club form is required");
+                    {clubs
+                      .filter((club) => {
+                        if (!club.availability) return true;
 
-                      return (
-                        <CardButton
-                          key={club.label}
-                          imageSrc={club.image?.publicURL}
-                          title={club.label}
-                          href={club.form}
-                        />
-                      );
-                    })}
+                        return isAvailable(club.availability);
+                      })
+                      .map((club) => {
+                        invariant(club.label, "club label is required");
+                        invariant(club.form, "club form is required");
+                        invariant(
+                          club.image?.publicURL,
+                          "club image is required"
+                        );
+
+                        return (
+                          <CardButton
+                            key={club.label}
+                            imageSrc={club.image.publicURL}
+                            title={club.label}
+                            href={club.form}
+                          />
+                        );
+                      })}
                   </div>
                 </div>
               </div>

@@ -27,4 +27,5 @@
     - fromMonth: 7
       toMonth: 8
 - label: Debaní klub ONLINE
+  image: ./clubs/online.png
   form: https://docs.google.com/forms/d/e/1FAIpQLSd7N5O66o_p8tymriNnxpEwWjoQZKSd9kDbmUls7VWEq8c-Tg/viewform?usp=dialog
