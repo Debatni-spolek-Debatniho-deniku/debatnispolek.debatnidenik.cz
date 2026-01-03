@@ -41,7 +41,7 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
 
 Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra. Nulla vehicula, sapien non hendrerit dapibus, enim diam dictum urna, eget facilisis enim libero id nisi.
 
-
+ 
 ![Lorem local](./local_charlie.jpg)
 
 Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra. Nulla vehicula, sapien non hendrerit dapibus, enim diam dictum urna, eget facilisis enim libero id nisi.
