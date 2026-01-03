@@ -64,10 +64,36 @@ npm run clean      # Clear Gatsby cache
 
 ### Markdown Frontmatter Schema
 
+Schema for `generic` template looks like:
+
 ```yaml
 title: Page Title
 path: /page-path
-template: generic | club
+template: generic
+```
+
+Schema for `club` template looks like:
+
+```yaml
+title: Page Title
+path: /page-path
+template: club
+
+locations:
+  - name: Location Name
+    info: # optional
+      - First row of ino
+      - Second row of info
+      - Third row of info
+    map: <iframe src="some iframe /> # optional
+
+owners:
+  - name: John Doe
+    picture: ./owners/JohnDoe.png
+    email: johndoe@x.com
+  - name: Jane Doe
+    picture: ./owners/JaneDoe.png
+    email: janedoe@x.com
 ```
 
 ### Navigation YAML Schema

@@ -4,9 +4,11 @@
   path: /about-us
 - label: Debatní kluby
   items:
-    - label: Praha
+    - label: V Praze
       path: /clubs/prague
-    - label: Plzeň
+    - label: V Plzni
+      path: /clubs/pilsen
+    - label: Online
       path: /clubs/pilsen
 - label: Debatní turnaje
   path: /tournaments

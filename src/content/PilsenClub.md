@@ -2,18 +2,20 @@
 title: Plzeňské kluby
 path: /clubs/pilsen
 template: club
-# lat: 50.08547631981888
-# lon: 14.431331308140502
-# info:
-#   - Navrátilova 1442, 110 00 Nové Město, Praha
-#   - Smrdí ti máma
-#   - FREESOCHOR
-# owner:
-#   - name: Tadeáš Souba
-#     email: tadeas@souba.cz
-#     image: /charlie.jpg
-#   - name: Charlie Kirk
-#     email: charlie@souba.cz
+
+locations:
+  - name: FF ZČU
+    info:
+      - Filozofická fakulta Zápodčeské univerzity
+      - Jungmannova 153/1, Plzeň 3
+      -
+      - Neprobíhá o letních prázdninách
+    map: <iframe style="border:none" src="https://mapy.com/s/gatazenozo" width="400" height="280" frameborder="0"></iframe>
+
+owners:
+  - name: Tadeáš Souba
+    picture: ./owners/placeholder.png
+    email: souba@debatnispolek.debatnidenik.cz
 ---
 
 # Tohle je tralelero nadpis

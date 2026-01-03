@@ -2,18 +2,26 @@
 title: Pražské kluby
 path: /clubs/prague
 template: club
-# lat: 50.08547631981888
-# lon: 14.431331308140502
-# info:
-#   - Navrátilova 1442, 110 00 Nové Město, Praha
-#   - Smrdí ti máma
-#   - FREESOCHOR
-# owner:
-#   - name: Tadeáš Souba
-#     email: tadeas@souba.cz
-#     image: /charlie.jpg
-#   - name: Charlie Kirk
-#     email: charlie@souba.cz
+
+locations:
+  - name: SSPŠ
+    info:
+      - Smíchovská střední průmyslová škola
+      - Preslova 72/25, Praha 5
+      -
+      - Dočasně přerušeno
+    map: <iframe style="border:none" src="https://mapy.com/s/jelutojugu" width="400" height="280" frameborder="0"></iframe>
+
+owners:
+  - name: Michael Svoboda
+    picture: ./owners/placeholder.png
+    email: michael.svoboda@debatnispolek.debatnidenik.cz
+  - name: Jakub Šmejkal
+    picture: ./owners/placeholder.png
+    email: smejkal@debatnispolek.debatnidenik.cz
+  - name: Tammam Hennawi
+    picture: ./owners/placeholder.png
+    email: tammamhennawi@gmail.com
 ---
 
 # Tohle je tralelero nadpis

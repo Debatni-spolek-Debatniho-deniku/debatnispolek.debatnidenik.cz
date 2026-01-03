@@ -1,10 +1,8 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren } from "react";
 import SignUpModal from "./SignUpModal";
 import NavItems from "./NavItems";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-
   return (
     <div className="container">
       <header>
@@ -13,13 +11,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
             <a className="navbar-brand" href="/">
               <img src="/NavLogo.svg" alt="Debatní spolek" height="64" />
             </a>
-            <button
-              type="button"
-              className="btn btn-primary order-lg-last ms-lg-3"
-              onClick={() => setShowSignUpModal(true)}
-            >
-              Přihlásit se na debatu
-            </button>
+            <SignUpModal buttonClassName="btn btn-primary order-lg-last ms-lg-3" />
             <button
               className="navbar-toggler"
               type="button"
@@ -45,11 +37,6 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
           © {new Date().getFullYear()} Debatní spolek Debatního deníku
         </p>
       </footer>
-
-      <SignUpModal
-        show={showSignUpModal}
-        onClose={() => setShowSignUpModal(false)}
-      />
     </div>
   );
 };
