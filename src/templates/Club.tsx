@@ -1,14 +1,14 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
-import { assert } from "../helpers";
+import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 
-const ActuallyGeneric = (props: PageProps<Queries.GenericPageQuery>) => {
+const Club = (props: PageProps<Queries.GenericPageQuery>) => {
   const page = props.data.markdownRemark;
 
   // Byl to typecheck error
-  assert(page?.frontmatter, "Front matter is not set.");
-  assert(page?.html, "Html is not set.");
+  invariant(page?.frontmatter, "Front matter is not set.");
+  invariant(page?.html, "Html is not set.");
 
   return (
     <Layout>
