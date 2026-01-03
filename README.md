@@ -77,3 +77,4 @@ Codebase obsahuje instrukční soubor pro GitHub Copilot a Claude Code.
 Pokud upravuješ CLAUDE.md nebo ./.github/copilot-instructions.md nezapomeň provést relevantní změny v souboru pro druhou AI.
 
 
+![](./meme.webp)
