@@ -12,7 +12,7 @@ This is a **Gatsby.js 5** static site generator project for a Czech debate club 
 - **Language**: TypeScript 5.3.3
 - **UI Library**: React 18.2.0
 - **Styling**: Bootstrap 5.3.8
-- **Maps**: Azure Maps Control 3.7.2
+- **Maps**: Embedded as iframes
 - **Content**: Markdown with gatsby-transformer-remark
 - **Navigation**: YAML with gatsby-transformer-yaml
 - **Deployment**: Azure Static Web Apps
@@ -139,14 +139,10 @@ All pages use the `Layout` component wrapper which provides:
 3. Pages are generated using appropriate template (`generic` or `club`)
 4. GraphQL queries in components fetch page-specific data
 
-### Azure Maps Integration
-- Loaded client-side only (SSR check: `typeof window === "undefined"`)
-- Map instance managed via `useRef` to prevent recreation
-- Cleanup handled in `useEffect` return function
-
 ## Conventions
 
 - **Assertions**: Use `invariant()` from `tiny-invariant` for null-safety checks
+- **Offensive programmer**: Assert everything that can be null/undefined for it not being as such unless specified that something is optional, you can benefit from ? operator as asserting child property also asserts existence of parent property
 - **Styling**: Use Bootstrap utility classes; custom CSS as needed
 - **Images**:
   - `src/content/`: Images managed by editors, referenced from markdown files, processed by gatsby-remark-images
