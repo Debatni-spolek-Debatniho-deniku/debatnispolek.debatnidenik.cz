@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import { graphql, PageProps } from "gatsby";
-import { assert } from "../helpers";
+import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import type { AuthenticationType } from "azure-maps-control";
 import type atlas from "azure-maps-control";
@@ -11,18 +11,18 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
   const mapRef = useRef<atlas.Map | null>(null);
 
   // Byl to typecheck error
-  assert(page?.frontmatter, "Front matter is not set.");
-  assert(page?.html, "Html is not set.");
+  invariant(page?.frontmatter, "Front matter is not set.");
+  invariant(page?.html, "Html is not set.");
 
   const lat = page.frontmatter.lat;
   const lon = page.frontmatter.lon;
 
   // Byl to typecheck error
-  assert(lat, "Lat not set.");
-  assert(lon, "Lat not set.");
+  invariant(lat, "Lat not set.");
+  invariant(lon, "Lat not set.");
 
   // Byl to typecheck error
-  assert(page.frontmatter.owner, "Owner not set");
+  invariant(page.frontmatter.owner, "Owner not set");
 
   useEffect(() => {
     if (typeof window === "undefined" || mapRef.current) return;
@@ -101,7 +101,7 @@ const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
                 <h3 className="mt-5">Odpovědná osoba</h3>
                 <div className="row">
                   {page.frontmatter.owner.map((person, index) => {
-                    assert(person, "person is not set");
+                    invariant(person, "person is not set");
 
                     return (
                       <div key={index} className="col-6">

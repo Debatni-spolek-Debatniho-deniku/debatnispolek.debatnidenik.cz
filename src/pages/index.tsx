@@ -1,6 +1,6 @@
 import { graphql, PageProps } from "gatsby";
 import React from "react";
-import { assert } from "../helpers";
+import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
@@ -9,7 +9,7 @@ import AboutClubSection from "../components/AboutClubSection";
 import RulesSection from "../components/RulesSection";
 
 const Home: React.FC<PageProps<Queries.IndexPageQuery>> = (props) => {
-  assert(props?.data?.allSitePage?.nodes, "Nodes not set!");
+  invariant(props?.data?.allSitePage?.nodes, "Nodes not set!");
 
   console.log(props?.data?.allSitePage?.nodes);
 
