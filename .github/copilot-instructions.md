@@ -29,7 +29,7 @@
 
 ## Conventions & Patterns
 - **Assertions**: Use `invariant()` from `tiny-invariant` for null-safety
-- **Defensive programming**: Assert all non-optional values; use `?.` for safe property access
+- **Offensive programming**: Use invariant to check everything that is not stated as optional, leverage ? operator so you dont have to check everything property in the chain individually
 - **Styling**: Prefer Bootstrap utility classes; custom CSS only as needed
 - **Images**:
   - In `src/content/`: Referenced in Markdown, processed by Gatsby

@@ -1,6 +1,6 @@
 ---
-title: Činnost spolku
-path: /activities
+title: Kontakty
+path: /contacts
 template: generic
 ---
 

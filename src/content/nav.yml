@@ -1,14 +1,26 @@
 - label: Domů
   path: /
-- label: O nás
-  path: /about-us
 - label: Debatní kluby
   items:
-    - label: V Praze
+    - label: FAQ
+      path: https://debatnispolek.sharepoint.com/:w:/g/Ed_Up0SkbixGk3AtLfq0YDwB5gDHxOKDWDGlzFvR4WL3ww
+    - label: Naše kluby v Praze
       path: /clubs/prague
-    - label: V Plzni
+    - label: Naše kluby v Plzni
       path: /clubs/pilsen
-    - label: Online
-      path: /clubs/pilsen
+    - label: Online klub
+      path: /clubs/online
+    - label: Založení debatního klubu
+      path: /clubs/start-your-own-club
 - label: Debatní turnaje
   path: /tournaments
+- label: Debatní spolek
+  items:
+    - label: Činnost spolku
+      path: /activities
+    - label: Organizace spolku
+      path: /structure
+    - label: Členství ve spolku
+      path: /membership
+- label: Kontakty
+  path: /contacts

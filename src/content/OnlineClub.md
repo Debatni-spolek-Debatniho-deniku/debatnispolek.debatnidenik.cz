@@ -7,17 +7,22 @@ locations:
   - name: Discord
     info:
       - Discord server Debatní spolek Debatního deníku
+      - Debata od 19:00, seminář od 18:30
 
 owners:
   - name: Karel Krob
-    picture: ./owners/placeholder.png
+    image: ./owners/placeholder.png
     email: karelkrob0@gmail.com
 ---
 
 # Tohle je tralelero nadpis
 
-This is generic 1 md
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex. Mauris dapibus risus quis suscipit vulputate. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
-![Charlie Kirk from  static folder](/charlie.jpg)
+## Subheading
 
-![Charlie Kirk from image markdown plugin](./local_charlie.jpg)
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquam, urna ut sollicitudin molestie, lacus justo aliquam mauris, interdum aliquam sapien nisi cursus mauris.
+
+- Lorem ipsum dolor sit amet
+- Consectetur adipiscing elit
+- Integer molestie lorem at massa

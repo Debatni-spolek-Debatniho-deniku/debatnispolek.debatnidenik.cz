@@ -6,22 +6,27 @@ template: club
 locations:
   - name: FF ZČU
     info:
-      - Filozofická fakulta Zápodčeské univerzity
+      - Od 18:00 v učebně JJ 305, pouze přes školní rok
       - Jungmannova 153/1, Plzeň 3
-      -
-      - Neprobíhá o letních prázdninách
-    map: <iframe style="border:none" src="https://mapy.com/s/gatazenozo" width="400" height="280" frameborder="0"></iframe>
+    map: <iframe style="border:none" src="https://mapy.com/s/gatazenozo" frameborder="0"></iframe>
+  - name: Kulturka ZČU
+    info:
+      - Od 18:00, pouze přes letní prázdniny
+      - Sedláčkova 216/19, Plzeň 3
+    map: <iframe style="border:none" src="https://mapy.com/s/gudozebega" frameborder="0"></iframe>
 
 owners:
   - name: Tadeáš Souba
-    picture: ./owners/placeholder.png
+    image: ./owners/placeholder.png
     email: souba@debatnispolek.debatnidenik.cz
 ---
 
-# Tohle je tralelero nadpis
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex. Mauris dapibus risus quis suscipit vulputate. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
-This is generic 1 md
+## Subheading
 
-![Charlie Kirk from  static folder](/charlie.jpg)
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquam, urna ut sollicitudin molestie, lacus justo aliquam mauris, interdum aliquam sapien nisi cursus mauris.
 
-![Charlie Kirk from image markdown plugin](./local_charlie.jpg)
+- Lorem ipsum dolor sit amet
+- Consectetur adipiscing elit
+- Integer molestie lorem at massa
