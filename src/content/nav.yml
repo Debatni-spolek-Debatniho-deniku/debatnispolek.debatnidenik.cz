@@ -1,5 +1,5 @@
-- label: Domů
-  path: /
+# - label: Domů
+#   path: /
 - label: Debatní kluby
   items:
     - label: FAQ
@@ -17,10 +17,10 @@
 - label: Debatní spolek
   items:
     - label: Činnost spolku
-      path: /activities
+      path: /organization/activities
     - label: Organizace spolku
-      path: /structure
+      path: /organization/structure
     - label: Členství ve spolku
-      path: /membership
+      path: /organization/membership
 - label: Kontakty
   path: /contacts

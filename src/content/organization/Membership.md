@@ -1,6 +1,6 @@
 ---
-title: Organizace spolku
-path: /structure
+title: Členství ve spolku
+path: /organization/membership
 template: generic
 ---
 

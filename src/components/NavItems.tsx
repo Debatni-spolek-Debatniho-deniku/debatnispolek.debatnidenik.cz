@@ -32,7 +32,7 @@ const NavItems: React.FC = () => {
         if (item.items) {
           invariant(Array.isArray(item.items), "nav item.items must be array");
           return (
-            <li className="nav-item dropdown" key={index}>
+            <li className="nav-item px-lg-3 dropdown" key={index}>
               <a
                 className="nav-link dropdown-toggle"
                 href="#"

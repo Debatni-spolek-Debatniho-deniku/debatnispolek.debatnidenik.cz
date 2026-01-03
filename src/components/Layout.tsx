@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import ErrorBoundary from "./ErrorBoundary";
-import SignUpModal from "./SignUpModal";
+import ClubPicker from "./ClubPicker";
 import NavItems from "./NavItems";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -11,9 +11,20 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
           <nav className="navbar navbar-expand-lg bg-body-tertiary w-100">
             <div className="container">
               <a className="navbar-brand" href="/">
-                <img src="/NavLogo.svg" alt="Debatní spolek" height="64" />
+                <img
+                  src="/NavLogo_compact.svg"
+                  alt="Debatní spolek"
+                  height="64"
+                  className="d-sm-none"
+                />
+                <img
+                  src="/NavLogo_full.svg"
+                  alt="Debatní spolek"
+                  height="64"
+                  className="d-none d-sm-block"
+                />
               </a>
-              <SignUpModal buttonClassName="order-lg-last ms-lg-5" />
+              <ClubPicker buttonClassName="order-lg-last py-2 py-lg-1 ms-auto me-4 me-lg-0 ms-lg-5" />
               <button
                 className="navbar-toggler"
                 type="button"

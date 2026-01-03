@@ -59,7 +59,7 @@ const isAvailable = (
   });
 };
 
-const SignUpModal: React.FC<{
+const ClubPicker: React.FC<{
   buttonClassName?: string;
 }> = ({ buttonClassName }) => {
   const [show, setShow] = useState(false);
@@ -109,14 +109,14 @@ const SignUpModal: React.FC<{
             className="modal fade show"
             style={{ display: "block" }}
             tabIndex={-1}
-            aria-labelledby="signUpModalLabel"
+            aria-labelledby="clubPickerLabel"
             aria-hidden={false}
             onClick={handleBackdropClick}
           >
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="signUpModalLabel">
+                  <h5 className="modal-title" id="clubPickerLabel">
                     Vyber si debatní klub
                   </h5>
                   <button
@@ -166,4 +166,4 @@ const SignUpModal: React.FC<{
   );
 };
 
-export default SignUpModal;
+export default ClubPicker;
