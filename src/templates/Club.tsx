@@ -3,12 +3,12 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const Club = (props: PageProps<Queries.ClubPageQuery>) => {
-  //const page = props.data.markdownRemark;
-
+const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
   return (
     <Layout>
-      <div>Club template placeholder</div>
+      <article
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html ?? "" }}
+      />
     </Layout>
   );
 };

@@ -3,12 +3,12 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const Generic = (props: PageProps<Queries.GenericPageQuery>) => {
-  //const page = props.data.markdownRemark;
-
+const Generic = ({ data }: PageProps<Queries.GenericPageQuery>) => {
   return (
     <Layout>
-      <div>Generic template placeholder</div>
+      <article
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html ?? "" }}
+      />
     </Layout>
   );
 };
