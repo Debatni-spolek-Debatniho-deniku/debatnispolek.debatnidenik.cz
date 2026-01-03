@@ -54,6 +54,8 @@ npm run serve      # Serve built site locally
 npm run clean      # Clear Gatsby cache
 ```
 
+**Important**: Do NOT run `npm run develop`, `npm run build`, or `npm run serve` commands. The programmer runs the dev server in a separate terminal window. Only make code changes and let the programmer handle running/testing.
+
 ## Routing
 
 - **File-based routing**: Pages in `src/pages/` are auto-routed
@@ -76,7 +78,7 @@ Navigation is defined in `src/content/nav.yml` and queryable via GraphQL:
 - label: Home
   path: /
 - label: Section Name
-  children:
+  items:
     - label: Child Page
       path: /child-path
 ```
@@ -88,7 +90,7 @@ query {
     nodes {
       label
       path
-      children {
+      items {
         label
         path
       }

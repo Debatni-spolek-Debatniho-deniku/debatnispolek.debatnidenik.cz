@@ -1,7 +1,7 @@
 ---
-title: My article 1
-path: /generic/1
-template: generic
+title: Plzeňské kluby
+path: /clubs/pilsen
+template: club
 # lat: 50.08547631981888
 # lon: 14.431331308140502
 # info:
