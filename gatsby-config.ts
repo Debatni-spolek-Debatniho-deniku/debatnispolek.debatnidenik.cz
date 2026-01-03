@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
+    "gatsby-transformer-yaml",
     {
       resolve: "gatsby-transformer-remark",
       options: {

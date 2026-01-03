@@ -1,0 +1,18 @@
+- label: Domů
+  path: /
+- label: O nás
+  path: /about
+- label: Klubiky
+  children:
+    - label: Praha
+      path: /generic/1
+    - label: Brno
+      path: /generic/2
+    - label: Ostrava
+      path: /generic/3
+- label: Členi
+  children:
+    - label: Pro členy
+      path: /generic/4
+    - label: Přihlášení
+      path: /generic/5
