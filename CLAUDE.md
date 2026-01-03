@@ -13,7 +13,8 @@ This is a **Gatsby.js 5** static site generator project for a Czech debate club 
 - **UI Library**: React 18.2.0
 - **Styling**: Bootstrap 5.3.8
 - **Maps**: Azure Maps Control 3.7.2
-- **Content**: Markdown with MDX support
+- **Content**: Markdown with gatsby-transformer-remark
+- **Navigation**: YAML with gatsby-transformer-yaml
 - **Deployment**: Azure Static Web Apps
 
 ## Project Structure
@@ -21,24 +22,16 @@ This is a **Gatsby.js 5** static site generator project for a Czech debate club 
 ```
 src/
 ├── components/          # Reusable React components
-│   ├── Layout.tsx       # Main layout wrapper (header, nav, footer)
-│   ├── HeroSection.tsx  # Hero banner component
-│   ├── AboutSection.tsx # About section
-│   ├── WhyDebateSection.tsx
-│   ├── AboutClubSection.tsx
-│   └── RulesSection.tsx
+│   └── Layout.tsx       # Main layout wrapper (header, nav, footer)
 ├── pages/               # Gatsby auto-routed pages
 │   ├── index.tsx        # Home page (/)
-│   ├── 404.tsx          # Not found page
-│   └── nav.json         # Navigation structure
+│   └── 404.tsx          # Not found page
 ├── templates/           # Templates for dynamic pages
-│   ├── Generic.tsx      # Club page template (with map)
-│   └── ActuallyGeneric.tsx  # Simple content template
-├── content/             # Markdown content files
-│   └── generic*.md      # Club pages content
-├── styles/
-│   └── bootstrap.css    # Bootstrap overrides
-└── helpers.ts           # Utility functions
+│   ├── Generic.tsx      # Generic content template
+│   └── Club.tsx         # Club page template (with map)
+└── content/             # Content files (managed by editors)
+    ├── nav.yml          # Navigation structure (GraphQL queryable)
+    └── *.md             # Markdown content pages
 ```
 
 ## Key Files
@@ -48,7 +41,7 @@ src/
 | `gatsby-config.ts` | Gatsby plugins and site configuration |
 | `gatsby-node.ts` | Build-time page generation from markdown |
 | `gatsby-browser.js` | Client-side Bootstrap imports |
-| `src/pages/nav.json` | Navigation menu structure |
+| `src/content/nav.yml` | Navigation menu structure (GraphQL queryable) |
 | `static/staticwebapp.config.json` | Azure deployment config |
 
 ## Commands
@@ -71,17 +64,37 @@ npm run clean      # Clear Gatsby cache
 
 ```yaml
 title: Page Title
-path: /generic/1
-template: generic | actuallyGeneric
-lat: 50.08547631981888      # Optional: for map
-lon: 14.431331308140502     # Optional: for map
-info:                       # Optional: club info
-  - Line 1
-  - Line 2
-owner:                      # Optional: club owners
-  - name: Person Name
-    email: email@example.com
-    image: /path/to/image.jpg
+path: /page-path
+template: generic | club
+```
+
+### Navigation YAML Schema
+
+Navigation is defined in `src/content/nav.yml` and queryable via GraphQL:
+
+```yaml
+- label: Home
+  path: /
+- label: Section Name
+  children:
+    - label: Child Page
+      path: /child-path
+```
+
+Query navigation with:
+```graphql
+query {
+  allNavYaml {
+    nodes {
+      label
+      path
+      children {
+        label
+        path
+      }
+    }
+  }
+}
 ```
 
 ## Architecture Patterns
@@ -95,7 +108,7 @@ All pages use the `Layout` component wrapper which provides:
 ### Data Flow
 1. Markdown files in `src/content/` define content
 2. `gatsby-node.ts` queries markdown at build time
-3. Pages are generated using appropriate template
+3. Pages are generated using appropriate template (`generic` or `club`)
 4. GraphQL queries in components fetch page-specific data
 
 ### Azure Maps Integration
@@ -105,10 +118,12 @@ All pages use the `Layout` component wrapper which provides:
 
 ## Conventions
 
-- **Assertion helper**: Use `assert()` from `src/helpers.ts` for null-safety checks
-- **Styling**: Use Bootstrap utility classes; custom CSS in `src/styles/bootstrap.css`
-- **Images**: Place in `static/` for direct reference or use gatsby-plugin-image for optimization
-- **Navigation**: Update `src/pages/nav.json` to modify menu structure
+- **Assertions**: Use `invariant()` from `tiny-invariant` for null-safety checks
+- **Styling**: Use Bootstrap utility classes; custom CSS as needed
+- **Images**:
+  - `src/content/`: Images managed by editors, referenced from markdown files, processed by gatsby-remark-images
+  - `static/`: Images used directly in React components via `<img>` tag, managed by programmers
+- **Navigation**: Update `src/content/nav.yml` to modify menu structure
 
 ## GraphQL
 
@@ -117,13 +132,11 @@ Gatsby uses GraphQL for data queries. Types are auto-generated in `src/gatsby-ty
 Example page query:
 ```typescript
 export const query = graphql`
-  query GenericPage($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query GenericPage($markdownId: String!) {
+    markdownRemark(id: { eq: $markdownId }) {
       html
       frontmatter {
         title
-        lat
-        lon
       }
     }
   }
@@ -142,3 +155,4 @@ export const query = graphql`
 - The site is in Czech language
 - Content is primarily static with minimal interactivity
 - Maps are the main interactive feature (club locations)
+- Content in `src/content/` is managed by editors, editors add, change and remove md files and images, editors also change nav.yml but the file is always present and cannot be deleted by them

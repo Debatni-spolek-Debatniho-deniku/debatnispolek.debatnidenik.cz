@@ -1,6 +1,6 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
-import { assert } from "./src/helpers";
+import invariant from "tiny-invariant";
 
 export const createPages: GatsbyNode["createPages"] = async ({
   graphql,
@@ -22,11 +22,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   `);
 
-  assert(createPagesQuery.data, "Data was not loaded!");
+  invariant(createPagesQuery.data, "Data was not loaded!");
 
   createPagesQuery.data.allMarkdownRemark.nodes.forEach((node) => {
-    assert(node?.frontmatter?.path, "Path is not set!");
-    assert(node?.frontmatter?.template, "Template is not set!");
+    invariant(node?.frontmatter?.path, "Path is not set!");
+    invariant(node?.frontmatter?.template, "Template is not set!");
 
     createPage({
       path: node.frontmatter.path,
@@ -42,8 +42,8 @@ const getTemplateFileFromTemplateName = (templateName: string) => {
   switch (templateName) {
     case "generic":
       return path.resolve("./src/templates/Generic.tsx");
-    case "genericactually":
-      return path.resolve("./src/templates/ActuallyGeneric.tsx");
+    case "club":
+      return path.resolve("./src/templates/Club.tsx");
     default:
       throw new Error(`Unknown template ${templateName}!`);
   }

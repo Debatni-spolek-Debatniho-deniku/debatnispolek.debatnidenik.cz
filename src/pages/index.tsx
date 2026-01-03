@@ -1,41 +1,12 @@
-import { graphql, PageProps } from "gatsby";
 import React from "react";
-import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import WhyDebateSection from "../components/WhyDebateSection";
-import AboutClubSection from "../components/AboutClubSection";
-import RulesSection from "../components/RulesSection";
 
-const Home: React.FC<PageProps<Queries.IndexPageQuery>> = (props) => {
-  invariant(props?.data?.allSitePage?.nodes, "Nodes not set!");
-
-  console.log(props?.data?.allSitePage?.nodes);
-
+const Home: React.FC = () => {
   return (
     <Layout>
-      <div className="container-fluid">
-        <HeroSection />
-        <AboutSection />
-        <WhyDebateSection />
-        <AboutClubSection />
-        <RulesSection />
-      </div>
+      <div>Home page placeholder</div>
     </Layout>
   );
 };
-
-export const query = graphql`
-  query IndexPage {
-    allSitePage {
-      nodes {
-        path
-        id
-        pageContext
-      }
-    }
-  }
-`;
 
 export default Home;
