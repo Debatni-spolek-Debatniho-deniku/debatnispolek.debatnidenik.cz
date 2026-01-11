@@ -74,3 +74,21 @@ $min-contrast-ratio: 2;
   object-fit: cover;
   flex-shrink: 0;
 }
+
+.bg-primary-light {
+  background-color: rgba($primary, 0.1);
+}
+
+.link-section-btn {
+  border-width: 2px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-width: 2px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($primary, 0.3);
+  }
+}
