@@ -11,7 +11,7 @@ This is a **Gatsby.js 5** static site generator project for a Czech debate club 
 - **Framework**: Gatsby 5.14.1 (React-based static site generator)
 - **Language**: TypeScript 5.3.3
 - **UI Library**: React 18.2.0
-- **Styling**: Bootstrap 5.3.8
+- **Styling**: Bootstrap 5.3.8 with SCSS customization
 - **Maps**: Embedded as iframes
 - **Content**: Markdown with gatsby-transformer-remark
 - **Navigation**: YAML with gatsby-transformer-yaml
@@ -40,7 +40,8 @@ src/
 |------|---------|
 | `gatsby-config.ts` | Gatsby plugins and site configuration |
 | `gatsby-node.ts` | Build-time page generation from markdown |
-| `gatsby-browser.js` | Client-side Bootstrap imports |
+| `gatsby-browser.js` | Client-side Bootstrap/SCSS imports |
+| `src/styles.scss` | Bootstrap SCSS with variable overrides and custom styles |
 | `src/content/nav.yml` | Navigation menu structure (GraphQL queryable) |
 | `static/staticwebapp.config.json` | Azure deployment config |
 
@@ -143,7 +144,7 @@ All pages use the `Layout` component wrapper which provides:
 
 - **Assertions**: Use `invariant()` from `tiny-invariant` for null-safety checks
 - **Offensive programmer**: Assert everything that can be null/undefined for it not being as such unless specified that something is optional, you can benefit from ? operator as asserting child property also asserts existence of parent property
-- **Styling**: Use Bootstrap utility classes; custom CSS as needed
+- **Styling**: Use Bootstrap utility classes; custom styles in `src/styles.scss`
 - **Images**:
   - `src/content/`: Images managed by editors, referenced from markdown files, processed by gatsby-remark-images
   - `static/`: Images used directly in React components via `<img>` tag, managed by programmers

@@ -11,7 +11,7 @@ const CardButton: React.FC<{
   return (
     <SmartAnchor
       href={href}
-      className="btn btn-outline-secondary d-flex align-items-center mb-2 text-start"
+      className="btn btn-outline-primary d-flex align-items-center mb-2 text-start"
       style={{ textDecoration: "none" }}
     >
       <div className="signup-modal-image-container">
@@ -95,7 +95,7 @@ const ClubPicker: React.FC<{
     <>
       <button
         type="button"
-        className={`btn btn-sm btn-primary ${
+        className={`btn btn-sm btn-secondary ${
           buttonClassName ? " " + buttonClassName : ""
         }`}
         onClick={() => setShow(true)}
