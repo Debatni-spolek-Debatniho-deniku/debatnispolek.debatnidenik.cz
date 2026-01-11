@@ -61,7 +61,8 @@ const isAvailable = (
 
 const ClubPicker: React.FC<{
   buttonClassName?: string;
-}> = ({ buttonClassName }) => {
+  buttonVariant?: "sm" | "lg";
+}> = ({ buttonClassName, buttonVariant = "sm" }) => {
   const [show, setShow] = useState(false);
 
   const data = useStaticQuery<Queries.AvailableClubsQueryQuery>(graphql`
@@ -95,7 +96,7 @@ const ClubPicker: React.FC<{
     <>
       <button
         type="button"
-        className={`btn btn-sm btn-secondary ${
+        className={`btn btn-${buttonVariant} btn-secondary${
           buttonClassName ? " " + buttonClassName : ""
         }`}
         onClick={() => setShow(true)}
