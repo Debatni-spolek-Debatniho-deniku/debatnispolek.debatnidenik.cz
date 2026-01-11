@@ -67,7 +67,7 @@ const ClubPicker: React.FC<{
 
   const data = useStaticQuery<Queries.AvailableClubsQueryQuery>(graphql`
     query AvailableClubsQuery {
-      allAvailableClubsYaml {
+      allClubpickerAvailableclubsYaml {
         nodes {
           label
           image {
@@ -83,7 +83,7 @@ const ClubPicker: React.FC<{
     }
   `);
 
-  const clubs = data.allAvailableClubsYaml.nodes;
+  const clubs = data.allClubpickerAvailableclubsYaml.nodes;
   invariant(clubs, "clubs are required");
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {

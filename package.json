@@ -2,7 +2,7 @@
   "name": "dsdd-webove-stranky",
   "private": true,
   "scripts": {
-    "deploy:swa": "swa deploy ./public --env production",
+    "deploy:swa:preview": "swa deploy ./public --env preview --app-name web-statci-web-app",
     "start:swa": "swa start ./public",
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -30,7 +30,8 @@
     "gatsby-plugin-sass": "^6.15.0",
     "gatsby-source-filesystem": "^5.14.0",
     "gatsby-transformer-remark": "^6.14.0",
-    "gatsby-transformer-yaml": "^5.15.0",
+    "gatsby-transformer-yaml-full": "^5.0.0",
+    "gatsby-yaml-full-markdown": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.97.2",
