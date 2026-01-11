@@ -14,13 +14,13 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
                 <img
                   src="/NavLogo_compact.svg"
                   alt="Debatní spolek"
-                  height="64"
+                  height="72"
                   className="d-sm-none"
                 />
                 <img
                   src="/NavLogo_full.svg"
                   alt="Debatní spolek"
-                  height="64"
+                  height="72"
                   className="d-none d-sm-block"
                 />
               </a>
