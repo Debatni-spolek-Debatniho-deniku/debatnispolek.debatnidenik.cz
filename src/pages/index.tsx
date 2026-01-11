@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql, PageProps } from "gatsby";
+import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ClubPicker from "../components/ClubPicker";
@@ -46,52 +48,49 @@ const LinkSection: React.FC<LinkSectionProps> = ({ title, groups }) => (
   </section>
 );
 
-const publicLinks: LinkItem[] = [
-  { title: "YouTube kanál", href: "https://youtube.com" },
-  { title: "Instagram", href: "https://instagram.com" },
-  { title: "Facebook", href: "https://facebook.com" },
-];
+interface CardData {
+  image: string;
+  title: string;
+  text: string;
+}
 
-const memberLinks: LinkItem[] = [
-  { title: "Interní portál", href: "https://example.com/portal" },
-  { title: "Kalendář akcí", href: "https://example.com/calendar" },
-  { title: "Materiály ke stažení", href: "https://example.com/materials" },
-];
+const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
+  const sections = data.homepageYaml;
+  invariant(sections, "HomepageSections.yml data is required");
+  invariant(sections.cards, "Cards data is required");
+  invariant(sections.bpFormat?.html, "BP format data is required");
+  invariant(sections.links?.public, "Public links are required");
+  invariant(sections.links?.members, "Member links are required");
 
-const cards = [
-  {
-    image: "https://picsum.photos/seed/card1/400/200",
-    title: "Naučte se argumentovat",
-    text: "Rozvíjejte své kritické myšlení a schopnost přesvědčivě prezentovat své názory. Naučíte se strukturovat své myšlenky, analyzovat argumenty druhých a reagovat na protiargumenty. Tyto dovednosti vám pomohou nejen v debatách, ale i v běžném životě.",
-  },
-  {
-    image: "https://picsum.photos/seed/card2/400/200",
-    title: "Poznejte nové lidi",
-    text: "Staňte se součástí komunity mladých lidí, kteří chtějí měnit svět k lepšímu. V našem klubu potkáte přátele z různých škol a měst, se kterými budete sdílet společné zážitky z turnajů, workshopů a společenských akcí.",
-  },
-  {
-    image: "https://picsum.photos/seed/card3/400/200",
-    title: "Cestujte na turnaje",
-    text: "Zúčastněte se debatních soutěží po celé České republice i v zahraničí. Každý rok pořádáme desítky turnajů pro začátečníky i pokročilé. Nejlepší debatéři se mohou kvalifikovat na mezinárodní soutěže v Evropě i zámoří.",
-  },
-  {
-    image: "https://picsum.photos/seed/card4/400/200",
-    title: "Získejte sebevědomí",
-    text: "Překonejte strach z veřejného vystupování a naučte se mluvit před publikem. Postupně si budujete jistotu při prezentování svých názorů. Mnoho našich absolventů dnes pracuje jako právníci, politici nebo manažeři.",
-  },
-  {
-    image: "https://picsum.photos/seed/card5/400/200",
-    title: "Rozšiřte si obzory",
-    text: "Diskutujte o aktuálních tématech z politiky, ekonomiky, vědy i kultury. Každá debata vás donutí prozkoumat nové téma do hloubky a podívat se na něj z různých úhlů pohledu. Stanete se informovanějším občanem.",
-  },
-  {
-    image: "https://picsum.photos/seed/card6/400/200",
-    title: "Připravte se na budoucnost",
-    text: "Dovednosti z debatování využijete ve škole, v práci i v osobním životě. Kritické myšlení, rétorika a schopnost rychle se zorientovat v novém tématu jsou kompetence, které oceňují zaměstnavatelé i univerzity po celém světě.",
-  },
-];
+  const cards: CardData[] = sections.cards.map((card: unknown) => {
+    const c = card as { image?: string; title?: string; text?: string } | null;
+    invariant(c, "Card is required");
+    invariant(c.image, "Card image is required");
+    invariant(c.title, "Card title is required");
+    invariant(c.text, "Card text is required");
+    return { image: c.image, title: c.title, text: c.text };
+  });
 
-const Home: React.FC = () => {
+  const bpFormat: string = sections.bpFormat.html;
+
+  const publicLinks: LinkItem[] = sections.links.public.map((link: unknown) => {
+    const l = link as { title?: string; href?: string } | null;
+    invariant(l, "Link is required");
+    invariant(l.title, "Link title is required");
+    invariant(l.href, "Link href is required");
+    return { title: l.title, href: l.href };
+  });
+
+  const memberLinks: LinkItem[] = sections.links.members.map(
+    (link: unknown) => {
+      const l = link as { title?: string; href?: string } | null;
+      invariant(l, "Link is required");
+      invariant(l.title, "Link title is required");
+      invariant(l.href, "Link href is required");
+      return { title: l.title, href: l.href };
+    }
+  );
+
   return (
     <Layout>
       {/* Section 1: Hero with two columns */}
@@ -137,7 +136,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="row g-4">
-          {cards.map((card, index) => (
+          {cards.map((card: CardData, index: number) => (
             <div key={index} className="col-md-6 col-lg-4">
               <div className="card h-100">
                 <img
@@ -162,36 +161,7 @@ const Home: React.FC = () => {
             <h2 className="display-5 fw-bold mb-4 text-center">
               Jaký formát debatujeme?
             </h2>
-            <p className="lead">
-              V našem spolku se věnujeme formátu British Parliamentary (BP),
-              který je nejrozšířenějším debatním formátem v České republice i ve
-              světě. Tento formát vznikl podle vzoru debat v britském parlamentu
-              a dnes se používá na všech významných mezinárodních soutěžích,
-              včetně mistrovství Evropy a mistrovství světa.
-            </p>
-            <p className="lead">
-              Každé debaty se účastní osm řečníků rozdělených do čtyř
-              dvoučlenných týmů. Dva týmy tvoří vládní stranu, která obhajuje
-              zadané téma (tzv. moci), a dva týmy představují opozici, která
-              téma vyvrací. Týmy se dále dělí na „opening" (úvodní) a „closing"
-              (závěrečné), přičemž každá pozice má své specifické strategické
-              úkoly.
-            </p>
-            <p className="lead">
-              Každý řečník má na svůj projev sedm minut. Během prvních a
-              posledních minut projevu mohou protivníci vznášet tzv. points of
-              information – krátké dotazy nebo námitky, na které řečník může,
-              ale nemusí reagovat. Tato interaktivní složka dodává debatám
-              dynamiku a testuje schopnost řečníků myslet na nohou.
-            </p>
-            <p className="lead">
-              Formát BP rozvíjí širokou škálu dovedností: kritické myšlení,
-              argumentaci, veřejné vystupování, týmovou spolupráci i schopnost
-              rychle se zorientovat v novém tématu. Debatéři se učí nahlížet na
-              problémy z různých úhlů pohledu a konstruktivně reagovat na názory
-              druhých. Tyto dovednosti jsou cenné nejen v akademickém prostředí,
-              ale i v profesním a osobním životě.
-            </p>
+            <div dangerouslySetInnerHTML={{ __html: bpFormat }}></div>
           </div>
         </div>
       </section>
@@ -211,3 +181,28 @@ const Home: React.FC = () => {
 export const Head = () => <SEO />;
 
 export default Home;
+
+export const query = graphql`
+  query Homepage {
+    homepageYaml {
+      cards {
+        image
+        text
+        title
+      }
+      links {
+        members {
+          title
+          href
+        }
+        public {
+          href
+          title
+        }
+      }
+      bpFormat {
+        html
+      }
+    }
+  }
+`;

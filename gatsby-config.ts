@@ -13,7 +13,12 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
-    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-transformer-yaml-full",
+      options: {
+        plugins: ["gatsby-yaml-full-markdown"],
+      },
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {

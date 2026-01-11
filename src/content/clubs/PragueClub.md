@@ -11,7 +11,7 @@ locations:
   #   map: <iframe style="border:none" src="https://mapy.com/s/jelutojugu" frameborder="0"></iframe>
   - name: LEXIS
     info:
-      - Od 18:50, učebna Barcelona
+      - Pondělí od 18:50, učebna Barcelona
       - Seifertova 327/85, Praha 3
     map: <iframe style="border:none" src="https://mapy.com/s/ludopomube" frameborder="0"></iframe>
 

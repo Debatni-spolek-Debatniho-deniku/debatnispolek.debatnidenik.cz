@@ -7,7 +7,7 @@ locations:
   - name: Discord
     info:
       - Discord server Debatní spolek Debatního deníku
-      - Debata od 19:00, seminář od 18:30
+      - Čtvrtek od 19:00
 
 owners:
   - name: Karel Krob

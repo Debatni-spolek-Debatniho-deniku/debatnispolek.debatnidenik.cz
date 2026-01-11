@@ -4,13 +4,15 @@
   items:
     - label: Často kladené dotazy
       path: https://debatnispolek.sharepoint.com/:w:/g/Ed_Up0SkbixGk3AtLfq0YDwB5gDHxOKDWDGlzFvR4WL3ww
-    - label: Naše kluby v Praze
+    - label: Debatní klub v Praze
       path: /clubs/prague
-    - label: Naše kluby v Plzni
+    - label: Debatní klub v Plzni
       path: /clubs/pilsen
-    - label: Online klub
+    - label: Debatní klub v Domažlicích
+      path: /clubs/domazlice
+    - label: Online debatní klub
       path: /clubs/online
-    - label: Založení debatního klubu
+    - label: Chci si založit debatní klub
       path: /clubs/start-your-own-club
 - label: Debatní turnaje
   path: /tournaments

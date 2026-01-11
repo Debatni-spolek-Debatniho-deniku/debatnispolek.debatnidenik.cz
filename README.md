@@ -6,6 +6,8 @@ Webový obsah je z většiny generován pomocí Gatsby.JS.
 
 ### Markdown soubory
 
+**Markdown soubor = stránka**
+
 Pokud jsi editor, tak jednotlivé stránky najdeš v se složce ./src/content/. Jednotlivé stránky jsou reprezentovány jako Markdown soubory *.md. Pokud s tímto formátem neumíš pracovat využil online návod jako [Markdown Guide](https://www.markdownguide.org/basic-syntax/), primitivní editor s vizualizací jako [Markdown Live Preview](https://markdownlivepreview.com/) nebo WYSIWYG editor jako [Online Markdown Editor](https://onlinemarkdowneditor.dev/).
 
 Každý *.md soubor by měl začínat frontmatterem. Frontmatter je ohraničen `---`. Frontamtter je napsaný ve formátu [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started), zbytek souboru je v Markdown formátu. Pokud si nejsi jistý, zda je tvůj YAML zápis validní, použij [online linter](https://www.yamllint.com/).
@@ -18,53 +20,35 @@ template: generic
 ```
 Do frontmatteru se píší nadstandartní informace. Každý *.md soubor musí alespoň obsahovat `path` která určuje jeho URL cestu (to co vidíš za doménou ve webovém prohlížeči). URL cesty musí být unikátní. Každá cesta začína znakem `/` a tímto znakem je možné cestu více segmentovat pro vizální estetiku, tedy `/clubs-pilsen` lze napsat i jako `/clubs/pilsen`. Z tvého pohledu jako editora v tom není rozdíl. Dále musí obsahovat `template`, která označuje použitou šablonu. Ve většině případů budeš používat šablonu `generic`, která označuje běžnou stránku.
 
-### Obrázky
+#### Obrázky v markdown souborech
 
 Pokud potřebuješ přidat vlastní obrázek, proto aby si jej v *.md souboru použil, přidej ho též do složky ./src/content. Cesta k tvému obrázku je relativní vůči *.md souboru v kterém jej používáš.
 
-### Navigace
+### Pomocné YAML soubory
 
-Pokud chceš aby se tvoje stránka objevila v menu, přidej mí do ./src/content/nav.yml. Stejně jako frontmatter, tak i navigace je psána v [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started). Pro strukturu souboru se inspiruj již existujícím obsahem souboru.
+Tam kde není jednoduše možné věc vyjádřit pomocí *.md souboru, jsou zde *.yml soubory. **Oproti \*.md souborům tyto \*.yml soubor nevytváříš ty**, soubory vytváří a jejihc strukturu určují programátoři. **Ty upravuješ pouze jejich obsah.**
+
+Jedná se o totožný formát, kterým by jsi psal frontmatter v *.md souboru.
+
+#### Navigační menu
+
+Soubor ./src/content/Nav.yml definuje jak vypadá menu webové stránky.
+
+Pokud chceš aby se tvoje stránka objevila v menu, přidej odkaz na ní sem. Stejně  Pro strukturu souboru se inspiruj již existujícím obsahem souboru.
+
+Ne každou stránku musíš přidávat do menu, na stránky můžeš odkazovat i z obsahu *.md souborů.
+
+#### Domovská stránka
+
+V souboru ./src/content/homepage/sections.yml najdeš možnost upravovat nětkeré části domovské stránky.
+
+#### Přihlásit se na debatu
+
+Pokud klikneš na "Přihlásit se na debatu", otevře se ti modál. To jaké kluby jsou zde k dispozici určuje ./src/content/clubPicker/AvailableClubs.yml.
 
 ### Pomoc od ChatGPT
 
 Pokud máš k dispozici ChatGPT (nebo jiný nástroj), můžeš jí zkopírovat tuto sekci a nechat si s výrobou souborů poradit.
-
-
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
 
 ## Programátoři
 

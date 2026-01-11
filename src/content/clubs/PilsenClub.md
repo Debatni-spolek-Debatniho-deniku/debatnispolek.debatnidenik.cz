@@ -6,12 +6,12 @@ template: club
 locations:
   - name: FF ZČU
     info:
-      - Od 18:00 v učebně JJ 305, pouze přes školní rok
+      - Úterý od 18:00 v učebně JJ 305, pouze přes školní rok
       - Jungmannova 153/1, Plzeň 3
     map: <iframe style="border:none" src="https://mapy.com/s/gatazenozo" frameborder="0"></iframe>
   - name: Kulturka ZČU
     info:
-      - Od 18:00, pouze přes letní prázdniny
+      - Úterý od 18:00, pouze přes letní prázdniny
       - Sedláčkova 216/19, Plzeň 3
     map: <iframe style="border:none" src="https://mapy.com/s/gudozebega" frameborder="0"></iframe>
 
