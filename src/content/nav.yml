@@ -2,7 +2,7 @@
 #   path: /
 - label: Debatní kluby
   items:
-    - label: FAQ
+    - label: Často kladené dotazy
       path: https://debatnispolek.sharepoint.com/:w:/g/Ed_Up0SkbixGk3AtLfq0YDwB5gDHxOKDWDGlzFvR4WL3ww
     - label: Naše kluby v Praze
       path: /clubs/prague

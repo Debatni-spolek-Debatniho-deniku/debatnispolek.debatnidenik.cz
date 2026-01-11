@@ -46,7 +46,6 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
 
               {/* Owners Section */}
               <div className="mt-4">
-                <hr />
                 <h5 className="mb-3">Odpovědné osoby</h5>
                 <div className="d-flex flex-wrap justify-content-around gap-4">
                   {owners.map((owner) => {
