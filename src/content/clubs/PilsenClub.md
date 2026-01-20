@@ -9,21 +9,20 @@ locations:
       - Úterý od 18:00 v učebně JJ 305, pouze přes školní rok
       - Jungmannova 153/1, Plzeň 3
     map: <iframe style="border:none" src="https://mapy.com/s/gatazenozo" frameborder="0"></iframe>
-  - name: Kulturka ZČU
-    info:
-      - Úterý od 18:00, pouze přes letní prázdniny
-      - Sedláčkova 216/19, Plzeň 3
-    map: <iframe style="border:none" src="https://mapy.com/s/gudozebega" frameborder="0"></iframe>
+  # - name: Kulturka ZČU
+  #   info:
+  #     - Úterý od 18:00, pouze přes letní prázdniny
+  #     - Sedláčkova 216/19, Plzeň 3
+  #   map: <iframe style="border:none" src="https://mapy.com/s/gudozebega" frameborder="0"></iframe>
 
 owners:
   - name: Tadeáš Souba
     image: ./owners/placeholder.png
     email: souba@debatnispolek.debatnidenik.cz
 ---
+## Debatní klub Plzeň
 
 Debatní klub v Plzni je místo, kde se dá svobodně debatovat o tématech všeho druhu na akademické půdě. Fungujeme pod Debatním spolkem Debatního deníku a jsme otevření jak studentům a studentkám, tak středoškolstvu i pracujícím.
-
-## Debatní klub Plzeň
 
 Klub je primárně pro studující z různých oborů, klidně i technických 😅. Potkáte se tu s lidmi, kteří chtějí trénovat argumentaci, zlepšovat se v soutěžní debatě a zároveň si užít příjemný večer v dobré partě.
 
