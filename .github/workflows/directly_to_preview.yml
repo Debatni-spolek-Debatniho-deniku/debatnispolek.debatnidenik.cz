@@ -1,4 +1,4 @@
-ame: Deploy preview branch using SWA CLI to preview environment
+name: Deploy preview branch using SWA CLI to preview environment
 
 on:
   push:
