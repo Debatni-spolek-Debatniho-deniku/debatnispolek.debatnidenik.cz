@@ -3,7 +3,7 @@ name: Deploy preview branch using SWA CLI to preview environment
 on:
   push:
     branches:
-      - preview
+      - preview-web
 
 jobs:
   deploy_preview:
