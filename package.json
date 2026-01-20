@@ -1,7 +1,8 @@
 {
   "name": "dsdd-webove-stranky",
   "scripts": {
-    "deploy": "swa deploy ./public --env production"
+    "deploy": "swa deploy ./public --env production",
+    "build": "echo \"No build step required\""
   },
   "author": "Lukáš Procházka",
   "license": "MIT",
