@@ -33,7 +33,7 @@ Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debat
 
 Pokud k nám jdete poprvé, doporučujeme přidat se na náš [Discord](https://discord.gg/SwkFPkb3) a v sekci výběr rolí zvolit Online klub. Získáte tím přístup do chatů, kde se řeší organizační záležitosti.
 
-Pokud chcete debatovat, obeznamte se předem se základy formátu britské parlamentní debaty (např. z tohoto [videa.](https://www.youtube.com/watch?v=AL7Q-UcxlXI) Zároveň je potřeba se na debatu přihlásit přes náš discord.
+Pokud chcete debatovat, obeznamte se předem se základy formátu britské parlamentní debaty (např. z tohoto [videa.](https://www.youtube.com/watch?v=AL7Q-UcxlXI)) Zároveň je potřeba se na debatu přihlásit přes náš discord.
 
 Je však možné si přijít debatu jen poslechnout. V ten moment pro Vás neplatí ani jeden z požadavků.
 
