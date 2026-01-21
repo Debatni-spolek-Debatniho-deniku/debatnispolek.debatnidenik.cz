@@ -7,7 +7,7 @@ locations:
   - name: Discord
     info:
       - Každý čtvrtek od 19:00
-      - Na našem discord serveru (Debatní spolek Debatního deníku)[https://discord.gg/SwkFPkb3]
+      - Na našem discord serveru [Debatní spolek Debatního deníku](https://discord.gg/SwkFPkb3)
 
 owners:
   - name: Karel Krob
@@ -21,7 +21,7 @@ Online debatní klub je místo, kde si můžete online zadebatovat na různá t�
 
 ## Kdy a kde se scházíme
 
-Scházíme se každý čtvrtek v 19:00 na našem discordu (Debatní spolek Debatního deníku)[https://discord.gg/SwkFPkb3]
+Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debatního deníku](https://discord.gg/SwkFPkb3)
 
 ## Průběh setkání
 
@@ -32,7 +32,7 @@ Scházíme se každý čtvrtek v 19:00 na našem discordu (Debatní spolek Debat
 
 ## Jdu poprvé na klub
 
-Pokud k nám jdete poprvé, doporučujeme přidat se na náš (Discord)[https://discord.gg/SwkFPkb3] a v sekci výběr rolí zvolit Online klub. Získáte tím přístup do chatů, kde se řeší organizační záležitosti.
+Pokud k nám jdete poprvé, doporučujeme přidat se na náš [Discord](https://discord.gg/SwkFPkb3) a v sekci výběr rolí zvolit Online klub. Získáte tím přístup do chatů, kde se řeší organizační záležitosti.
 
 Pokud chcete debatovat, obeznamte se předem se základy formátu britské parlamentní debaty. Zároveň je potřeba se na debatu přihlásit přes náš discord.
 
