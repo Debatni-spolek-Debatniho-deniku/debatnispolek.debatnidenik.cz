@@ -8,8 +8,8 @@
       path: /clubs/prague
     - label: Debatní klub v Plzni
       path: /clubs/pilsen
-    - label: Debatní klub v Domažlicích
-      path: /clubs/domazlice
+    # - label: Debatní klub v Domažlicích
+    #   path: /clubs/domazlice
     - label: Online debatní klub
       path: /clubs/online
     - label: Chci si založit debatní klub
