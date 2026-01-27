@@ -55,25 +55,28 @@ interface CardData {
 }
 
 const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
-  const sections = data.homepageYaml;
-  invariant(sections, "HomepageSections.yml data is required");
-  invariant(sections.cards, "Cards data is required");
-  invariant(sections.bpFormat?.html, "BP format data is required");
-  invariant(sections.links?.public, "Public links are required");
-  invariant(sections.links?.members, "Member links are required");
+  const yml = data.homepageYaml;
+  invariant(yml, "HomepageSections.yml data is required");
 
-  const cards: CardData[] = sections.cards.map((card: unknown) => {
-    const c = card as { image?: string; title?: string; text?: string } | null;
+  const bannerImage = yml.bannerImage?.publicURL;
+  invariant(bannerImage, "BannerImage is required data is required");
+
+  invariant(yml.cards, "Cards data is required");
+  invariant(yml.bpFormat?.html, "BP format data is required");
+  invariant(yml.links?.public, "Public links are required");
+  invariant(yml.links?.members, "Member links are required");
+
+  const cards: CardData[] = yml.cards.map((c) => {
     invariant(c, "Card is required");
-    invariant(c.image, "Card image is required");
+    invariant(c.image?.publicURL, "Card image is required");
     invariant(c.title, "Card title is required");
     invariant(c.text, "Card text is required");
-    return { image: c.image, title: c.title, text: c.text };
+    return { image: c.image.publicURL, title: c.title, text: c.text };
   });
 
-  const bpFormat: string = sections.bpFormat.html;
+  const bpFormat: string = yml.bpFormat.html;
 
-  const publicLinks: LinkItem[] = sections.links.public.map((link: unknown) => {
+  const publicLinks: LinkItem[] = yml.links.public.map((link: unknown) => {
     const l = link as { title?: string; href?: string } | null;
     invariant(l, "Link is required");
     invariant(l.title, "Link title is required");
@@ -81,15 +84,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
     return { title: l.title, href: l.href };
   });
 
-  const memberLinks: LinkItem[] = sections.links.members.map(
-    (link: unknown) => {
-      const l = link as { title?: string; href?: string } | null;
-      invariant(l, "Link is required");
-      invariant(l.title, "Link title is required");
-      invariant(l.href, "Link href is required");
-      return { title: l.title, href: l.href };
-    }
-  );
+  const memberLinks: LinkItem[] = yml.links.members.map((link) => {
+    const l = link as { title?: string; href?: string } | null;
+    invariant(l, "Link is required");
+    invariant(l.title, "Link title is required");
+    invariant(l.href, "Link href is required");
+    return { title: l.title, href: l.href };
+  });
 
   return (
     <Layout>
@@ -115,11 +116,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             </div>
           </div>
           <div className="col-lg-6">
-            <img
-              src="https://picsum.photos/seed/hero/800/600"
-              alt="Debatní klub"
-              className="img-fluid rounded shadow"
-            />
+            <div className="ratio ratio-4x3">
+              <img
+                src={bannerImage}
+                alt="Debatní klub"
+                className="img-fluid rounded shadow"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -139,11 +142,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           {cards.map((card: CardData, index: number) => (
             <div key={index} className="col-md-6 col-lg-4">
               <div className="card h-100">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="card-img-top"
-                />
+                <div className="ratio ratio-21x9">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="card-img-top"
+                  />
+                </div>
                 <div className="card-body">
                   <h5 className="card-title">{card.title}</h5>
                   <p className="card-text text-muted">{card.text}</p>
@@ -185,8 +190,13 @@ export default Home;
 export const query = graphql`
   query Homepage {
     homepageYaml {
+      bannerImage {
+        publicURL
+      }
       cards {
-        image
+        image {
+          publicURL
+        }
         text
         title
       }

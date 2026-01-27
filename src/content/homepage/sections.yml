@@ -1,20 +1,22 @@
+bannerImage: ./banner_image.png
+
 cards:
-  - image: https://picsum.photos/seed/card1/400/200
+  - image: ./learn_debate.png
     title: Naučte se argumentovat
     text: Rozvíjejte své kritické myšlení a schopnost přesvědčivě prezentovat své názory. Naučíte se strukturovat své myšlenky, analyzovat argumenty druhých a reagovat na protiargumenty. Tyto dovednosti vám pomohou nejen v debatách, ale i v běžném životě.
-  - image: https://picsum.photos/seed/card2/400/200
+  - image: ./new_people.png
     title: Poznejte nové lidi
     text: Staňte se součástí komunity mladých lidí, kteří chtějí měnit svět k lepšímu. V našem klubu potkáte přátele z různých škol a měst, se kterými budete sdílet společné zážitky z turnajů, workshopů a společenských akcí.
-  - image: https://picsum.photos/seed/card3/400/200
+  - image: ./tournaments.png
     title: Cestujte na turnaje
     text: Zúčastněte se debatních soutěží po celé České republice i v zahraničí. Každý rok pořádáme desítky turnajů pro začátečníky i pokročilé. Nejlepší debatéři se mohou kvalifikovat na mezinárodní soutěže v Evropě i zámoří.
-  - image: https://picsum.photos/seed/card4/400/200
+  - image: ./courage.png
     title: Získejte sebevědomí
     text: Překonejte strach z veřejného vystupování a naučte se mluvit před publikem. Postupně si budujete jistotu při prezentování svých názorů. Mnoho našich absolventů dnes pracuje jako právníci, politici nebo manažeři.
-  - image: https://picsum.photos/seed/card5/400/200
+  - image: ./horizons.png
     title: Rozšiřte si obzory
     text: Diskutujte o aktuálních tématech z politiky, ekonomiky, vědy i kultury. Každá debata vás donutí prozkoumat nové téma do hloubky a podívat se na něj z různých úhlů pohledu. Stanete se informovanějším občanem.
-  - image: https://picsum.photos/seed/card6/400/200
+  - image: ./future.png
     title: Připravte se na budoucnost
     text: Dovednosti z debatování využijete ve škole, v práci i v osobním životě. Kritické myšlení, rétorika a schopnost rychle se zorientovat v novém tématu jsou kompetence, které oceňují zaměstnavatelé i univerzity po celém světě.
 
