@@ -15,11 +15,7 @@ const CardButton: React.FC<{
       style={{ textDecoration: "none" }}
     >
       <div className="signup-modal-image-container">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="rounded-start signup-modal-image"
-        />
+        <img src={imageSrc} alt={title} className="signup-modal-image" />
       </div>
 
       <div className="ms-4 flex-grow-1">
@@ -36,7 +32,7 @@ const isAvailable = (
         toMonth: number | null;
       } | null>
     | null
-    | undefined
+    | undefined,
 ): boolean => {
   // If no availability specified, always available
   if (!availability || availability.length === 0) {
@@ -50,7 +46,7 @@ const isAvailable = (
 
     invariant(
       interval.fromMonth !== null && interval.toMonth !== null,
-      "interval months are required"
+      "interval months are required",
     );
 
     return (
@@ -140,7 +136,7 @@ const ClubPicker: React.FC<{
                         invariant(club.form, "club form is required");
                         invariant(
                           club.image?.publicURL,
-                          "club image is required"
+                          "club image is required",
                         );
 
                         return (

@@ -92,3 +92,12 @@ $min-contrast-ratio: 2;
     box-shadow: 0 4px 12px rgba($primary, 0.3);
   }
 }
+
+// Apply Bootstrap table styling to all tables
+table {
+  @extend .table;
+}
+
+thead {
+  @extend .table-light;
+}
