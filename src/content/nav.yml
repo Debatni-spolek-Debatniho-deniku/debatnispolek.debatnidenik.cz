@@ -24,5 +24,7 @@
 #       path: /organization/structure
 #     - label: Členství ve spolku
 #       path: /organization/membership
+- label: Staré Linktree
+  path: https://linktr.ee/debatnispolekdebatnihodeniku
 - label: Kontakty
   path: /contacts
