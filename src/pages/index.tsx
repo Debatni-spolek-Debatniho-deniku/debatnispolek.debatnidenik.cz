@@ -58,8 +58,11 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
   const yml = data.homepageYaml;
   invariant(yml, "HomepageSections.yml data is required");
 
-  const bannerImage = yml.bannerImage?.publicURL;
-  invariant(bannerImage, "BannerImage is required data is required");
+  const bannerImages = yml.bannerImages;
+  invariant(bannerImages?.length, "BannerImages are required");
+  const randomBannerImage =
+    bannerImages[Math.floor(Math.random() * bannerImages.length)];
+  invariant(randomBannerImage?.publicURL, "Banner image publicURL is required");
 
   invariant(yml.cards, "Cards data is required");
   invariant(yml.bpFormat?.html, "BP format data is required");
@@ -118,7 +121,7 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           <div className="col-lg-6">
             <div className="ratio ratio-4x3">
               <img
-                src={bannerImage}
+                src={randomBannerImage.publicURL}
                 alt="Debatní klub"
                 className="img-fluid rounded shadow"
               />
@@ -190,7 +193,7 @@ export default Home;
 export const query = graphql`
   query Homepage {
     homepageYaml {
-      bannerImage {
+      bannerImages {
         publicURL
       }
       cards {

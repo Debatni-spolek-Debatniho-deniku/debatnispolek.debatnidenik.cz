@@ -27,21 +27,11 @@ owners:
     email: tammamhennawi@gmail.com
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex. Mauris dapibus risus quis suscipit vulputate. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## Debatní klub v Praze
 
-## Subheading
+Jedná se o nejstarší debatní klub spolku.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquam, urna ut sollicitudin molestie, lacus justo aliquam mauris, interdum aliquam sapien nisi cursus mauris.
+### Kdy a kde se scházíme
+Scházíme se každé pondělí od 19:50 V Jazykové škole Lexis, Seifertova 327/85, Praha 3, v učebně Barcelona. 
 
-- Lorem ipsum dolor sit amet
-- Consectetur adipiscing elit
-- Integer molestie lorem at massa
-
-### Image Example
-
-Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra. Nulla vehicula, sapien non hendrerit dapibus, enim diam dictum urna, eget facilisis enim libero id nisi.
-
- 
-![Lorem local](./local_charlie.jpg)
-
-Curabitur ac lacus arcu. Sed vehicula varius lectus auctor viverra. Nulla vehicula, sapien non hendrerit dapibus, enim diam dictum urna, eget facilisis enim libero id nisi.
+**Jazyková škola Lexis je omezena pouze na tři debaty (24 debatérů + rozhodčí)!**

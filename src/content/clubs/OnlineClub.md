@@ -14,22 +14,22 @@ owners:
     email: karelkrob0@gmail.com
 ---
 
-# Online debatní klub
+## Online debatní klub
 
 Online debatní klub je místo, kde si můžete online zadebatovat na různá témata. Fungujeme pod Debatním spolkem Debatního deníku. Vítáni jsou všichni - středoškoláci, studenti i pracující.
 
-## Kdy a kde se scházíme
+### Kdy a kde se scházíme
 
 Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debatního deníku](https://discord.gg/SwkFPkb3)
 
-## Průběh setkání
+### Průběh setkání
 
 - 19:00 - 19:30 Workshop
 - 19:30 - 19:45 Vyhlášení debatní teze
 - 20:00 - 22:00 Debata
 - od 22:00 socializace např. online hry
 
-## Jdu poprvé na klub
+### Jdu poprvé na klub
 
 Pokud k nám jdete poprvé, doporučujeme přidat se na náš [Discord](https://discord.gg/SwkFPkb3) a v sekci výběr rolí zvolit Online klub. Získáte tím přístup do chatů, kde se řeší organizační záležitosti.
 

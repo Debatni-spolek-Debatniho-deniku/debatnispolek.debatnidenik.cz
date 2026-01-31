@@ -12,17 +12,17 @@
     #   path: /clubs/domazlice
     - label: Online debatní klub
       path: /clubs/online
-    - label: Chci si založit debatní klub
-      path: /clubs/start-your-own-club
-- label: Debatní turnaje
-  path: /tournaments
-- label: Debatní spolek
-  items:
-    - label: Činnost spolku
-      path: /organization/activities
-    - label: Organizace spolku
-      path: /organization/structure
-    - label: Členství ve spolku
-      path: /organization/membership
+    # - label: Chci si založit debatní klub
+    #   path: /clubs/start-your-own-club
+# - label: Debatní turnaje
+#   path: /tournaments
+# - label: Debatní spolek
+#   items:
+#     - label: Činnost spolku
+#       path: /organization/activities
+#     - label: Organizace spolku
+#       path: /organization/structure
+#     - label: Členství ve spolku
+#       path: /organization/membership
 - label: Kontakty
   path: /contacts

@@ -18,7 +18,7 @@ V tabulce níže najdete kontatky na jednotlivé členy debatního výboru:
 | Michael Svoboda      	| Vedoucí debatní pobočky Praha <br/> <small>Hlavní město Praha a Středočeský kraj</small>	| michael.svoboda@debatnispolek.debatnidenik.cz 	|
 | Tadeáš Souba         	| Vedoucí debatní pobočky Plzeň <br/> <small>Plzeňský kraj</small> 	| souba@debatnispolek.debatnidenik.cz           	|
 
-## Debatní komise
+## Další orgány spolku
 
 Debatním komisím v rámci spolku přísluší různé oblasti působení. V seznamu kontaktů jsou uvedeny pouze kontakty ja komise s dlouhodobou působností.
 
