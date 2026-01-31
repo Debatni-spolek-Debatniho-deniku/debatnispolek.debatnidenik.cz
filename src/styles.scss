@@ -1,0 +1,103 @@
+// Custom Bootstrap variable overrides
+// See all available variables at: node_modules/bootstrap/scss/_variables.scss
+
+// =============================================================================
+// BOOTSTRAP IMPORTS - FUNCTIONS FIRST
+// =============================================================================
+
+// Import Bootstrap's functions first (required for variable manipulation)
+@import "~bootstrap/scss/functions";
+
+// =============================================================================
+// COLOR CUSTOMIZATION (must be after functions, before variables)
+// =============================================================================
+
+// Primary theme colors - from favicon.svg
+$primary: #39aae1;
+$secondary: #ee2b2d;
+
+// Lower contrast ratio to force white text on colored buttons (default is 4.5)
+$min-contrast-ratio: 2;
+
+// =============================================================================
+// BOOTSTRAP IMPORTS - VARIABLES
+// =============================================================================
+
+// Import Bootstrap's default variables
+@import "~bootstrap/scss/variables";
+
+// Import Bootstrap's mixins
+@import "~bootstrap/scss/mixins";
+
+// Import the rest of Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// =============================================================================
+// CUSTOM STYLES
+// =============================================================================
+
+.navbar-brand {
+  padding: 0;
+}
+
+.card {
+  border: none;
+  background-color: rgba($primary, 0.1);
+}
+
+.club-owner {
+  max-width: 160px;
+}
+
+.club-owner-profile-picture {
+  width: 48px;
+  height: 48px;
+}
+
+.club-map {
+  width: 100%;
+  max-height: 150px;
+}
+
+.club-map iframe {
+  width: 100%;
+}
+
+.signup-modal-image-container {
+  width: 64px;
+  height: 48px;
+}
+
+.signup-modal-image {
+  max-width: 64px;
+  max-height: 48px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.bg-primary-light {
+  background-color: rgba($primary, 0.1);
+}
+
+.link-section-btn {
+  border-width: 2px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-width: 2px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($primary, 0.3);
+  }
+}
+
+// Apply Bootstrap table styling to all tables
+table {
+  @extend .table;
+}
+
+thead {
+  @extend .table-light;
+}
