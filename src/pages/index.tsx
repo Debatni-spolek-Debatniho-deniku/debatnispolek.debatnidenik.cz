@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { graphql, PageProps } from "gatsby";
 import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
@@ -67,12 +67,17 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
   const bannerImages = yml.bannerImages;
   invariant(bannerImages?.length, "BannerImages are required");
 
-  const randomBannerImage = getImage(
-    bannerImages[
-      Math.floor(Math.random() * bannerImages.length)
-    ] as ImageDataLike,
-  );
-  invariant(randomBannerImage, "BannerImage are required");
+  const [bannerImage, setBannerImage] = useState<IGatsbyImageData | null>(null);
+
+  // Must be in use effect otherwise random pick will occur only during build time.
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * bannerImages.length);
+    const img = getImage(bannerImages[randomIndex] as ImageDataLike);
+
+    invariant(img, "Image is required");
+
+    setBannerImage(img);
+  }, []);
 
   invariant(yml.cards, "Cards data is required");
   invariant(yml.bpFormat?.html, "BP format data is required");
@@ -136,11 +141,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             </div>
           </div>
           <div className="col-lg-6">
-            <GatsbyImage
-              image={randomBannerImage}
-              alt="Debatní klub"
-              className="img-fluid rounded shadow"
-            />
+            {bannerImage && (
+              <GatsbyImage
+                image={bannerImage}
+                alt="Debatní klub"
+                className="img-fluid rounded shadow"
+              />
+            )}
           </div>
         </div>
       </section>
