@@ -27,11 +27,52 @@ owners:
     email: tammamhennawi@gmail.com
 ---
 
-## Debatní klub v Praze
+## Debatní klub Praha
 
-Jedná se o nejstarší debatní klub spolku.
+Chceš si zlepšit argumentaci, naučit se mluvit jasně a sebevědomě, nebo si prostě jen dobře zadiskutovat nad zajímavými tématy? Debatní klub Praha je otevřený prostor pro všechny, kdo mají chuť přemýšlet, diskutovat a rozvíjet své názory.  
+Jedná se o **nejstarší debatní klub spolku** a dlouhodobě fungující místo, kde se potkávají lidé s chutí kultivovaně diskutovat.
 
-### Kdy a kde se scházíme
-Scházíme se každé pondělí od 19:50 V Jazykové škole Lexis, Seifertova 327/85, Praha 3, v učebně Barcelona. 
+Klub je primárně pro studující napříč obory – klidně i technickými 😅 – a vítán je kdokoliv **od 14 do 99 let** se zájmem o debatu. Nezáleží na tom, jestli jsi úplný začátečník, nebo máš zkušenosti ze soutěžní debaty.
 
+- Otevřeno pro začátečníky i pokročilé
+- Trénink argumentace, rétoriky a kritického myšlení
+- Soutěžní i nesoutěžní debaty
+- Aktuální společenská i nadčasová témata
+- Přátelská, respektující a otevřená atmosféra
+- Prostor pro feedback a dlouhodobé zlepšování
+
+## Kdy a kde se scházíme
+
+Scházíme se každé **pondělí od 18:50** v prostorách **Jazykové školy LEXIS**,  
+Seifertova 327/85, 130 00 Praha 3 – Žižkov.
+
+Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud si nejste jistí, klidně se zeptejte v kanálu *Prague general*.
+
+## Průběh setkání
+
+**Harmonogram**
+
+- 18:50 až 19:10 Workshop (argumentace, rétorika, pravidla debat)
+- 19:10 až 21:00 Debata
+
+Tempo i forma se mohou lehce lišit podle typu večera a počtu účastníků.
+
+## Přihlášení na klub
+
+Pokud se chceš zúčastnit, **vyplň prosím přihlašovací formulář a prostě přijď**:
+
+👉 https://docs.google.com/forms/d/e/1FAIpQLSeCL52mijDQLBhyjmu25py2GaiHOOYH0imr32e_MP8cb6fFcQ/viewform?usp=dialog
+
+Formulář slouží hlavně pro organizační účely, aby bylo jasné, kolik lidí dorazí. Vyplnění zabere jen chvilku.
+
+## Po debatě
+
+Po debatě často pokračujeme neformálně – přesuneme se do některé z hospod nebo kaváren v okolí Žižkova. Tam proběhne vyhodnocení debaty, vyhlášení vítěze, zpětná vazba a pak už jen volná diskuze a zábava.
+
+## Jdu poprvé na klub
+
+Jdeš k nám poprvé? Super! Doporučujeme přidat se na náš Discord a ve výběru rolí zvolit klub **Praha**. Získáš tím přístup do organizačních kanálů, kde se řeší aktuální informace a změny.
+
+**Začátečnický workshop**  
+Pokud jsi na debatním klubu poprvé, můžeš se zapojit do úvodního workshopu, kde vysvětlíme základní pravidla a průběh debat. Stačí dorazit včas na začátek setkání v 18:50.
 **Jazyková škola Lexis je omezena pouze na tři debaty (24 debatérů + rozhodčí)!**
