@@ -127,12 +127,12 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             </p>
             <div className="d-flex gap-3 flex-wrap">
               <ClubPicker buttonVariant="lg" />
-              <a
+              {/* <a
                 href="/organization/activities"
                 className="btn btn-outline-primary btn-lg"
               >
                 Naše další akvitity
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="col-lg-6">
