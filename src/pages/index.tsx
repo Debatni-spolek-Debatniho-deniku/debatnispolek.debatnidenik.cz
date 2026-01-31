@@ -5,6 +5,12 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ClubPicker from "../components/ClubPicker";
 import SmartAnchor from "../components/SmartAnchor";
+import {
+  GatsbyImage,
+  getImage,
+  IGatsbyImageData,
+  ImageDataLike,
+} from "gatsby-plugin-image";
 
 interface LinkItem {
   title: string;
@@ -49,7 +55,7 @@ const LinkSection: React.FC<LinkSectionProps> = ({ title, groups }) => (
 );
 
 interface CardData {
-  image: string;
+  image: IGatsbyImageData;
   title: string;
   text: string;
 }
@@ -60,9 +66,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
 
   const bannerImages = yml.bannerImages;
   invariant(bannerImages?.length, "BannerImages are required");
-  const randomBannerImage =
-    bannerImages[Math.floor(Math.random() * bannerImages.length)];
-  invariant(randomBannerImage?.publicURL, "Banner image publicURL is required");
+
+  const randomBannerImage = getImage(
+    bannerImages[
+      Math.floor(Math.random() * bannerImages.length)
+    ] as ImageDataLike,
+  );
+  invariant(randomBannerImage, "BannerImage are required");
 
   invariant(yml.cards, "Cards data is required");
   invariant(yml.bpFormat?.html, "BP format data is required");
@@ -71,10 +81,17 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
 
   const cards: CardData[] = yml.cards.map((c) => {
     invariant(c, "Card is required");
-    invariant(c.image?.publicURL, "Card image is required");
+
+    const image = getImage(c.image as ImageDataLike);
+    invariant(image, "Card image is required");
     invariant(c.title, "Card title is required");
     invariant(c.text, "Card text is required");
-    return { image: c.image.publicURL, title: c.title, text: c.text };
+
+    return {
+      image,
+      title: c.title,
+      text: c.text,
+    };
   });
 
   const bpFormat: string = yml.bpFormat.html;
@@ -120,8 +137,8 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           </div>
           <div className="col-lg-6">
             <div className="ratio ratio-4x3">
-              <img
-                src={randomBannerImage.publicURL}
+              <GatsbyImage
+                image={randomBannerImage}
                 alt="Debatní klub"
                 className="img-fluid rounded shadow"
               />
@@ -146,8 +163,8 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             <div key={index} className="col-md-6 col-lg-4">
               <div className="card h-100">
                 <div className="ratio ratio-21x9">
-                  <img
-                    src={card.image}
+                  <GatsbyImage
+                    image={card.image}
                     alt={card.title}
                     className="card-img-top"
                   />
@@ -194,11 +211,15 @@ export const query = graphql`
   query Homepage {
     homepageYaml {
       bannerImages {
-        publicURL
+        childImageSharp {
+          gatsbyImageData(width: 600, height: 450, placeholder: BLURRED)
+        }
       }
       cards {
         image {
-          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 416, height: 178, placeholder: BLURRED)
+          }
         }
         text
         title
