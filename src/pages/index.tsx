@@ -136,13 +136,11 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="ratio ratio-4x3">
-              <GatsbyImage
-                image={randomBannerImage}
-                alt="Debatní klub"
-                className="img-fluid rounded shadow"
-              />
-            </div>
+            <GatsbyImage
+              image={randomBannerImage}
+              alt="Debatní klub"
+              className="img-fluid rounded shadow"
+            />
           </div>
         </div>
       </section>
@@ -162,13 +160,11 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           {cards.map((card: CardData, index: number) => (
             <div key={index} className="col-md-6 col-lg-4">
               <div className="card h-100">
-                <div className="ratio ratio-21x9">
-                  <GatsbyImage
-                    image={card.image}
-                    alt={card.title}
-                    className="card-img-top"
-                  />
-                </div>
+                <GatsbyImage
+                  image={card.image}
+                  alt={card.title}
+                  className="card-img-top"
+                />
                 <div className="card-body">
                   <h5 className="card-title">{card.title}</h5>
                   <p className="card-text text-muted">{card.text}</p>
