@@ -25,7 +25,7 @@ owners:
     discord: kuba_vojak
     email: smejkal@debatnispolek.debatnidenik.cz
   - name: Tammam Hennawi
-    image: ./owners/placeholder.png
+    image: ./owners/praha_hennawi.png
     discord: tammamhennawi
     email: tammamhennawi@gmail.com
 ---
