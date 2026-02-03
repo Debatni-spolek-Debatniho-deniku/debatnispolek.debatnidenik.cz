@@ -12,6 +12,12 @@ owners:
   - name: Karel Krob
     image: ./owners/placeholder.png
     email: karelkrob0@gmail.com
+  - name: Michal Forman
+    image: ./owners/online_forman.png
+    email: michal.format@debatnispolek.debatnidenik.cz
+  - name: Matěj Diviš
+    image: ./owners/placeholder.png
+    email: matej.divis@debatnispolek.debatnidenik.cz
 ---
 
 ## Online debatní klub

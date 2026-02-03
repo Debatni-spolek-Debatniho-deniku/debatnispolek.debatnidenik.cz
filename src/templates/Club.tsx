@@ -3,6 +3,7 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
   const html = data.markdownRemark?.html;
@@ -50,18 +51,18 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
                 <div className="d-flex flex-wrap justify-content-around gap-4">
                   {owners.map((owner) => {
                     invariant(owner?.name, "owner name is required");
-                    invariant(
-                      owner?.image?.publicURL,
-                      "owner image is required"
-                    );
+
+                    const image = getImage(owner.image as ImageDataLike);
+                    invariant(image, "owner image is required");
+
                     invariant(owner?.email, "owner email is required");
                     return (
                       <div
                         key={owner.name}
                         className="text-center small club-owner"
                       >
-                        <img
-                          src={owner.image.publicURL}
+                        <GatsbyImage
+                          image={image}
                           alt={owner.name ?? ""}
                           className="rounded-circle mb-2 club-owner-profile-picture"
                         />
@@ -103,7 +104,9 @@ export const query = graphql`
           name
           email
           image {
-            publicURL
+            childImageSharp {
+              gatsbyImageData(width: 80, height: 80, placeholder: BLURRED)
+            }
           }
         }
       }
