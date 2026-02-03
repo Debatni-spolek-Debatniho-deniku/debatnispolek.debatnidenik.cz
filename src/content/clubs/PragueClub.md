@@ -18,12 +18,15 @@ locations:
 owners:
   - name: Michael Svoboda
     image: ./owners/placeholder.png
+    discord: michaelwilliemsvoboda
     email: michael.svoboda@debatnispolek.debatnidenik.cz
   - name: Jakub Šmejkal
     image: ./owners/placeholder.png
+    discord: kuba_vojak
     email: smejkal@debatnispolek.debatnidenik.cz
   - name: Tammam Hennawi
     image: ./owners/placeholder.png
+    discord: tammamhennawi
     email: tammamhennawi@gmail.com
 ---
 

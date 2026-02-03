@@ -26,5 +26,7 @@
 #       path: /organization/membership
 - label: Staré Linktree
   path: https://linktr.ee/debatnispolekdebatnihodeniku
+- label: Discord
+  path: https://discord.gg/BzxVaarzyJ
 - label: Kontakty
   path: /contacts

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, PropsWithChildren } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import invariant from "tiny-invariant";
 import SmartAnchor from "./SmartAnchor";
@@ -29,10 +29,16 @@ const NavItems: React.FC = () => {
         invariant(item.label, "nav item label is required");
         // item.path is not required if item.items exists
 
+        const Li: FC<PropsWithChildren> = ({ children }) => (
+          <li className="nav-item px-lg-2 dropdown" key={index}>
+            {children}
+          </li>
+        );
+
         if (item.items) {
           invariant(Array.isArray(item.items), "nav item.items must be array");
           return (
-            <li className="nav-item px-lg-3 dropdown" key={index}>
+            <Li>
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -55,16 +61,16 @@ const NavItems: React.FC = () => {
                   );
                 })}
               </ul>
-            </li>
+            </Li>
           );
         } else {
           invariant(item.path, "nav item path is required");
           return (
-            <li className="nav-item" key={index}>
+            <Li>
               <SmartAnchor className="nav-link" href={item.path}>
                 {item.label}
               </SmartAnchor>
-            </li>
+            </Li>
           );
         }
       })}

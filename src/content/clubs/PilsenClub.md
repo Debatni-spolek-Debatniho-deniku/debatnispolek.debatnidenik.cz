@@ -18,6 +18,7 @@ locations:
 owners:
   - name: Tadeáš Souba
     image: ./owners/online_souba.png
+    discord: tadeassouba
     email: souba@debatnispolek.debatnidenik.cz
 ---
 ## Debatní klub v Plzni

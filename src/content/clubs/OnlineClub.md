@@ -11,12 +11,15 @@ locations:
 owners:
   - name: Karel Krob
     image: ./owners/placeholder.png
+    discord: krobik
     email: karelkrob0@gmail.com
   - name: Michal Forman
     image: ./owners/online_forman.png
+    discord: michal_forman
     email: michal.format@debatnispolek.debatnidenik.cz
   - name: Matěj Diviš
     image: ./owners/placeholder.png
+    discord: mozekruzovej
     email: matej.divis@debatnispolek.debatnidenik.cz
 ---
 

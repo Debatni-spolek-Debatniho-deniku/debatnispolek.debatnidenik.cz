@@ -48,14 +48,19 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
               {/* Owners Section */}
               <div className="mt-4">
                 <h5 className="mb-3">Odpovědné osoby</h5>
-                <div className="d-flex flex-wrap justify-content-around gap-4">
-                  {owners.map((owner) => {
+                {(() => {
+                  const isOdd = owners.length % 2 === 1;
+                  const firstOwner = isOdd ? owners[0] : null;
+                  const remainingOwners = isOdd ? owners.slice(1) : owners;
+
+                  const renderOwner = (owner: typeof owners[number]) => {
                     invariant(owner?.name, "owner name is required");
 
                     const image = getImage(owner.image as ImageDataLike);
                     invariant(image, "owner image is required");
 
                     invariant(owner?.email, "owner email is required");
+                    invariant(owner?.discord, "owner discord is required");
                     return (
                       <div
                         key={owner.name}
@@ -73,10 +78,37 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
                         >
                           {owner.email}
                         </a>
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigator.clipboard.writeText(owner.discord!);
+                          }}
+                          title="Zkopírovat do schránky"
+                          className="text-muted text-decoration-none"
+                        >
+                          <small>
+                            <i className="bi bi-discord me-1"></i>
+                            {owner.discord}
+                          </small>
+                        </a>
                       </div>
                     );
-                  })}
-                </div>
+                  };
+
+                  return (
+                    <>
+                      {firstOwner && (
+                        <div className="d-flex justify-content-center mb-4">
+                          {renderOwner(firstOwner)}
+                        </div>
+                      )}
+                      <div className="d-flex flex-wrap justify-content-around gap-4">
+                        {remainingOwners.map((owner) => renderOwner(owner))}
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </div>
@@ -103,6 +135,7 @@ export const query = graphql`
         owners {
           name
           email
+          discord
           image {
             childImageSharp {
               gatsbyImageData(width: 80, height: 80, placeholder: BLURRED)
