@@ -18,7 +18,7 @@ owners:
     discord: michal_forman
     email: michal.format@debatnispolek.debatnidenik.cz
   - name: Matěj Diviš
-    image: ./owners/placeholder.png
+    image: ./owners/online_divis.png
     discord: mozekruzovej
     email: matej.divis@debatnispolek.debatnidenik.cz
 ---
