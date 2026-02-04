@@ -10,7 +10,7 @@ locations:
       - Na našem discord serveru Debatní spolek Debatního deníku
 owners:
   - name: Karel Krob
-    image: ./owners/placeholder.png
+    image: ./owners/online_krob.png
     discord: krobik
     email: karelkrob0@gmail.com
   - name: Michal Forman
@@ -30,6 +30,8 @@ Online debatní klub je místo, kde si můžete online zadebatovat na různá t�
 ### Kdy a kde se scházíme
 
 Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debatního deníku](https://discord.gg/SwkFPkb3)
+
+**👉 [Klikni zde pro přihlášení](https://docs.google.com/forms/d/e/1FAIpQLSd7N5O66o_p8tymriNnxpEwWjoQZKSd9kDbmUls7VWEq8c-Tg/viewform)** nebo klikni na "Přihlaš se na debatu" pro výběr debatního klubu.
 
 ### Průběh setkání
 

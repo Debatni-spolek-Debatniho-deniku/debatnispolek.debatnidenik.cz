@@ -17,7 +17,7 @@ locations:
 
 owners:
   - name: Tadeáš Souba
-    image: ./owners/online_souba.png
+    image: ./owners/plzen_souba.png
     discord: tadeassouba
     email: souba@debatnispolek.debatnidenik.cz
 ---
@@ -34,6 +34,8 @@ Klub je primárně pro studující z různých oborů, klidně i technických �
 ### Kdy a kde se scházíme
 
 Scházíme se každé úterý od 18:00 na FF ZČU, Jungmannova 153/1, Plzeň 3, ve třetím patře. Nejčastěji jsme v místnosti JJ302, při větším zájmu používáme JJ305. Aktuální místnost najdete na Discordu (pokud ne, neváhejte se zeptat v Plzeň general).
+
+**👉 [Klikni zde pro přihlášení](https://docs.google.com/forms/d/e/1FAIpQLSfKcPRSGsmjcncc7tVf5VWRgPBxvsP6PV4hCOVlmROXme4Qxw/viewform)** nebo klikni na "Přihlaš se na debatu" pro výběr debatního klubu.
 
 ### Průběh setkání
 

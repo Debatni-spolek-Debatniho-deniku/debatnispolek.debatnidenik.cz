@@ -21,7 +21,7 @@ owners:
     discord: michaelwilliemsvoboda
     email: michael.svoboda@debatnispolek.debatnidenik.cz
   - name: Jakub Šmejkal
-    image: ./owners/placeholder.png
+    image: ./owners/praha_smejkal.png
     discord: kuba_vojak
     email: smejkal@debatnispolek.debatnidenik.cz
   - name: Tammam Hennawi
@@ -51,6 +51,8 @@ Seifertova 327/85, 130 00 Praha 3 – Žižkov.
 
 Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud si nejste jistí, klidně se zeptejte v kanálu *Prague general*.
 
+**Jazyková škola Lexis je omezena pouze na tři debaty (24 debatérů + rozhodčí)!**
+
 ## Průběh setkání
 
 **Harmonogram**
@@ -64,7 +66,7 @@ Tempo i forma se mohou lehce lišit podle typu večera a počtu účastníků.
 
 Pokud se chceš zúčastnit, **vyplň prosím přihlašovací formulář a prostě přijď**:
 
-👉 https://docs.google.com/forms/d/e/1FAIpQLSeCL52mijDQLBhyjmu25py2GaiHOOYH0imr32e_MP8cb6fFcQ/viewform?usp=dialog
+**👉 [Klikni zde pro přihlášení](https://docs.google.com/forms/d/e/1FAIpQLSeCL52mijDQLBhyjmu25py2GaiHOOYH0imr32e_MP8cb6fFcQ/viewform?usp=dialog)** nebo klikni na "Přihlaš se na debatu" pro výběr debatního klubu.
 
 Formulář slouží hlavně pro organizační účely, aby bylo jasné, kolik lidí dorazí. Vyplnění zabere jen chvilku.
 
@@ -78,4 +80,4 @@ Jdeš k nám poprvé? Super! Doporučujeme přidat se na náš Discord a ve výb
 
 **Začátečnický workshop**  
 Pokud jsi na debatním klubu poprvé, můžeš se zapojit do úvodního workshopu, kde vysvětlíme základní pravidla a průběh debat. Stačí dorazit včas na začátek setkání v 18:50.
-**Jazyková škola Lexis je omezena pouze na tři debaty (24 debatérů + rozhodčí)!**
+

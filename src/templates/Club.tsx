@@ -53,7 +53,7 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
                   const firstOwner = isOdd ? owners[0] : null;
                   const remainingOwners = isOdd ? owners.slice(1) : owners;
 
-                  const renderOwner = (owner: typeof owners[number]) => {
+                  const renderOwner = (owner: (typeof owners)[number]) => {
                     invariant(owner?.name, "owner name is required");
 
                     const image = getImage(owner.image as ImageDataLike);
@@ -138,7 +138,7 @@ export const query = graphql`
           discord
           image {
             childImageSharp {
-              gatsbyImageData(width: 80, height: 80, placeholder: BLURRED)
+              gatsbyImageData(width: 160, height: 160, placeholder: BLURRED)
             }
           }
         }
