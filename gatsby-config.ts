@@ -43,6 +43,7 @@ const config: GatsbyConfig = {
         path: "./src/content",
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 };
 
