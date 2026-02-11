@@ -17,7 +17,7 @@ locations:
 
 owners:
   - name: Michael Svoboda
-    image: ./owners/placeholder.png
+    image: ./owners/praha_svoboda.png
     discord: michaelwilliemsvoboda
     email: michael.svoboda@debatnispolek.debatnidenik.cz
   - name: Jakub Šmejkal
@@ -52,6 +52,10 @@ Seifertova 327/85, 130 00 Praha 3 – Žižkov.
 Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud si nejste jistí, klidně se zeptejte v kanálu *Prague general*.
 
 **Jazyková škola Lexis je omezena pouze na tři debaty (24 debatérů + rozhodčí)!**
+
+V jazykové škole Lexis dodržujte následující pravidla:
+- Na chodbě při příchodu a přípravě na debatu udržujte klid, v učebně Berlín probíhá výuka do 20:00
+- Při přípravě se zdržujte v prostorách Lexisu, můžete využít volné místnosti a chodbu, nechoďte po schodech nahoru a dolů.
 
 ## Průběh setkání
 
