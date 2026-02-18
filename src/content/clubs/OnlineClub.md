@@ -12,7 +12,7 @@ owners:
   - name: Karel Krob
     image: ./owners/online_krob.png
     discord: krobik
-    email: karelkrob0@gmail.com
+    email: karel.krob@debatnispolek.debatnidenik.cz
   - name: Michal Forman
     image: ./owners/online_forman.png
     discord: michal_forman
@@ -35,10 +35,10 @@ Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debat
 
 ### Průběh setkání
 
-- 19:00 - 19:30 Workshop
-- 19:30 - 19:45 Vyhlášení debatní teze
-- 20:00 - 22:00 Debata
-- od 22:00 socializace např. online hry
+- 18:30 - 19:00 Většinou workshop
+- 19:00 - 19:15 Vyhlášení debatní teze
+- 19:30 - 21:30 Debata
+- od 21:30 Společenské aktivity např. online hry
 
 ### Jdu poprvé na klub
 
