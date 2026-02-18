@@ -11,7 +11,7 @@ locations:
   #   map: <iframe style="border:none" src="https://mapy.com/s/jelutojugu" frameborder="0"></iframe>
   - name: Jazyková škola LEXIS
     info:
-      - Pondělí od 18:50, učebna Barcelona
+      - Úterý od 19:00, učebna Barcelona
       - Seifertova 327/85, Praha 3
     map: <iframe style="border:none" src="https://mapy.com/s/ludopomube" frameborder="0"></iframe>
 
@@ -61,8 +61,8 @@ V jazykové škole Lexis dodržujte následující pravidla:
 
 **Harmonogram**
 
-- 18:50 až 19:10 Workshop (argumentace, rétorika, pravidla debat)
-- 19:10 až 21:00 Debata
+- 19:00 až 19:20 Workshop (argumentace, rétorika, pravidla debat)
+- 19:20 až 21:00 Debata
 
 Tempo i forma se mohou lehce lišit podle typu večera a počtu účastníků.
 
