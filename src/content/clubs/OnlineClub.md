@@ -57,4 +57,4 @@ Je však možné si přijít debatu jen poslechnout. V ten moment pro Vás nepla
 (Úplným nováčkům doporučujeme si napoprvé přijít debatu pouze poslechnout. U toho se seznámíte s formátem a příště už víte, co vás čeká.)
 
 **Začátečnický workshop**  
-Když přijdete poprvé, můžeme vám nabídnout začátečnický workshop, kde vysvětlíme pravidla a průběh debat. Pokud toho chcete využít, přijďte prosím ideálně v 18:30. 
+Když přijdete poprvé, můžeme vám nabídnout začátečnický workshop o pravidlech BP debaty, kde vysvětlíme pravidla a průběh debat. Pokud toho chcete využít, přijďte prosím ideálně v 18:30. 
