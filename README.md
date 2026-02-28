@@ -1,5 +1,20 @@
 # Webové stránky Debatního spolku Debatního deníku
 
+## Přidávání změn 
+
+Bez ohledu na to zda, jsi editor nebo programátor, změny se v tomto repozitáři dělají skrze [pull requesty](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+
+Pokud edituješ soubory přímo skrze webovku GitHubu, bude ti při uložení změny zvol `Create a new branch for this commit and start a pull request`, čímž ti bude založena nová větev a otevře se ti okno pro založení **pull requestu**. __Tento postup je vhodný zejména pokud si editor.__
+
+### Automatciký náhled
+
+Jakmile vytvoříš tvůj pull request, přibližně do 5ti minut ti naše [GitHub workflow](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows) přidá komentář s odkazem, kde si můžeš svoje změny prohlédnout.
+
+Příklad takového komentáře:
+```
+Azure Static Web Apps: Your stage site is ready! Visit it here: https://delightful-hill-0f8fc9f03-3.westeurope.6.azurestaticapps.net
+```
+
 ## Editoři
 
 Webový obsah je z většiny generován pomocí Gatsby.JS. 
