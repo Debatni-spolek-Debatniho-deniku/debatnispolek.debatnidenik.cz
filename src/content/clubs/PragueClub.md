@@ -46,7 +46,7 @@ Klub je primárně pro studující napříč obory – klidně i technickými �
 
 ## Kdy a kde se scházíme
 
-Scházíme se každé **pondělí od 18:50** v prostorách **Jazykové školy LEXIS**,  
+Scházíme se každé **úterý od 19:00** v prostorách **Jazykové školy LEXIS**,  
 Seifertova 327/85, 130 00 Praha 3 – Žižkov.
 
 Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud si nejste jistí, klidně se zeptejte v kanálu *Prague general*.
