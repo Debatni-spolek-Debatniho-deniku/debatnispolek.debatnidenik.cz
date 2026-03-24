@@ -20,6 +20,10 @@ owners:
     image: ./owners/plzen_souba.png
     discord: tadeassouba
     email: souba@debatnispolek.debatnidenik.cz
+  - name: Karel Krob
+    image: ./owners/online_krob.png
+    discord: krobik
+    email: karel.krob@debatnispolek.debatnidenik.cz
 ---
 ## Debatní klub v Plzni
 

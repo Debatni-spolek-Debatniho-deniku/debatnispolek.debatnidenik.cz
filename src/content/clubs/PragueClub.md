@@ -24,6 +24,10 @@ owners:
     image: ./owners/praha_smejkal.png
     discord: kuba_vojak
     email: smejkal@debatnispolek.debatnidenik.cz
+  - name: Matěj Diviš
+    image: ./owners/online_divis.png
+    discord: mozekruzovej
+    email: matej.divis@debatnispolek.debatnidenik.cz
   - name: Tammam Hennawi
     image: ./owners/praha_hennawi.png
     discord: tammamhennawi
