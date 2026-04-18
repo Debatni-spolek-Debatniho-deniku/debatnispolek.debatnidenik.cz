@@ -101,3 +101,9 @@ table {
 thead {
   @extend .table-light;
 }
+
+// Highlight a single column in a table with the primary-light tint (matches .bg-primary-light cards)
+.table-spolek {
+  --bs-table-bg: #{rgba($primary, 0.1)};
+  --bs-table-color: inherit;
+}

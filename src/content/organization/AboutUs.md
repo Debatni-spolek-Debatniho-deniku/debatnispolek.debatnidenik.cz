@@ -4,6 +4,8 @@ path: /organization/activities
 template: generic
 ---
 
+# Činnost spolku
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum erat. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum nisi urna at nisi.
 
 ## Naše mise

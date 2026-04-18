@@ -23,13 +23,13 @@ owners:
     email: matej.divis@debatnispolek.debatnidenik.cz
 ---
 
-## Online debatní klub
+# Online debatní klub
 
 Online debatní klub je místo, kde si můžete online zadebatovat na různá témata. Fungujeme pod Debatním spolkem Debatního deníku. Vítáni jsou všichni - středoškoláci, studenti i pracující.
 
 Na online klubu se konají dva druhy debat a to jednak soutěžní BP debata a též civilní debatování, tedy neformální debatování mezi lidmi, kteří se ten den dostaví. Civilní debatování je každý týden stylizováno do předem daného tématu, avšak lze debatovat i na jiné téma.
 
-### Kdy a kde se scházíme
+## Kdy a kde se scházíme
 
 Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debatního deníku](https://discord.gg/qpp8v52AgP)
 
@@ -37,7 +37,7 @@ Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debat
 
 **Pokud chceš debatovat pouze civilně, nemusíš ze zapisovat přes formulář.**
 
-### Průběh setkání
+## Průběh setkání
 
 - 18:30 - 19:00 Civilní debatování nebo workshop
 - 19:00 - 19:15 Vyhlášení soutěžní debatní teze (pokud je zájem, jinak civilní debatování)
@@ -46,7 +46,7 @@ Scházíme se každý čtvrtek v 19:00 na našem discordu [Debatní spolek Debat
 
 Civilní debatování může začít i dříve v případě, že se debatéři dostaví přes 18:30.
 
-### Jdu poprvé na klub
+## Jdu poprvé na klub
 
 Pokud k nám jdete poprvé, doporučujeme přidat se na náš [Discord](https://discord.gg/qpp8v52AgP) a v sekci výběr rolí zvolit Online klub. Získáte tím přístup do chatů, kde se řeší organizační záležitosti.
 

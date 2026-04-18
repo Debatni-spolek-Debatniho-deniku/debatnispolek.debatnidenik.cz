@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Ja/.claude/plugins/**)",
+      "Read(//c/Users/Ja/.claude/**)",
+      "Bash(curl -s \"https://www.google.com/search?q=zapsan%C3%BD+spolek+vs+fyzick%C3%A1+osoba+prov%C3%A1d%C4%9Bn%C3%AD+neziskov%C3%A9+%C4%8Dinnosti\" -A \"Mozilla/5.0\")",
+      "Bash(curl -s \"https://duckduckgo.com/html/?q=zapsan%C3%BD+spolek+odpov%C4%9Bdnost+%C4%8Dlen%C5%AF+%C2%A7+215+OZ\" -A \"Mozilla/5.0\")",
+      "WebSearch"
+    ]
+  }
+}

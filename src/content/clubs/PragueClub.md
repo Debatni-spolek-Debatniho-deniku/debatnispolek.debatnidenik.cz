@@ -34,7 +34,7 @@ owners:
     email: tammamhennawi@gmail.com
 ---
 
-## Debatní klub v Praze
+# Debatní klub v Praze
 
 Chceš si zlepšit argumentaci, naučit se mluvit jasně a sebevědomě, nebo si prostě jen dobře zadiskutovat nad zajímavými tématy? Debatní klub Praha je otevřený prostor pro všechny, kdo mají chuť přemýšlet, diskutovat a rozvíjet své názory.  
 Jedná se o **nejstarší debatní klub spolku** a dlouhodobě fungující místo, kde se potkávají lidé s chutí kultivovaně diskutovat.

@@ -108,7 +108,12 @@ Navigation is defined in `src/content/nav.yml` and queryable via GraphQL:
   items:
     - label: Child Page
       path: /child-path
+    - divider: true       # renders <hr class="dropdown-divider"> to split groups
+    - label: Another Child
+      path: /another
 ```
+
+`divider: true` is valid only inside `items:` (dropdown children), not at the top level. No other fields are needed on a divider entry.
 
 Query navigation with:
 ```graphql
@@ -149,6 +154,7 @@ All pages use the `Layout` component wrapper which provides:
   - `src/content/`: Images managed by editors, referenced from markdown files, processed by gatsby-remark-images
   - `static/`: Images used directly in React components via `<img>` tag, managed by programmers
 - **Navigation**: Update `src/content/nav.yml` to modify menu structure
+- **Screenshots / tool outputs**: When saving screenshots from Playwright MCP or any other MCP server (page captures, diagnostic images, etc.), always save them into `.screenshots/` at the repo root. Use relative paths like `.screenshots/<descriptive-name>.png`. This directory is gitignored.
 
 ## GraphQL
 

@@ -13,6 +13,7 @@ const NavItems: React.FC = () => {
           items {
             label
             path
+            divider
           }
         }
       }
@@ -49,7 +50,14 @@ const NavItems: React.FC = () => {
                 {item.label}
               </a>
               <ul className="dropdown-menu">
-                {item.items.map((child) => {
+                {item.items.map((child, childIndex) => {
+                  if (child.divider) {
+                    return (
+                      <li key={`divider-${childIndex}`}>
+                        <hr className="dropdown-divider" />
+                      </li>
+                    );
+                  }
                   invariant(child.label, "nav child label is required");
                   invariant(child.path, "nav child path is required");
                   return (

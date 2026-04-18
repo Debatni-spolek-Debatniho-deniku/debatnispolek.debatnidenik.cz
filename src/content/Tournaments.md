@@ -4,6 +4,8 @@ path: /tournaments
 template: generic
 ---
 
+# Debatní turnaje
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum nisi urna at nisi. Proin nec urna nec erat cursus posuere. 
 
 ## Nadcházející turnaje
