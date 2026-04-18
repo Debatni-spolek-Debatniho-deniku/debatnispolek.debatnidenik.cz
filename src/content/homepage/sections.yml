@@ -1,6 +1,8 @@
 bannerImages:
   - ./banner_image_1.png
   - ./banner_image_2.png
+  - ./banner_image_3.png
+  - ./banner_image_4.png
 
 cards:
   - image: ./card_learn_debate.png
