@@ -16,8 +16,8 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
   return (
     <Layout>
       <article className="row">
-        <div className="col-md-8" dangerouslySetInnerHTML={{ __html: html }} />
-        <aside className="col-md-4">
+        <div className="col-lg-8" dangerouslySetInnerHTML={{ __html: html }} />
+        <aside className="col-lg-4">
           <div className="card">
             <div className="card-body">
               {/* Locations Section */}
@@ -85,7 +85,7 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
                             navigator.clipboard.writeText(owner.discord!);
                           }}
                           title="Zkopírovat do schránky"
-                          className="text-muted text-decoration-none"
+                          className="text-muted text-decoration-none d-inline-block py-1"
                         >
                           <small>
                             <i className="bi bi-discord me-1"></i>

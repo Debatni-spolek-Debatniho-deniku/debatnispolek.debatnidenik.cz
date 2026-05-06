@@ -67,7 +67,12 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
   const bannerImages = yml.bannerImages;
   invariant(bannerImages?.length, "BannerImages are required");
 
-  const [bannerImage, setBannerImage] = useState<IGatsbyImageData | null>(null);
+  // Render the first image in SSR/initial paint so the hero column isn't blank.
+  // The useEffect below replaces it with a random pick once on the client.
+  const initialImage = getImage(bannerImages[0] as ImageDataLike);
+  invariant(initialImage, "Initial banner image is required");
+  const [bannerImage, setBannerImage] =
+    useState<IGatsbyImageData>(initialImage);
 
   // Must be in use effect otherwise random pick will occur only during build time.
   useEffect(() => {
@@ -141,13 +146,11 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
             </div>
           </div>
           <div className="col-lg-6">
-            {bannerImage && (
-              <GatsbyImage
-                image={bannerImage}
-                alt="Debatní klub"
-                className="img-fluid rounded shadow"
-              />
-            )}
+            <GatsbyImage
+              image={bannerImage}
+              alt="Debatní klub"
+              className="img-fluid rounded shadow"
+            />
           </div>
         </div>
       </section>

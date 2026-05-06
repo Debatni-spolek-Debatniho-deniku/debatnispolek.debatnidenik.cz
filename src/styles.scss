@@ -96,10 +96,24 @@ $min-contrast-ratio: 2;
 // Apply Bootstrap table styling to all tables
 table {
   @extend .table;
+
+  // Make markdown tables horizontally scrollable on narrow viewports.
+  // GitHub-style: switch the table itself to a block so overflow-x kicks in
+  // without needing a wrapper element.
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 thead {
   @extend .table-light;
+}
+
+// Balance heading line breaks (avoids one-word orphans like "deníku")
+h1, h2, h3, h4,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  text-wrap: balance;
 }
 
 // Highlight a single column in a table with the primary-light tint (matches .bg-primary-light cards)

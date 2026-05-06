@@ -14,7 +14,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
                 <img
                   src="/NavLogo_compact.svg"
                   alt="Debatní spolek"
-                  height="72"
+                  height="56"
                   className="d-sm-none"
                 />
                 <img
@@ -24,7 +24,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
                   className="d-none d-sm-block"
                 />
               </a>
-              <ClubPicker buttonClassName="order-lg-last py-2 py-lg-1 ms-auto me-4 me-lg-0 ms-lg-5" />
+              <ClubPicker buttonClassName="order-lg-last py-2 py-lg-1 ms-auto me-2 me-lg-0 ms-lg-3" />
               <button
                 className="navbar-toggler"
                 type="button"

@@ -31,7 +31,7 @@ const NavItems: React.FC = () => {
         // item.path is not required if item.items exists
 
         const Li: FC<PropsWithChildren> = ({ children }) => (
-          <li className="nav-item px-lg-2 dropdown" key={index}>
+          <li className="nav-item px-lg-1 dropdown" key={index}>
             {children}
           </li>
         );
