@@ -152,6 +152,22 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
         </div>
       </section>
 
+      {/* Donation CTA */}
+      <section className="py-4 px-4 rounded bg-primary-light my-4">
+        <div className="row justify-content-center">
+          <div className="col-lg-8 text-center">
+            <h3 className="fw-bold mb-2">Podpořte debatování v Česku</h3>
+            <p className="mb-3 text-muted">
+              Učíme mladé lidi argumentovat, naslouchat a kriticky myslet —
+              zdarma a ve volném čase.
+            </p>
+            <a href="/podporte-nas" className="btn btn-primary">
+              Chci podpořit spolek
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Section 2: Cards */}
       <section className="py-5">
         <div className="row justify-content-center mb-5">

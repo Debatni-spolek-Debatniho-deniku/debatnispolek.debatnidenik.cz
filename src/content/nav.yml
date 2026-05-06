@@ -25,9 +25,11 @@
 #       path: /organization/structure
 #     - label: Členství ve spolku
 #       path: /organization/membership
-- label: Staré Linktree
-  path: https://linktr.ee/debatnispolekdebatnihodeniku
+# - label: Staré Linktree
+#   path: https://linktr.ee/debatnispolekdebatnihodeniku
 - label: Discord
   path: https://discord.gg/qpp8v52AgP
+- label: Podpořte nás
+  path: /podporte-nas
 - label: Kontakty
   path: /contacts
