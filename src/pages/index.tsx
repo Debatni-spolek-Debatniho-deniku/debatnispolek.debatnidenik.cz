@@ -60,6 +60,11 @@ interface CardData {
   text: string;
 }
 
+interface Supporter {
+  src: string;
+  name: string;
+}
+
 const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
   const yml = data.homepageYaml;
   invariant(yml, "HomepageSections.yml data is required");
@@ -88,6 +93,8 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
   invariant(yml.bpFormat?.html, "BP format data is required");
   invariant(yml.links?.public, "Public links are required");
   invariant(yml.links?.members, "Member links are required");
+  invariant(yml.supporters, "Supporters data is required");
+  invariant(yml.supportersDisclaimer, "Supporters disclaimer is required");
 
   const cards: CardData[] = yml.cards.map((c) => {
     invariant(c, "Card is required");
@@ -120,6 +127,13 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
     invariant(l.title, "Link title is required");
     invariant(l.href, "Link href is required");
     return { title: l.title, href: l.href };
+  });
+
+  const supporters: Supporter[] = yml.supporters.map((s) => {
+    invariant(s, "Supporter is required");
+    invariant(s.image?.publicURL, "Supporter image is required");
+    invariant(s.name, "Supporter name is required");
+    return { src: s.image.publicURL, name: s.name };
   });
 
   return (
@@ -221,6 +235,28 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
           { title: "Pro členy", links: memberLinks },
         ]}
       />
+
+      {/* Section 5: Supporters */}
+      <section className="py-5">
+        <h2 className="display-6 fw-bold mb-4 text-center">Podporují nás</h2>
+        <div className="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5">
+          {supporters.map((s, i) => (
+            <img
+              key={i}
+              src={s.src}
+              alt={s.name}
+              title={s.name}
+              className="supporter-logo"
+            />
+          ))}
+        </div>
+        <p
+          className="text-center text-muted small mt-4 mb-0 mx-auto"
+          style={{ maxWidth: 720 }}
+        >
+          {yml.supportersDisclaimer}
+        </p>
+      </section>
     </Layout>
   );
 };
@@ -259,6 +295,13 @@ export const query = graphql`
       bpFormat {
         html
       }
+      supporters {
+        image {
+          publicURL
+        }
+        name
+      }
+      supportersDisclaimer
     }
   }
 `;

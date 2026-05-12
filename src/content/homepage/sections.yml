@@ -33,6 +33,22 @@ bpFormat: !markdown |
  
   Formát BP rozvíjí širokou škálu dovedností: kritické myšlení, argumentaci, veřejné vystupování, týmovou spolupráci i schopnost rychle se zorientovat v novém tématu. Debatéři se učí nahlížet na problémy z různých úhlů pohledu a konstruktivně reagovat na názory druhých. Tyto dovednosti jsou cenné nejen v akademickém prostředí, ale i v profesním a osobním životě.
 
+supporters:
+  - image: ./supporter_eu.png
+    name: Spolufinancováno Evropskou unií
+  - image: ./supporter_zcu.png
+    name: Západočeská univerzita v Plzni
+  - image: ./supporter_dzs.png
+    name: Dům zahraniční spolupráce
+  - image: ./supporter_plzen.png
+    name: Město Plzeň
+
+supportersDisclaimer: >-
+  Financováno Evropskou unií. Vyjádřené názory a stanoviska představují názory
+  a stanoviska autorů a nemusí nutně odrážet názory a stanoviska Evropské unie
+  nebo Domu zahraniční spolupráce. Evropská unie ani poskytovatel grantu za ně
+  nenesou odpovědnost.
+
 links:
   public:
     - title: Často kladené otázky
