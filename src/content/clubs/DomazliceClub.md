@@ -3,7 +3,12 @@ title: Domažlický klub
 path: /clubs/domazlice
 template: club
 
-locations: []
+locations:
+  - name: VOŠ, OA a SZŠ Domažlice
+    info:
+      - Středa od 16:30
+      - Erbenova 184, 344 01 Domažlice 1
+    map: <iframe style="border:none" src="https://mapy.com/s/detagojuha" frameborder="0"></iframe>
 
 owners:
   - name: Natálie Juklíčková
