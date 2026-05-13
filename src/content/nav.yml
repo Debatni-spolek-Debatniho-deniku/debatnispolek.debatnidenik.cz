@@ -29,7 +29,12 @@
 #   path: https://linktr.ee/debatnispolekdebatnihodeniku
 - label: Discord
   path: https://discord.gg/qpp8v52AgP
-- label: Podpořte nás
-  path: /podporte-nas
-- label: Kontakty
-  path: /contacts
+- label: O spolku
+  items:
+    - label: Podpořte nás
+      path: /podporte-nas
+    - label: Kontakty
+      path: /contacts
+    - divider: true
+    - label: Solidární projekt 2025–2026
+      path: /projekty/solidarni-projekt-2025-2026

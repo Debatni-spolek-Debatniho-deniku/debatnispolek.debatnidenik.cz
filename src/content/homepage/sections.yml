@@ -38,8 +38,6 @@ supporters:
     name: Spolufinancováno Evropskou unií
   - image: ./supporter_zcu.png
     name: Západočeská univerzita v Plzni
-  - image: ./supporter_dzs.png
-    name: Dům zahraniční spolupráce
   - image: ./supporter_plzen.png
     name: Město Plzeň
 
