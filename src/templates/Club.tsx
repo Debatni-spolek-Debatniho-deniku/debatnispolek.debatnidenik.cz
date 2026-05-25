@@ -3,6 +3,7 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import MarkdownContent from "../components/MarkdownContent";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
@@ -16,7 +17,7 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
   return (
     <Layout>
       <article className="row">
-        <div className="col-lg-8" dangerouslySetInnerHTML={{ __html: html }} />
+        <MarkdownContent html={html} className="col-lg-8" />
         <aside className="col-lg-4">
           <div className="card">
             <div className="card-body">

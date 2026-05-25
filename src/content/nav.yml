@@ -29,8 +29,10 @@
 #   path: https://linktr.ee/debatnispolekdebatnihodeniku
 - label: Discord
   path: https://discord.gg/qpp8v52AgP
-- label: O spolku
+- label: O Spolku
   items:
+    - label: Členství ve spolku
+      path: /membership
     - label: Podpořte nás
       path: /podporte-nas
     - label: Kontakty

@@ -3,6 +3,7 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import invariant from "tiny-invariant";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import MarkdownContent from "../components/MarkdownContent";
 
 const Generic = ({ data }: PageProps<Queries.GenericPageQuery>) => {
   const html = data.markdownRemark?.html;
@@ -10,7 +11,9 @@ const Generic = ({ data }: PageProps<Queries.GenericPageQuery>) => {
 
   return (
     <Layout>
-      <article dangerouslySetInnerHTML={{ __html: html }} />
+      <article>
+        <MarkdownContent html={html} />
+      </article>
     </Layout>
   );
 };
