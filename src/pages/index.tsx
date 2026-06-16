@@ -65,7 +65,7 @@ interface Supporter {
   name: string;
 }
 
-const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
+export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   const yml = data.homepageYaml;
   invariant(yml, "HomepageSections.yml data is required");
 
@@ -259,11 +259,9 @@ const Home: React.FC<PageProps<Queries.HomepageQuery>> = ({ data }) => {
       </section>
     </Layout>
   );
-};
+}
 
 export const Head = () => <SEO />;
-
-export default Home;
 
 export const query = graphql`
   query Homepage {

@@ -3,7 +3,7 @@ import ErrorBoundary from "./ErrorBoundary";
 import ClubPicker from "./ClubPicker";
 import NavItems from "./NavItems";
 
-const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <ErrorBoundary>
       <div className="min-vh-100 d-flex flex-column">
@@ -57,6 +57,4 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       </div>
     </ErrorBoundary>
   );
-};
-
-export default Layout;
+}

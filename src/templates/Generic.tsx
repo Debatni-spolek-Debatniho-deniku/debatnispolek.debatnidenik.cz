@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import MarkdownContent from "../components/MarkdownContent";
 
-const Generic = ({ data }: PageProps<Queries.GenericPageQuery>) => {
+export default function Generic({ data }: PageProps<Queries.GenericPageQuery>) {
   const html = data.markdownRemark?.html;
   invariant(html, "html is required");
 
@@ -16,7 +16,7 @@ const Generic = ({ data }: PageProps<Queries.GenericPageQuery>) => {
       </article>
     </Layout>
   );
-};
+}
 
 export const Head = ({ data }: HeadProps<Queries.GenericPageQuery>) => (
   <SEO title={data.markdownRemark?.frontmatter?.title} />
@@ -32,5 +32,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default Generic;

@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const NotFoundPage: React.FC = () => {
+export default function NotFoundPage() {
   return (
     <Layout>
       <div className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: "50vh" }}>
@@ -10,8 +10,6 @@ const NotFoundPage: React.FC = () => {
       </div>
     </Layout>
   );
-};
+}
 
 export const Head = () => <SEO title="Stránka nenalezena" />;
-
-export default NotFoundPage;

@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 import MarkdownContent from "../components/MarkdownContent";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
-const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
+export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
   const html = data.markdownRemark?.html;
   invariant(html, "html is required");
   const locations = data.markdownRemark?.frontmatter?.locations;
@@ -117,7 +117,7 @@ const Club = ({ data }: PageProps<Queries.ClubPageQuery>) => {
       </article>
     </Layout>
   );
-};
+}
 
 export const Head = ({ data }: HeadProps<Queries.ClubPageQuery>) => (
   <SEO title={data.markdownRemark?.frontmatter?.title} />
@@ -148,5 +148,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default Club;
