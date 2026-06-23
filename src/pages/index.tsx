@@ -72,22 +72,48 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   const bannerImages = yml.bannerImages;
   invariant(bannerImages?.length, "BannerImages are required");
 
-  // Render the first image in SSR/initial paint so the hero column isn't blank.
-  // The useEffect below replaces it with a random pick once on the client.
-  const initialImage = getImage(bannerImages[0] as ImageDataLike);
-  invariant(initialImage, "Initial banner image is required");
-  const [bannerImage, setBannerImage] =
-    useState<IGatsbyImageData>(initialImage);
+  const slides: IGatsbyImageData[] = bannerImages.map((b) => {
+    const img = getImage(b as ImageDataLike);
+    invariant(img, "Banner image is required");
+    return img;
+  });
 
-  // Must be in use effect otherwise random pick will occur only during build time.
+  // Order in which the slides are shown. Identity order for a deterministic
+  // SSR/initial paint; the client shuffles it below for a fresh random order
+  // (which also makes the first visible slide random) on every render.
+  const [order, setOrder] = useState<number[]>(() => slides.map((_, i) => i));
+  // Position within `order` of the currently visible slide.
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+  // The crossfade is disabled for the initial shuffle so the SSR first image
+  // doesn't visibly fade out; it's enabled once the random order is in place.
+  const [animate, setAnimate] = useState<boolean>(false);
+
+  // Auto-rotate the banner. The timer only runs on the client, so the build
+  // output is stable. Skip entirely when there is just a single image.
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * bannerImages.length);
-    const img = getImage(bannerImages[randomIndex] as ImageDataLike);
+    if (slides.length <= 1) return;
 
-    invariant(img, "Image is required");
+    // Fisher–Yates shuffle for a fresh random order each client render.
+    const shuffled = slides.map((_, i) => i);
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setOrder(shuffled);
+    setActiveSlide(0);
 
-    setBannerImage(img);
-  }, []);
+    // Enable the crossfade only after the instant initial swap has painted.
+    const animateId = setTimeout(() => setAnimate(true), 50);
+
+    const intervalId = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 10000);
+
+    return () => {
+      clearTimeout(animateId);
+      clearInterval(intervalId);
+    };
+  }, [slides.length]);
 
   invariant(yml.cards, "Cards data is required");
   invariant(yml.bpFormat?.html, "BP format data is required");
@@ -160,11 +186,22 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
             </div>
           </div>
           <div className="col-lg-6">
-            <GatsbyImage
-              image={bannerImage}
-              alt="Debatní klub"
-              className="img-fluid rounded shadow"
-            />
+            <div
+              className={`banner-slideshow rounded shadow${
+                animate ? " banner-slideshow--animated" : ""
+              }`}
+            >
+              {order.map((slideIndex, position) => (
+                <GatsbyImage
+                  key={slideIndex}
+                  image={slides[slideIndex]}
+                  alt="Debatní klub"
+                  className={`banner-slide${
+                    position === activeSlide ? " banner-slide--active" : ""
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

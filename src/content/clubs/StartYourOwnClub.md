@@ -48,7 +48,7 @@ Ať už se rozhodneš klub provozovat jako fyzická osoba, nebo si založit vlas
 <th scope="row">Přístup ke grantům</th>
 <td>Prakticky žádný. Dotace měst (Plzeň), evropské projekty solidarity, Erasmus+ – všechny vyžadují IČO.</td>
 <td>Ano, jako právnická osoba dosáhneš na většinu grantů pro NNO.</td>
-<td class="table-spolek">Žádáme pod naším IČO – společně. <br/><br/> Nyní zrovna jednu takovou <a href="/projekty/solidarni-projekt-2025-2026">dotaci</a> čerpáme!</td>
+<td class="table-spolek">Žádáme pod naším IČO – společně.</td>
 </tr>
 <tr>
 <th scope="row">Kontinuita klubu</th>

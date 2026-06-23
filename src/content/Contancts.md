@@ -5,12 +5,20 @@ template: generic
 ---
 
 <style>
-  .contacts-table table { table-layout: fixed; }
+  .contacts-table { overflow-x: auto; }
+  .contacts-table table { display: table; width: 100%; min-width: 640px; table-layout: fixed; }
   .contacts-table th:nth-child(1), .contacts-table td:nth-child(1) { width: 18%; }
-  .contacts-table th:nth-child(2), .contacts-table td:nth-child(2) { width: 30%; }
-  .contacts-table th:nth-child(3), .contacts-table td:nth-child(3) { width: 22%; }
-  .contacts-table th:nth-child(4), .contacts-table td:nth-child(4) { width: 30%; word-break: break-word; }
+  .contacts-table th:nth-child(2), .contacts-table td:nth-child(2) { width: 28%; }
+  .contacts-table th:nth-child(3), .contacts-table td:nth-child(3) { width: 18%; }
+  .contacts-table th:nth-child(4), .contacts-table td:nth-child(4) { word-break: break-word; }
 </style>
+
+## Identifikační údaje spolku
+
+**Název:** Debatní spolek Debatního deníku  
+**Sídlo:** Zdíkovská 3322/66h, Smíchov, 150 00 Praha 5  
+**IČO:** 21653968  
+Spolek není plátcem DPH.
 
 ## Statutární orgán
 
