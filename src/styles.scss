@@ -125,6 +125,22 @@ h1, h2, h3, h4,
   --bs-table-color: inherit;
 }
 
+// Debatní turnaje page — quick jump-nav between the tournament sections
+.tournament-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+// Subtle separator between the three tournament sections.
+.tournament-separator {
+  margin: 3rem 0 2rem;
+  border: 0;
+  border-top: 1px solid rgba($primary, 0.25);
+  opacity: 1;
+}
+
 .supporter-logo {
   max-height: 70px;
   max-width: 240px;

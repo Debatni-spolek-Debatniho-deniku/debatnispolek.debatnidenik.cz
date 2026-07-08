@@ -16,7 +16,7 @@
     - label: Založ si svůj klub
       path: /clubs/start-your-own-club
 # - label: Debatní turnaje
-#   path: /tournaments
+#   path: /turnaje
 # - label: Debatní spolek
 #   items:
 #     - label: Činnost spolku
