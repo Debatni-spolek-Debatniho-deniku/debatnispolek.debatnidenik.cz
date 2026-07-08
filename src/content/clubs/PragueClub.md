@@ -11,7 +11,7 @@ locations:
   #   map: <iframe style="border:none" src="https://mapy.com/s/jelutojugu" frameborder="0"></iframe>
   - name: ČVUT (České vysoké učení technické)
     info:
-      - Pondělí od 18:00, učebna 346 ve 2. patře
+      - Pondělí od 18:00, učebna 347 ve 2. patře
       - Thákurova 2700/9, Praha 6 – Dejvice
     map: <iframe style="border:none" src="https://mapy.com/s/musuzebacu" width="400" height="280" frameborder="0"></iframe>
 
@@ -64,7 +64,7 @@ Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud
 - **Metro A** – stanice **Dejvická**, odkud je to k budově pár minut pěšky.
 - **Tramvaje** – přímo u areálu je zastávka **Thákurova** (linky **20** a **26**). Nedaleko je také přestupní uzel **Dejvická** (tramvaje **8**, **18**, **20** a **26**).
 
-Na vrátnici by měl být připravený podpisový arch pro přihlášené debatéry – po podepsání vás vrátnice pustí do budovy. Sraz je v **učebně 346 ve druhém patře**.
+Na vrátnici by měl být připravený podpisový arch pro přihlášené debatéry – zapište se do něj a po podepsání vás vrátnice pustí do budovy. Pokud arch na vrátnici ještě není, vyčkejte příchodu organizátora, který jej přinese. Sraz je v **učebně 347 ve druhém patře**.
 
 ## Přihlášení na klub
 
