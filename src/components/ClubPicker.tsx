@@ -25,35 +25,38 @@ const CardButton: React.FC<{
   );
 };
 
-const isAvailable = (
-  availability:
-    | ReadonlyArray<{
-        fromMonth: number | null;
-        toMonth: number | null;
-      } | null>
-    | null
-    | undefined,
-): boolean => {
-  // If no availability specified, always available
-  if (!availability || availability.length === 0) {
-    return true;
-  }
-
-  const currentMonth = new Date().getMonth() + 1; // 1-12
-
-  return availability.some((interval) => {
-    if (!interval) return false;
-
-    invariant(
-      interval.fromMonth !== null && interval.toMonth !== null,
-      "interval months are required",
-    );
-
-    return (
-      currentMonth >= interval.fromMonth && currentMonth <= interval.toMonth
-    );
-  });
-};
+// Availability filtering is currently unused – no club uses the `availability`
+// field. Kept commented out so it can be re-enabled by adding the field back to
+// AvailableClubs.yml and restoring the query/filter below.
+// const isAvailable = (
+//   availability:
+//     | ReadonlyArray<{
+//         fromMonth: number | null;
+//         toMonth: number | null;
+//       } | null>
+//     | null
+//     | undefined,
+// ): boolean => {
+//   // If no availability specified, always available
+//   if (!availability || availability.length === 0) {
+//     return true;
+//   }
+//
+//   const currentMonth = new Date().getMonth() + 1; // 1-12
+//
+//   return availability.some((interval) => {
+//     if (!interval) return false;
+//
+//     invariant(
+//       interval.fromMonth !== null && interval.toMonth !== null,
+//       "interval months are required",
+//     );
+//
+//     return (
+//       currentMonth >= interval.fromMonth && currentMonth <= interval.toMonth
+//     );
+//   });
+// };
 
 const ClubPicker: React.FC<{
   buttonClassName?: string;
@@ -70,10 +73,10 @@ const ClubPicker: React.FC<{
             publicURL
           }
           form
-          availability {
-            fromMonth
-            toMonth
-          }
+          # availability {
+          #   fromMonth
+          #   toMonth
+          # }
         }
       }
     }
@@ -126,11 +129,11 @@ const ClubPicker: React.FC<{
                 <div className="modal-body">
                   <div className="list-group">
                     {clubs
-                      .filter((club) => {
-                        if (!club.availability) return true;
-
-                        return isAvailable(club.availability);
-                      })
+                      // .filter((club) => {
+                      //   if (!club.availability) return true;
+                      //
+                      //   return isAvailable(club.availability);
+                      // })
                       .map((club) => {
                         invariant(club.label, "club label is required");
                         invariant(club.form, "club form is required");
