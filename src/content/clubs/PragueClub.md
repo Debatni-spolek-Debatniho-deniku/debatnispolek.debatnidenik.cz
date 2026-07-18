@@ -32,10 +32,10 @@ owners:
     image: ./owners/online_divis.png
     discord: mozekruzovej
     email: matej.divis@debatnispolek.debatnidenik.cz
-  - name: Tammam Hennawi
-    image: ./owners/praha_hennawi.png
-    discord: tammamhennawi
-    email: tammamhennawi@gmail.com
+#  - name: Tammam Hennawi
+#    image: ./owners/praha_hennawi.png
+#    discord: tammamhennawi
+#    email: tammamhennawi@gmail.com
 ---
 
 # Debatní klub v Praze
