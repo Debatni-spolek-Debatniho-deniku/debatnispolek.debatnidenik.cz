@@ -4,7 +4,7 @@ path: /clubs/pilsen
 template: club
 
 locations:
-  - name: ZČU
+  - name: ZČU (Západočeská univerzita)
     info:
       - Úterý od 18:00 v učebně JJ 305
       - O letních prázdninách nestandardní provoz, více na Discordu
