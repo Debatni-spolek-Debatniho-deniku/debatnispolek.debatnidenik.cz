@@ -24,7 +24,17 @@ export default function Layout({ children }: PropsWithChildren) {
                   className="d-none d-sm-block"
                 />
               </a>
-              <ClubPicker buttonClassName="order-lg-last py-2 py-lg-1 ms-auto me-2 me-lg-0 ms-lg-3" />
+              <a
+                href="https://timer.debatnispolek.debatnidenik.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-sm btn-outline-primary order-lg-last py-2 py-lg-1 ms-auto me-2 ms-lg-3 me-lg-0 d-flex align-items-center"
+                title="Debatní stopky"
+              >
+                <i className="bi bi-stopwatch"></i>
+                <span className="d-none d-md-inline ms-1">Debatní stopky</span>
+              </a>
+              <ClubPicker buttonClassName="order-lg-last py-2 py-lg-1 ms-2 me-2 me-lg-0 ms-lg-3" />
               <button
                 className="navbar-toggler"
                 type="button"
