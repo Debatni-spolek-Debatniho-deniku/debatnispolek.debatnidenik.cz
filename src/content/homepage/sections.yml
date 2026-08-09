@@ -24,6 +24,29 @@ cards:
     title: Připravte se na budoucnost
     text: Dovednosti z debatování využijete ve škole, v práci i v osobním životě. Kritické myšlení, rétorika a schopnost rychle se zorientovat v novém tématu jsou kompetence, které oceňují zaměstnavatelé i univerzity po celém světě.
 
+howToJoin:
+  title: Jak se přihlásit a jak to u nás funguje?
+  subtitle: Přidat se k nám je velmi snadné a bez závazků. Zde je přehled všeho, co potřebujete vědět před první návštěvou.
+  items:
+    - icon: bi-piggy-bank-fill
+      title: Zcela zdarma
+      text: Účast na debatním klubu vás nic nestojí. Všechna naše běžná setkání jsou zdarma a bez jakýchkoliv poplatků.
+    - icon: bi-people-fill
+      title: Pro každého
+      text: Nezáleží na věku ani na tom, zda studujete vysokou či střední školu nebo pracujete – naše dveře jsou otevřené všem.
+    - icon: bi-cursor-fill
+      title: Stačí kliknout a přijít
+      text: Stačí kliknout na tlačítko „Přihlaš se na debatu“, vyplnit krátký formulář pro vybraný klub a dorazit na setkání.
+    - icon: bi-eye-fill
+      title: Poprvé stačí jen sledovat
+      text: Nemusíte mít strach, že budete muset hned mluvit. Poprvé se můžete přijít jen podívat, nasát atmosféru a zjistit, jak to chodí.
+    - icon: bi-easel-fill
+      title: Workshop a pak debata
+      text: Setkání je rozdělené na dvě části – nejprve proběhne krátký workshop na rétoriku či argumentaci a potom samotná debata.
+    - icon: bi-lightbulb-fill
+      title: Nováčkům vše vysvětlíme
+      text: Nejsou potřeba žádné předchozí znalosti o debatování. Vše vám od základu trpělivě vysvětlíme a se vším pomůžeme.
+
 bpFormat: !markdown |
   V našem spolku se věnujeme formátu British Parliamentary (BP), který je nejrozšířenějším debatním formátem v České republice i ve světě. Tento formát vznikl podle vzoru debat v britském parlamentu a dnes se používá na všech významných mezinárodních soutěžích, včetně mistrovství Evropy a mistrovství světa.
  
@@ -50,7 +73,7 @@ supportersDisclaimer: >-
 links:
   public:
     - title: Často kladené otázky
-      href: https://debatnispolek.sharepoint.com/:w:/g/IQDf1KdEpG4sRpNwLS36tGA8AeYAx8Tig1gxpcxb0eFi98M
+      href: /faq
     - title: Návštěvní řád
       href: https://debatnispolek.sharepoint.com/:w:/g/IQAe2i-0TjqlQpZpU0qINDTmAVr_KZ5EkTL_8OtfaBGbuXE
     - title: Pravidla Discord serverů

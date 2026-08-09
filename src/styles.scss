@@ -96,6 +96,14 @@ $min-contrast-ratio: 2;
   }
 }
 
+.transition-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba($primary, 0.15) !important;
+  }
+}
+
 // Apply Bootstrap table styling to all tables
 table {
   @extend .table;
@@ -173,5 +181,60 @@ h1, h2, h3, h4,
   // first image swaps instantly instead of fading out on load.
   &.banner-slideshow--animated .banner-slide {
     transition: opacity 1s ease-in-out;
+  }
+}
+
+// =============================================================================
+// FAQ ACCORDION STYLES
+// =============================================================================
+.faq-accordion-item {
+  border: 1px solid rgba($primary, 0.15);
+  border-radius: 0.75rem;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+  background-color: #ffffff;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba($primary, 0.12);
+    border-color: rgba($primary, 0.35);
+  }
+
+  &.open {
+    border-color: rgba($primary, 0.4);
+    box-shadow: 0 6px 20px rgba($primary, 0.15);
+  }
+
+  .faq-question-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--bs-body-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($primary, 0.04);
+    }
+  }
+
+  .faq-answer-content {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .faq-chevron {
+    transition: transform 0.25s ease-in-out;
+  }
+
+  &.open .faq-chevron {
+    transform: rotate(180deg);
   }
 }

@@ -6,12 +6,12 @@
 #       toMonth: 6
 #     - fromMonth: 9
 #       toMonth: 12
-- label: Debaní klub PRAHA (ČVUT)
+- label: Debatní klub PRAHA (ČVUT)
   image: ./cvut.png
   form: https://docs.google.com/forms/d/e/1FAIpQLSfg5RxVJv7d-GuqMddUOH7WkXAoIFduUH5UD9a33fWftXqO4w/viewform
-- label: Debaní klub PLZEŇ (na ZČU)
+- label: Debatní klub PLZEŇ (na ZČU)
   image: ./ffzcu.jpg
   form: https://docs.google.com/forms/d/e/1FAIpQLSfKcPRSGsmjcncc7tVf5VWRgPBxvsP6PV4hCOVlmROXme4Qxw/viewform
-- label: Debaní klub ONLINE
+- label: Debatní klub ONLINE
   image: ./online.png
   form: https://docs.google.com/forms/d/e/1FAIpQLSd7N5O66o_p8tymriNnxpEwWjoQZKSd9kDbmUls7VWEq8c-Tg/viewform?usp=dialog
