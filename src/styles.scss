@@ -230,6 +230,22 @@ h1, h2, h3, h4,
     line-height: 1.6;
   }
 
+  .faq-markdown-body {
+    p:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      font-weight: 600;
+      color: $primary;
+    }
+    code {
+      background-color: rgba($primary, 0.08);
+      color: $primary;
+      padding: 0.15rem 0.35rem;
+      border-radius: 0.25rem;
+    }
+  }
+
   .faq-chevron {
     transition: transform 0.25s ease-in-out;
   }
