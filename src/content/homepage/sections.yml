@@ -4,29 +4,32 @@ bannerImages:
   - ./banner_image_3.png
   - ./banner_image_4.png
 
-cards:
-  - image: ./card_learn_debate.png
-    title: Naučte se argumentovat
-    text: Rozvíjejte své kritické myšlení a schopnost přesvědčivě prezentovat své názory. Naučíte se strukturovat své myšlenky, analyzovat argumenty druhých a reagovat na protiargumenty. Tyto dovednosti vám pomohou nejen v debatách, ale i v běžném životě.
-  - image: ./card_new_people.png
-    title: Poznejte nové lidi
-    text: Staňte se součástí komunity mladých lidí, kteří chtějí měnit svět k lepšímu. V našem klubu potkáte přátele z různých škol a měst, se kterými budete sdílet společné zážitky z turnajů, workshopů a společenských akcí.
-  - image: ./card_tournaments.png
-    title: Cestujte na turnaje
-    text: Zúčastněte se debatních soutěží po celé České republice i v zahraničí. Každý rok pořádáme desítky turnajů pro začátečníky i pokročilé. Nejlepší debatéři se mohou kvalifikovat na mezinárodní soutěže v Evropě i zámoří.
-  - image: ./card_courage.png
-    title: Získejte sebevědomí
-    text: Překonejte strach z veřejného vystupování a naučte se mluvit před publikem. Postupně si budujete jistotu při prezentování svých názorů. Mnoho našich absolventů dnes pracuje jako právníci, politici nebo manažeři.
-  - image: ./card_horizons.png
-    title: Rozšiřte si obzory
-    text: Diskutujte o aktuálních tématech z politiky, ekonomiky, vědy i kultury. Každá debata vás donutí prozkoumat nové téma do hloubky a podívat se na něj z různých úhlů pohledu. Stanete se informovanějším občanem.
-  - image: ./card_future.png
-    title: Připravte se na budoucnost
-    text: Dovednosti z debatování využijete ve škole, v práci i v osobním životě. Kritické myšlení, rétorika a schopnost rychle se zorientovat v novém tématu jsou kompetence, které oceňují zaměstnavatelé i univerzity po celém světě.
+hero:
+  badge: Přijímáme nováčky po celý rok
+  title: Debatní spolek Debatního deníku
+  lead: Přidejte se k otevřené komunitě. Naučíme vás přesvědčivě argumentovat, pohotově reagovat a mluvit před lidmi bez obav.
+  secondaryButtonText: Jak to funguje?
+  secondaryButtonHref: "#jak-to-funguje"
+  trustHighlights:
+    - icon: bi-check-circle-fill
+      boldText: 100% Zdarma
+      text: a bez poplatků
+    - icon: bi-check-circle-fill
+      boldText: Vhodné pro nováčky
+      text: (vše vysvětlíme)
+    - icon: bi-check-circle-fill
+      boldText: Otevřeno všem
+      text: bez ohledu na věk
+    - icon: bi-check-circle-fill
+      boldText: Praha • Plzeň • Domažlice • Online
+      text: ""
 
 howToJoin:
+  badge: Jednoduchý začátek
   title: Jak se přihlásit a jak to u nás funguje?
   subtitle: Přidat se k nám je velmi snadné a bez závazků. Zde je přehled všeho, co potřebujete vědět před první návštěvou.
+  faqButtonText: Často kladené otázky
+  faqButtonHref: /faq
   items:
     - icon: bi-piggy-bank-fill
       title: Zcela zdarma
@@ -47,6 +50,74 @@ howToJoin:
       title: Nováčkům vše vysvětlíme
       text: Nejsou potřeba žádné předchozí znalosti o debatování. Vše vám od základu trpělivě vysvětlíme a se vším pomůžeme.
 
+clubsSection:
+  badge: Pobočky & Schůzky
+  title: Kde a kdy se scházíme?
+  subtitle: Vyberte si pobočku, která vám nejvíce vyhovuje. Setkání probíhají pravidelně každý týden i během prázdnin.
+  detailButtonText: Podrobnosti o klubu
+  clubs:
+    - name: Debatní klub Praha
+      city: Praha
+      badge: Prezenčně
+      when: Každé pondělí od 18:00
+      where: ČVUT (Thákurova 2700/9, Dejvice) / učebna 347
+      path: /clubs/prague
+      icon: bi-buildings-fill
+    - name: Debatní klub Plzeň
+      city: Plzeň
+      badge: Prezenčně
+      when: Každé úterý od 18:00
+      where: ZČU (Jungmannova 153/1)
+      path: /clubs/pilsen
+      icon: bi-mortarboard-fill
+    - name: Debatní klub Domažlice
+      city: Domažlice
+      badge: Prezenčně
+      when: Každá středa od 16:30
+      where: SZŠ (Chodské náměstí 97)
+      path: /clubs/domazlice
+      icon: bi-geo-alt-fill
+    - name: Online debatní klub
+      city: Online
+      badge: Odkudkoliv
+      when: Každý čtvrtek od 19:00
+      where: Na Discord serveru spolku
+      path: /clubs/online
+      icon: bi-laptop-fill
+
+whyDebate:
+  badge: Přínosy
+  title: Proč debatovat?
+  subtitle: Debatování není jen o vítězství v diskuzi. Je to způsob, jak lépe porozumět světu kolem sebe, získat odvahu a stát se lepší verzí sebe sama.
+
+cards:
+  - image: ./card_learn_debate.png
+    title: Naučte se argumentovat
+    text: Rozvíjejte své kritické myšlení a schopnost přesvědčivě prezentovat své názory. Naučíte se strukturovat své myšlenky, analyzovat argumenty druhých a reagovat na protiargumenty. Tyto dovednosti vám pomohou nejen v debatách, ale i v běžném životě.
+  - image: ./card_new_people.png
+    title: Poznejte nové lidi
+    text: Staňte se součástí komunity mladých lidí, kteří chtějí měnit svět k lepšímu. V našem klubu potkáte přátele z různých škol a měst, se kterými budete sdílet společné zážitky z turnajů, workshopů a společenských akcí.
+  - image: ./card_tournaments.png
+    title: Cestujte na turnaje
+    text: Zúčastněte se debatních soutěží po celé České republice i v zahraničí. Každý rok pořádáme desítky turnajů pro začátečníky i pokročilé. Nejlepší debatéři se mohou kvalifikovat na mezinárodní soutěže v Evropě i zámoří.
+  - image: ./card_courage.png
+    title: Získejte sebevědomí
+    text: Překonejte strach z veřejného vystupování a naučte se mluvit před publikem. Postupně si budujete jistotu při prezentování svých názorů. Mnoho našich absolventů dnes pracuje jako právníci, politici nebo manažeři.
+  - image: ./card_horizons.png
+    title: Rozšiřte si obzory
+    text: Diskutujte o aktuálních tématech z politiky, ekonomiky, vědy i kultury. Každá debata vás donutí prozkoumat nové téma do hloubky a podívat se na něj z různých úhlů pohledu. Stanete se informovanějším občanem.
+  - image: ./card_future.png
+    title: Připravte se na budoucnost
+    text: Dovednosti z debatování využijete ve škole, v práci i v osobním životě. Kritické myšlení, rétorika a schopnost rychle se zorientovat v novém tématu jsou kompetence, které oceňují zaměstnavatelé i univerzity po celém světě.
+
+ctaBanner:
+  title: Chcete si to nezávazně vyzkoušet?
+  text: Přijďte na nejbližší setkání. Nic to nestojí, poprvé se můžete jen dívat a nováčkům se vždy rádi věnujeme.
+  discordButtonText: Discord komunita
+  discordHref: https://discord.gg/qpp8v52AgP
+
+bpFormatTitle: Jaký formát debatujeme?
+
 bpFormat: !markdown |
   V našem spolku se věnujeme formátu British Parliamentary (BP), který je nejrozšířenějším debatním formátem v České republice i ve světě. Tento formát vznikl podle vzoru debat v britském parlamentu a dnes se používá na všech významných mezinárodních soutěžích, včetně mistrovství Evropy a mistrovství světa.
  
@@ -55,6 +126,14 @@ bpFormat: !markdown |
   Každý řečník má na svůj projev sedm minut. Mezi první a poslední minutou projevu mohou protivníci vznášet tzv. points of information – krátké dotazy nebo námitky, na které řečník může, ale nemusí reagovat. Tato interaktivní složka dodává debatám dynamiku a testuje schopnost řečníků myslet na nohou.
  
   Formát BP rozvíjí širokou škálu dovedností: kritické myšlení, argumentaci, veřejné vystupování, týmovou spolupráci i schopnost rychle se zorientovat v novém tématu. Debatéři se učí nahlížet na problémy z různých úhlů pohledu a konstruktivně reagovat na názory druhých. Tyto dovednosti jsou cenné nejen v akademickém prostředí, ale i v profesním a osobním životě.
+
+donationCta:
+  title: Podpořte debatování v Česku
+  text: Učíme mladé lidi argumentovat, naslouchat a kriticky myslet — zdarma a ve volném čase.
+  buttonText: Chci podpořit spolek
+  buttonHref: /podporte-nas
+
+supportersSectionTitle: Podporují nás
 
 supporters:
   - image: ./supporter_eu.png
@@ -69,6 +148,8 @@ supportersDisclaimer: >-
   a stanoviska autorů a nemusí nutně odrážet názory a stanoviska Evropské unie
   nebo Domu zahraniční spolupráce. Evropská unie ani poskytovatel grantu za ně
   nenesou odpovědnost.
+
+linksTitle: Odkazy
 
 links:
   public:

@@ -54,10 +54,19 @@ const LinkSection: React.FC<LinkSectionProps> = ({ title, groups }) => (
   </section>
 );
 
-interface CardData {
-  image: IGatsbyImageData;
-  title: string;
+interface TrustHighlight {
+  icon: string;
+  boldText: string;
   text: string;
+}
+
+interface HeroData {
+  badge: string;
+  title: string;
+  lead: string;
+  secondaryButtonText: string;
+  secondaryButtonHref: string;
+  trustHighlights: TrustHighlight[];
 }
 
 interface HowToJoinItem {
@@ -67,54 +76,62 @@ interface HowToJoinItem {
 }
 
 interface HowToJoinData {
+  badge?: string;
   title: string;
   subtitle: string;
+  faqButtonText?: string;
+  faqButtonHref?: string;
   items: HowToJoinItem[];
+}
+
+interface ClubItem {
+  name: string;
+  city: string;
+  badge: string;
+  when: string;
+  where: string;
+  path: string;
+  icon: string;
+}
+
+interface ClubsSectionData {
+  badge: string;
+  title: string;
+  subtitle: string;
+  detailButtonText: string;
+  clubs: ClubItem[];
+}
+
+interface WhyDebateData {
+  badge: string;
+  title: string;
+  subtitle: string;
+}
+
+interface CardData {
+  image: IGatsbyImageData;
+  title: string;
+  text: string;
+}
+
+interface CtaBannerData {
+  title: string;
+  text: string;
+  discordButtonText: string;
+  discordHref: string;
+}
+
+interface DonationCtaData {
+  title: string;
+  text: string;
+  buttonText: string;
+  buttonHref: string;
 }
 
 interface Supporter {
   src: string;
   name: string;
 }
-
-const CLUBS_LIST = [
-  {
-    name: "Debatní klub Praha",
-    city: "Praha",
-    badge: "Prezenčně",
-    when: "Každé pondělí od 18:00",
-    where: "ČVUT (Thákurova 2700/9, Dejvice)",
-    path: "/clubs/prague",
-    icon: "bi-buildings-fill",
-  },
-  {
-    name: "Debatní klub Plzeň",
-    city: "Plzeň",
-    badge: "Prezenčně",
-    when: "Každé úterý od 18:00",
-    where: "ZČU (Jungmannova 153/1)",
-    path: "/clubs/pilsen",
-    icon: "bi-mortarboard-fill",
-  },
-  {
-    name: "Debatní klub Domažlice",
-    city: "Domažlice",
-    badge: "Prezenčně",
-    when: "Každá středa od 16:30",
-    where: "SZŠ (Chodské náměstí 97)",
-    path: "/clubs/domazlice",
-    icon: "bi-geo-alt-fill",
-  },
-  {
-    name: "Online debatní klub",
-    city: "Online",
-    badge: "Odkudkoliv",
-    when: "Každý čtvrtek od 19:00",
-    where: "Na Discord serveru spolku",
-    path: "/clubs/online",
-    icon: "bi-laptop-fill",
-  },
-];
 
 export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   const yml = data.homepageYaml;
@@ -129,22 +146,13 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
     return img;
   });
 
-  // Order in which the slides are shown. Identity order for a deterministic
-  // SSR/initial paint; the client shuffles it below for a fresh random order
-  // (which also makes the first visible slide random) on every render.
   const [order, setOrder] = useState<number[]>(() => slides.map((_, i) => i));
-  // Position within `order` of the currently visible slide.
   const [activeSlide, setActiveSlide] = useState<number>(0);
-  // The crossfade is disabled for the initial shuffle so the SSR first image
-  // doesn't visibly fade out; it's enabled once the random order is in place.
   const [animate, setAnimate] = useState<boolean>(false);
 
-  // Auto-rotate the banner. The timer only runs on the client, so the build
-  // output is stable. Skip entirely when there is just a single image.
   useEffect(() => {
     if (slides.length <= 1) return;
 
-    // Fisher–Yates shuffle for a fresh random order each client render.
     const shuffled = slides.map((_, i) => i);
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -153,7 +161,6 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
     setOrder(shuffled);
     setActiveSlide(0);
 
-    // Enable the crossfade only after the instant initial swap has painted.
     const animateId = setTimeout(() => setAnimate(true), 50);
 
     const intervalId = setInterval(() => {
@@ -166,24 +173,35 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
     };
   }, [slides.length]);
 
-  invariant(yml.cards, "Cards data is required");
+  invariant(yml.hero, "Hero data is required");
   invariant(yml.howToJoin, "HowToJoin data is required");
+  invariant(yml.clubsSection, "ClubsSection data is required");
+  invariant(yml.whyDebate, "WhyDebate data is required");
+  invariant(yml.cards, "Cards data is required");
+  invariant(yml.ctaBanner, "CtaBanner data is required");
   invariant(yml.bpFormat?.html, "BP format data is required");
+  invariant(yml.donationCta, "DonationCta data is required");
   invariant(yml.links?.public, "Public links are required");
   invariant(yml.links?.members, "Member links are required");
   invariant(yml.supporters, "Supporters data is required");
   invariant(yml.supportersDisclaimer, "Supporters disclaimer is required");
 
+  const hero = yml.hero as HeroData;
   const howToJoin = yml.howToJoin as HowToJoinData;
+  const clubsSection = yml.clubsSection as ClubsSectionData;
+  const whyDebate = yml.whyDebate as WhyDebateData;
+  const ctaBanner = yml.ctaBanner as CtaBannerData;
+  const donationCta = yml.donationCta as DonationCtaData;
+  const bpFormatTitle = yml.bpFormatTitle || "Jaký formát debatujeme?";
+  const linksTitle = yml.linksTitle || "Odkazy";
+  const supportersSectionTitle = yml.supportersSectionTitle || "Podporují nás";
 
   const cards: CardData[] = yml.cards.map((c) => {
     invariant(c, "Card is required");
-
     const image = getImage(c.image as ImageDataLike);
     invariant(image, "Card image is required");
     invariant(c.title, "Card title is required");
     invariant(c.text, "Card text is required");
-
     return {
       image,
       title: c.title,
@@ -222,40 +240,41 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section className="py-5">
         <div className="row align-items-center">
           <div className="col-lg-6 mb-4 mb-lg-0">
-            <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary-light text-primary fw-semibold small mb-3">
-              <i className="bi bi-stars"></i> Přijímáme nováčky po celý rok
-            </div>
-            <h1 className="display-4 fw-bold mb-3">
-              Debatní spolek Debatního deníku
-            </h1>
-            <p className="lead mb-4 text-muted">
-              Přidejte se k otevřené komunitě. Naučíme vás přesvědčivě argumentovat, pohotově reagovat a mluvit před lidmi bez obav.
-            </p>
+            {hero.badge && (
+              <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary-light text-primary fw-semibold small mb-3">
+                <i className="bi bi-stars"></i> {hero.badge}
+              </div>
+            )}
+            <h1 className="display-4 fw-bold mb-3">{hero.title}</h1>
+            <p className="lead mb-4 text-muted">{hero.lead}</p>
             <div className="d-flex gap-3 flex-wrap align-items-center mb-4">
               <ClubPicker buttonVariant="lg" />
-              <a href="#jak-to-funguje" className="btn btn-outline-primary btn-lg">
-                Jak to funguje?
-              </a>
+              {hero.secondaryButtonText && (
+                <a
+                  href={hero.secondaryButtonHref || "#jak-to-funguje"}
+                  className="btn btn-outline-primary btn-lg"
+                >
+                  {hero.secondaryButtonText}
+                </a>
+              )}
             </div>
             {/* Trust highlights */}
-            <div className="row g-2 pt-3 border-top">
-              <div className="col-sm-6 d-flex align-items-center gap-2 text-muted small">
-                <i className="bi bi-check-circle-fill text-success fs-6"></i>
-                <span><strong>100% Zdarma</strong> a bez poplatků</span>
+            {hero.trustHighlights?.length > 0 && (
+              <div className="row g-2 pt-3 border-top">
+                {hero.trustHighlights.map((th, index) => (
+                  <div
+                    key={index}
+                    className="col-sm-6 d-flex align-items-center gap-2 text-muted small"
+                  >
+                    <i className={`bi ${th.icon || "bi-check-circle-fill"} text-success fs-6`}></i>
+                    <span>
+                      {th.boldText && <strong>{th.boldText}</strong>}{" "}
+                      {th.text}
+                    </span>
+                  </div>
+                ))}
               </div>
-              <div className="col-sm-6 d-flex align-items-center gap-2 text-muted small">
-                <i className="bi bi-check-circle-fill text-success fs-6"></i>
-                <span><strong>Vhodné pro nováčky</strong> (vše vysvětlíme)</span>
-              </div>
-              <div className="col-sm-6 d-flex align-items-center gap-2 text-muted small">
-                <i className="bi bi-check-circle-fill text-success fs-6"></i>
-                <span><strong>Otevřeno všem</strong> bez ohledu na věk</span>
-              </div>
-              <div className="col-sm-6 d-flex align-items-center gap-2 text-muted small">
-                <i className="bi bi-check-circle-fill text-success fs-6"></i>
-                <span><strong>Praha • Plzeň • Domažlice • Online</strong></span>
-              </div>
-            </div>
+            )}
           </div>
           <div className="col-lg-6">
             <div
@@ -267,7 +286,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
                 <GatsbyImage
                   key={slideIndex}
                   image={slides[slideIndex]}
-                  alt="Debatní klub"
+                  alt={hero.title}
                   className={`banner-slide${
                     position === activeSlide ? " banner-slide--active" : ""
                   }`}
@@ -282,9 +301,11 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section id="jak-to-funguje" className="py-5">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
-            <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
-              Jednoduchý začátek
-            </span>
+            {howToJoin.badge && (
+              <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
+                {howToJoin.badge}
+              </span>
+            )}
             <h2 className="display-5 fw-bold mb-3">{howToJoin.title}</h2>
             <p className="lead text-muted">{howToJoin.subtitle}</p>
           </div>
@@ -309,8 +330,12 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
         </div>
         <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 text-center">
           <ClubPicker buttonVariant="lg" />
-          <a href="/faq" className="btn btn-outline-primary btn-lg">
-            <i className="bi bi-question-circle me-2"></i> Často kladené otázky
+          <a
+            href={howToJoin.faqButtonHref || "/faq"}
+            className="btn btn-outline-primary btn-lg"
+          >
+            <i className="bi bi-question-circle me-2"></i>{" "}
+            {howToJoin.faqButtonText || "Často kladené otázky"}
           </a>
         </div>
       </section>
@@ -319,17 +344,17 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section className="py-5">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
-            <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
-              Pobočky & Schůzky
-            </span>
-            <h2 className="display-5 fw-bold mb-3">Kde a kdy se scházíme?</h2>
-            <p className="lead text-muted">
-              Vyberte si pobočku, která vám nejvíce vyhovuje. Setkání probíhají pravidelně každý týden i během prázdnin.
-            </p>
+            {clubsSection.badge && (
+              <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
+                {clubsSection.badge}
+              </span>
+            )}
+            <h2 className="display-5 fw-bold mb-3">{clubsSection.title}</h2>
+            <p className="lead text-muted">{clubsSection.subtitle}</p>
           </div>
         </div>
         <div className="row g-4">
-          {CLUBS_LIST.map((club, index) => (
+          {clubsSection.clubs.map((club: ClubItem, index: number) => (
             <div key={index} className="col-md-6 col-lg-3">
               <div className="card h-100 p-4 shadow-sm border-0 transition-card d-flex flex-column justify-content-between">
                 <div>
@@ -357,7 +382,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
                     href={club.path}
                     className="btn btn-outline-primary btn-sm w-100 fw-semibold"
                   >
-                    Podrobnosti o klubu &rarr;
+                    {clubsSection.detailButtonText || "Podrobnosti o klubu"} &rarr;
                   </a>
                 </div>
               </div>
@@ -370,14 +395,13 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section className="py-5">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
-            <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
-              Přínosy
-            </span>
-            <h2 className="display-5 fw-bold mb-3">Proč debatovat?</h2>
-            <p className="lead text-muted">
-              Debatování není jen o vítězství v diskuzi. Je to způsob, jak lépe
-              porozumět světu kolem sebe, získat odvahu a stát se lepší verzí sebe sama.
-            </p>
+            {whyDebate.badge && (
+              <span className="badge bg-primary text-white rounded-pill px-3 py-2 text-uppercase mb-2">
+                {whyDebate.badge}
+              </span>
+            )}
+            <h2 className="display-5 fw-bold mb-3">{whyDebate.title}</h2>
+            <p className="lead text-muted">{whyDebate.subtitle}</p>
           </div>
         </div>
         <div className="row g-4">
@@ -403,20 +427,21 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section className="py-5 px-4 rounded bg-primary-light my-5 shadow-sm text-center">
         <div className="row justify-content-center">
           <div className="col-lg-8">
-            <h2 className="display-6 fw-bold mb-3">Chcete si to nezávazně vyzkoušet?</h2>
-            <p className="lead mb-4 text-muted">
-              Přijďte na nejbližší setkání. Nic to nestojí, poprvé se můžete jen dívat a nováčkům se vždy rádi věnujeme.
-            </p>
+            <h2 className="display-6 fw-bold mb-3">{ctaBanner.title}</h2>
+            <p className="lead mb-4 text-muted">{ctaBanner.text}</p>
             <div className="d-flex gap-3 justify-content-center flex-wrap">
               <ClubPicker buttonVariant="lg" />
-              <a
-                href="https://discord.gg/qpp8v52AgP"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline-primary btn-lg"
-              >
-                <i className="bi bi-discord me-2"></i> Discord komunita
-              </a>
+              {ctaBanner.discordHref && (
+                <a
+                  href={ctaBanner.discordHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary btn-lg"
+                >
+                  <i className="bi bi-discord me-2"></i>{" "}
+                  {ctaBanner.discordButtonText || "Discord komunita"}
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -427,7 +452,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <h2 className="display-5 fw-bold mb-4 text-center">
-              Jaký formát debatujeme?
+              {bpFormatTitle}
             </h2>
             <div dangerouslySetInnerHTML={{ __html: bpFormat }}></div>
           </div>
@@ -438,13 +463,13 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
       <section className="py-4 px-4 rounded bg-light border my-4">
         <div className="row justify-content-center">
           <div className="col-lg-8 text-center">
-            <h3 className="fw-bold mb-2">Podpořte debatování v Česku</h3>
-            <p className="mb-3 text-muted">
-              Učíme mladé lidi argumentovat, naslouchat a kriticky myslet —
-              zdarma a ve volném čase.
-            </p>
-            <a href="/podporte-nas" className="btn btn-outline-primary">
-              Chci podpořit spolek
+            <h3 className="fw-bold mb-2">{donationCta.title}</h3>
+            <p className="mb-3 text-muted">{donationCta.text}</p>
+            <a
+              href={donationCta.buttonHref || "/podporte-nas"}
+              className="btn btn-outline-primary"
+            >
+              {donationCta.buttonText || "Chci podpořit spolek"}
             </a>
           </div>
         </div>
@@ -452,16 +477,18 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
 
       {/* Section 8: External Links */}
       <LinkSection
-        title="Odkazy"
+        title={linksTitle}
         groups={[
           { title: "Pro veřejnost", links: publicLinks },
           { title: "Pro členy", links: memberLinks },
         ]}
       />
 
-      {/* Section 5: Supporters */}
+      {/* Section 9: Supporters */}
       <section className="py-5">
-        <h2 className="display-6 fw-bold mb-4 text-center">Podporují nás</h2>
+        <h2 className="display-6 fw-bold mb-4 text-center">
+          {supportersSectionTitle}
+        </h2>
         <div className="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-5">
           {supporters.map((s, i) => (
             <img
@@ -494,6 +521,50 @@ export const query = graphql`
           gatsbyImageData(width: 600, height: 450, placeholder: BLURRED)
         }
       }
+      hero {
+        badge
+        title
+        lead
+        secondaryButtonText
+        secondaryButtonHref
+        trustHighlights {
+          icon
+          boldText
+          text
+        }
+      }
+      howToJoin {
+        badge
+        title
+        subtitle
+        faqButtonText
+        faqButtonHref
+        items {
+          icon
+          title
+          text
+        }
+      }
+      clubsSection {
+        badge
+        title
+        subtitle
+        detailButtonText
+        clubs {
+          name
+          city
+          badge
+          when
+          where
+          path
+          icon
+        }
+      }
+      whyDebate {
+        badge
+        title
+        subtitle
+      }
       cards {
         image {
           childImageSharp {
@@ -503,15 +574,23 @@ export const query = graphql`
         text
         title
       }
-      howToJoin {
+      ctaBanner {
         title
-        subtitle
-        items {
-          icon
-          title
-          text
-        }
+        text
+        discordButtonText
+        discordHref
       }
+      bpFormatTitle
+      bpFormat {
+        html
+      }
+      donationCta {
+        title
+        text
+        buttonText
+        buttonHref
+      }
+      linksTitle
       links {
         members {
           title
@@ -522,9 +601,7 @@ export const query = graphql`
           title
         }
       }
-      bpFormat {
-        html
-      }
+      supportersSectionTitle
       supporters {
         image {
           publicURL
