@@ -4,11 +4,6 @@ path: /clubs/prague
 template: club
 
 locations:
-  # - name: Budova SSPŠ
-  #   info:
-  #     - Od 18:30 v učebně 211, pouze přes školní rok
-  #     - Preslova 72/25, Praha 5
-  #   map: <iframe style="border:none" src="https://mapy.com/s/jelutojugu" frameborder="0"></iframe>
   - name: ČVUT (České vysoké učení technické)
     info:
       - Pondělí od 18:00, učebna 347 ve 2. patře
@@ -32,56 +27,91 @@ owners:
     image: ./owners/online_divis.png
     discord: mozekruzovej
     email: matej.divis@debatnispolek.debatnidenik.cz
-#  - name: Tammam Hennawi
-#    image: ./owners/praha_hennawi.png
-#    discord: tammamhennawi
-#    email: tammamhennawi@gmail.com
 ---
 
-# Debatní klub v Praze
+<div class="club-origin-badge">
+  <i class="bi bi-patch-check-fill text-primary"></i> Původní a zakládající klub spolku
+</div>
 
-Chceš si zlepšit argumentaci, naučit se mluvit jasně a sebevědomě, nebo si prostě jen dobře zadiskutovat nad zajímavými tématy? Debatní klub Praha je otevřený prostor pro všechny, kdo mají chuť přemýšlet, diskutovat a rozvíjet své názory.  
-Jedná se o **nejstarší debatní klub spolku** a dlouhodobě fungující místo, kde se potkávají lidé s chutí kultivovaně diskutovat.
+# Debatní klub Praha (ČVUT)
 
-Klub je primárně pro studující napříč obory – klidně i technickými 😅 – a vítán je kdokoliv **od 14 do 99 let** se zájmem o debatu. Nezáleží na tom, jestli jsi úplný začátečník, nebo máš zkušenosti ze soutěžní debaty.
+Debatní klub Praha je **originálním a nejstarším klubem** našeho spolku. Právě zde začala celá tradice otevřených debat a setkávání. Dnes působíme na půdě **ČVUT**, konkrétně na **Fakultě informačních technologií (FIT)** v Dejvicích.
 
-- Otevřeno pro začátečníky i pokročilé
-- Trénink argumentace, rétoriky a kritického myšlení
-- Soutěžní i nesoutěžní debaty
-- Aktuální společenská i nadčasová témata
-- Přátelská, respektující a otevřená atmosféra
-- Prostor pro feedback a dlouhodobé zlepšování
+<div class="club-timeline">
+  <div class="timeline-step">
+    <div class="step-tag">1. Začátek (2019)</div>
+    <div class="step-title">SSPŠ</div>
+    <p class="step-desc">Založení původního klubu na Smíchovské střední průmyslové škole.</p>
+  </div>
+  <div class="timeline-step">
+    <div class="step-tag">2. Přesun a růst</div>
+    <div class="step-title">Lexis</div>
+    <p class="step-desc">Rozvoj komunity v prostorách jazykové školy Lexis v centru Prahy.</p>
+  </div>
+  <div class="timeline-step current">
+    <div class="step-tag">3. Současnost</div>
+    <div class="step-title">ČVUT</div>
+    <p class="step-desc">Zázemí přímo na Fakultě informačních technologií (FIT) v Dejvicích.</p>
+  </div>
+</div>
 
 ## Kdy a kde se scházíme
 
-Scházíme se každé **pondělí od 18:00** v prostorách **ČVUT (České vysoké učení technické)**,  
-Thákurova 2700/9, 160 00 Praha 6 – Dejvice.
+Setkáváme se každé **pondělí od 18:00** v prostorách **ČVUT**, konkrétně na Fakultě informačních technologií (Nová budova ČVUT, Thákurova 2700/9, Praha 6 – Dejvice).
 
-Konkrétní učebnu a případné změny vždy najdete na našem Discordu. Pokud si nejste jistí, klidně se zeptejte v kanálu *Prague general*.
+Aktuální místnost i případné novinky vždy najdete na našem Discordu v kanálu *#prague-general*.
 
-**Jak se k nám dostanete**
+## Jak se k nám dostat
 
-- **Metro A** – stanice **Dejvická**, odkud je to k budově pár minut pěšky.
-- **Tramvaje** – přímo u areálu je zastávka **Thákurova** (linky **20** a **26**). Nedaleko je také přestupní uzel **Dejvická** (tramvaje **8**, **18**, **20** a **26**).
+<div class="club-transport-grid">
+  <div class="transport-card">
+    <div>
+      <div class="transport-icon"><i class="bi bi-train-front"></i></div>
+      <h6>Městská hromadná doprava</h6>
+      <p><strong>Metro A</strong> – stanice <strong>Dejvická</strong>, odtud 5 minut pěšky kampusem.<br>
+      <strong>Tramvaje</strong> – zastávka <strong>Thákurova</strong> (linky 20, 26) přímo u budovy, nebo uzel <strong>Dejvická</strong> (linky 8, 18, 20, 26).</p>
+    </div>
+  </div>
+  <div class="transport-card">
+    <div>
+      <div class="transport-icon"><i class="bi bi-door-open"></i></div>
+      <h6>Vstup do budovy a vrátnice</h6>
+      <p>Na vrátnici je pro debatéry připraven <strong>podpisový arch</strong> – zapište se a vrátnice vás pustí do budovy (pokud arch ještě není vyložen, vyčkejte příchodu organizátora).</p>
+    </div>
+    <div class="mt-3 pt-2 border-top">
+      <small class="text-muted"><i class="bi bi-geo-alt-fill text-primary me-1"></i> Místo setkání: <strong>Učebna 347 (2. patro - výtahem do trojky)</strong></small>
+    </div>
+  </div>
+</div>
 
-Na vrátnici by měl být připravený podpisový arch pro přihlášené debatéry – zapište se do něj a po podepsání vás vrátnice pustí do budovy. Pokud arch na vrátnici ještě není, vyčkejte příchodu organizátora, který jej přinese. Sraz je v **učebně 347 ve druhém patře**. Pro orientaci uvnitř se hodí [mapa budovy](https://debatnispolek.sharepoint.com/:b:/g/IQAm9wuagun8T4yWoDAblsuhAa8hRWd3OBe7Iy0erBa4SDM?e=ZIobNa).
+<div class="building-map-highlight">
+  <div class="building-map-info">
+    <i class="bi bi-map-fill"></i>
+    <div>
+      <div class="title">Plán a orientace v budově FIT ČVUT</div>
+      <div class="subtitle">Snadno najděte učebnu 347 ve 2. patře Nové budovy ČVUT</div>
+    </div>
+  </div>
+  <a href="https://debatnispolek.sharepoint.com/:b:/g/IQAm9wuagun8T4yWoDAblsuhAa8hRWd3OBe7Iy0erBa4SDM?e=ZIobNa" target="_blank" rel="noopener noreferrer" class="btn btn-primary building-map-btn text-white text-decoration-none">
+    <i class="bi bi-file-earmark-pdf me-1"></i> Otevřít mapu budovy (PDF)
+  </a>
+</div>
 
-## Přihlášení na klub
+<div class="club-cta-banner">
+  <h4>Chceš si přijít zadebatovat?</h4>
+  <p>Vyplň krátký přihlašovací formulář, ať víme, s kým máme počítat, a v pondělí v 18:00 prostě doraz.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfg5RxVJv7d-GuqMddUOH7WkXAoIFduUH5UD9a33fWftXqO4w/viewform?usp=dialog" class="btn btn-primary btn-lg px-4 fw-bold text-white text-decoration-none">
+    <i class="bi bi-pencil-square me-2"></i>Přihlásit se na debatu
+  </a>
+</div>
 
-Pokud se chceš zúčastnit, **vyplň prosím přihlašovací formulář a prostě přijď**:
+## Jak setkání probíhá
 
-**👉 [Klikni zde pro přihlášení](https://docs.google.com/forms/d/e/1FAIpQLSfg5RxVJv7d-GuqMddUOH7WkXAoIFduUH5UD9a33fWftXqO4w/viewform?usp=dialog)** nebo klikni na "Přihlaš se na debatu" pro výběr debatního klubu.
+- **18:00 – Úvod & začátečnický workshop**: Pokud jsi na debatě poprvé, vysvětlíme pravidla a formát, takže nepotřebuješ žádnou předchozí zkušenost.
+- **18:30 – Zadání teze a příprava**: Vyhlášení debatního tématu a čas na sestavení argumentů.
+- **19:00 – Debata**: Samotná debata s moderováním.
+- **Po debatě**: Společně se přesuneme do některé z kaváren či hospod v okolí Dejvic na zpětnou vazbu od rozhodčích, vyhlášení a volnou diskuzi.
 
-Formulář slouží hlavně pro organizační účely, aby bylo jasné, kolik lidí dorazí. Vyplnění zabere jen chvilku.
+## Jdeš poprvé?
 
-## Po debatě
-
-Po debatě často pokračujeme neformálně – přesuneme se do některé z hospod nebo kaváren v okolí Dejvic. Tam proběhne vyhodnocení debaty, vyhlášení vítěze, zpětná vazba a pak už jen volná diskuze a zábava.
-
-## Jdu poprvé na klub
-
-Jdeš k nám poprvé? Super! Doporučujeme přidat se na náš Discord a ve výběru rolí zvolit klub **Praha**. Získáš tím přístup do organizačních kanálů, kde se řeší aktuální informace a změny.
-
-**Začátečnický workshop**  
-Pokud jsi na debatním klubu poprvé, můžeš se zapojit do úvodního workshopu, kde vysvětlíme základní pravidla a průběh debat. Stačí dorazit včas na začátek setkání v 18:00.
-
+Stačí dorazit včas (krátce před 18:00) a mít chuť diskutovat. Doporučujeme se také připojit na náš Discord a v sekci výběru rolí si zvolit **Praha** pro přístup k aktuálním organizačním informacím.
