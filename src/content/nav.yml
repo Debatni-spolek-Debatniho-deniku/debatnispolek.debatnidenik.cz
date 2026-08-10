@@ -12,21 +12,11 @@
       path: /clubs/online
     - divider: true
     - label: Často kladené dotazy
-      path: https://debatnispolek.sharepoint.com/:w:/g/Ed_Up0SkbixGk3AtLfq0YDwB5gDHxOKDWDGlzFvR4WL3ww
+      path: /faq
     - label: Založ si svůj klub
       path: /clubs/start-your-own-club
-# - label: Debatní turnaje
-#   path: /turnaje
-# - label: Debatní spolek
-#   items:
-#     - label: Činnost spolku
-#       path: /organization/activities
-#     - label: Organizace spolku
-#       path: /organization/structure
-#     - label: Členství ve spolku
-#       path: /organization/membership
-# - label: Staré Linktree
-#   path: https://linktr.ee/debatnispolekdebatnihodeniku
+- label: Často kladené dotazy
+  path: /faq
 - label: Discord
   path: https://discord.gg/qpp8v52AgP
 - label: O Spolku
