@@ -10,19 +10,6 @@ hero:
   lead: Přidejte se k otevřené komunitě. Naučíme vás přesvědčivě argumentovat, pohotově reagovat a mluvit před lidmi bez obav.
   secondaryButtonText: Jak to funguje?
   secondaryButtonHref: "#jak-to-funguje"
-  trustHighlights:
-    - icon: bi-check-circle-fill
-      boldText: 100% Zdarma
-      text: a bez poplatků
-    - icon: bi-check-circle-fill
-      boldText: Vhodné pro nováčky
-      text: (vše vysvětlíme)
-    - icon: bi-check-circle-fill
-      boldText: Otevřeno všem
-      text: bez ohledu na věk
-    - icon: bi-check-circle-fill
-      boldText: Praha • Plzeň • Domažlice • Online
-      text: ""
 
 howToJoin:
   badge: Jednoduchý začátek

@@ -43,7 +43,12 @@ const config: GatsbyConfig = {
         path: "./src/content",
       },
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        resolveSiteUrl: () => "https://debatnispolek.debatnidenik.cz",
+      },
+    },
   ],
 };
 

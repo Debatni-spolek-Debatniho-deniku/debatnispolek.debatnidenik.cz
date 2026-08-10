@@ -54,19 +54,12 @@ const LinkSection: React.FC<LinkSectionProps> = ({ title, groups }) => (
   </section>
 );
 
-interface TrustHighlight {
-  icon: string;
-  boldText: string;
-  text: string;
-}
-
 interface HeroData {
   badge: string;
   title: string;
   lead: string;
   secondaryButtonText: string;
   secondaryButtonHref: string;
-  trustHighlights: TrustHighlight[];
 }
 
 interface HowToJoinItem {
@@ -247,7 +240,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
             )}
             <h1 className="display-4 fw-bold mb-3">{hero.title}</h1>
             <p className="lead mb-4 text-muted">{hero.lead}</p>
-            <div className="d-flex gap-3 flex-wrap align-items-center mb-4">
+            <div className="d-flex gap-3 flex-wrap align-items-center">
               <ClubPicker buttonVariant="lg" />
               {hero.secondaryButtonText && (
                 <a
@@ -258,23 +251,6 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
                 </a>
               )}
             </div>
-            {/* Trust highlights */}
-            {hero.trustHighlights?.length > 0 && (
-              <div className="row g-2 pt-3 border-top">
-                {hero.trustHighlights.map((th, index) => (
-                  <div
-                    key={index}
-                    className="col-sm-6 d-flex align-items-center gap-2 text-muted small"
-                  >
-                    <i className={`bi ${th.icon || "bi-check-circle-fill"} text-success fs-6`}></i>
-                    <span>
-                      {th.boldText && <strong>{th.boldText}</strong>}{" "}
-                      {th.text}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
           <div className="col-lg-6">
             <div
@@ -527,11 +503,6 @@ export const query = graphql`
         lead
         secondaryButtonText
         secondaryButtonHref
-        trustHighlights {
-          icon
-          boldText
-          text
-        }
       }
       howToJoin {
         badge
