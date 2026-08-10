@@ -39,7 +39,7 @@ Debatní klub Praha je **originálním a nejstarším klubem** našeho spolku. P
 
 <div class="club-timeline">
   <div class="timeline-step">
-    <div class="step-tag">1. Začátek (2019)</div>
+    <div class="step-tag">1. Začátek (2023)</div>
     <div class="step-title">SSPŠ</div>
     <p class="step-desc">Založení původního klubu na Smíchovské střední průmyslové škole.</p>
   </div>
