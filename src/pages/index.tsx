@@ -62,6 +62,13 @@ interface HeroData {
   secondaryButtonHref: string;
 }
 
+interface DonationCtaData {
+  title: string;
+  text: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
 interface HowToJoinItem {
   icon: string;
   title: string;
@@ -112,13 +119,6 @@ interface CtaBannerData {
   text: string;
   discordButtonText: string;
   discordHref: string;
-}
-
-interface DonationCtaData {
-  title: string;
-  text: string;
-  buttonText: string;
-  buttonHref: string;
 }
 
 interface Supporter {
@@ -230,7 +230,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   return (
     <Layout>
       {/* Section 1: Hero */}
-      <section className="py-5">
+      <section className="pt-4 pt-lg-5 pb-3 pb-lg-4">
         <div className="row align-items-center">
           <div className="col-lg-6 mb-4 mb-lg-0">
             {hero.badge && (
@@ -269,6 +269,22 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Donation CTA */}
+      <section className="py-4 px-4 rounded bg-primary-light my-4 text-center shadow-sm">
+        <div className="row justify-content-center">
+          <div className="col-lg-9 col-xl-8">
+            <h2 className="h4 fw-bold mb-2">{donationCta.title}</h2>
+            <p className="text-muted mb-3">{donationCta.text}</p>
+            <a
+              href={donationCta.buttonHref || "/podporte-nas"}
+              className="btn btn-primary px-4 py-2 fw-semibold"
+            >
+              {donationCta.buttonText || "Chci podpořit spolek"}
+            </a>
           </div>
         </div>
       </section>
@@ -435,23 +451,7 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
         </div>
       </section>
 
-      {/* Section 7: Donation CTA */}
-      <section className="py-4 px-4 rounded bg-light border my-4">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 text-center">
-            <h3 className="fw-bold mb-2">{donationCta.title}</h3>
-            <p className="mb-3 text-muted">{donationCta.text}</p>
-            <a
-              href={donationCta.buttonHref || "/podporte-nas"}
-              className="btn btn-outline-primary"
-            >
-              {donationCta.buttonText || "Chci podpořit spolek"}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 8: External Links */}
+      {/* Section 7: External Links */}
       <LinkSection
         title={linksTitle}
         groups={[
