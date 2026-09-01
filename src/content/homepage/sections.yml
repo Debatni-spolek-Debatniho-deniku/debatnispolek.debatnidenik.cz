@@ -129,6 +129,8 @@ supporters:
     name: Západočeská univerzita v Plzni
   - image: ./supporter_plzen.png
     name: Město Plzeň
+  - image: ./supporter_cvutfit.png
+    name: Fakulta informačních technologií Českého vysokého učení technického v Praze
 
 supportersDisclaimer: >-
   Financováno Evropskou unií. Vyjádřené názory a stanoviska představují názory
