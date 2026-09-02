@@ -19,14 +19,20 @@ export default function Generic({ data }: PageProps<Queries.GenericPageQuery>) {
 }
 
 export const Head = ({ data }: HeadProps<Queries.GenericPageQuery>) => (
-  <SEO title={data.markdownRemark?.frontmatter?.title} />
+  <SEO
+    title={data.markdownRemark?.frontmatter?.title}
+    pathname={data.markdownRemark?.frontmatter?.path || undefined}
+    description={(data.markdownRemark as any)?.excerpt}
+  />
 );
 
 export const query = graphql`
   query GenericPage($markdownId: String!) {
     markdownRemark(id: { eq: $markdownId }) {
+      excerpt(pruneLength: 160)
       frontmatter {
         title
+        path
       }
       html
     }

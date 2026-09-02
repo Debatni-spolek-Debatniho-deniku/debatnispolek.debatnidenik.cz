@@ -120,14 +120,21 @@ export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
 }
 
 export const Head = ({ data }: HeadProps<Queries.ClubPageQuery>) => (
-  <SEO title={data.markdownRemark?.frontmatter?.title} />
+  <SEO
+    title={data.markdownRemark?.frontmatter?.title}
+    pathname={data.markdownRemark?.frontmatter?.path || undefined}
+    description={(data.markdownRemark as any)?.excerpt}
+    includeLocalOrg={data.markdownRemark?.frontmatter?.path === "/clubs/prague"}
+  />
 );
 
 export const query = graphql`
   query ClubPage($markdownId: String!) {
     markdownRemark(id: { eq: $markdownId }) {
+      excerpt(pruneLength: 160)
       frontmatter {
         title
+        path
         locations {
           name
           info

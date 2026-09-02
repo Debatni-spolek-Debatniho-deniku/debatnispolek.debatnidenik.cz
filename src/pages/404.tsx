@@ -12,4 +12,4 @@ export default function NotFoundPage() {
   );
 }
 
-export const Head = () => <SEO title="Stránka nenalezena" />;
+export const Head = () => <SEO title="Stránka nenalezena" pathname="/404/" noindex={true} />;

@@ -487,7 +487,14 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   );
 }
 
-export const Head = () => <SEO />;
+export const Head = () => (
+  <SEO
+    title="Debatní klub Praha a Plzeň"
+    description="Přidejte se do debatního klubu v Praze na ČVUT nebo v Plzni. Naučíme vás argumentovat a mluvit před lidmi – zdarma, pro každého. Přijďte na setkání!"
+    pathname="/"
+    includeLocalOrg={true}
+  />
+);
 
 export const query = graphql`
   query Homepage {

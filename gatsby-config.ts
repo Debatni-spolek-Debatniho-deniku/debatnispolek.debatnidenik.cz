@@ -3,6 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Debatní spolek Debatního deníku`,
+    description: `Přidejte se do debatního klubu v Praze na ČVUT nebo v Plzni. Naučíme vás argumentovat a mluvit před lidmi – zdarma, pro každého.`,
     siteUrl: `https://debatnispolek.debatnidenik.cz`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -47,9 +48,36 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         resolveSiteUrl: () => "https://debatnispolek.debatnidenik.cz",
+        excludes: [
+          "/casto-kladene-dotazy",
+          "/casto-kladene-dotazy/",
+          "/404",
+          "/404/",
+          "/404.html",
+        ],
+        serialize: (node: { path: string }) => {
+          let priority = 0.7;
+          let changefreq = "weekly";
+          if (node.path === "/") {
+            priority = 1.0;
+            changefreq = "daily";
+          } else if (node.path.startsWith("/clubs/")) {
+            priority = 0.9;
+            changefreq = "weekly";
+          } else if (node.path === "/faq/" || node.path === "/faq") {
+            priority = 0.8;
+            changefreq = "monthly";
+          }
+          return {
+            url: node.path,
+            changefreq,
+            priority,
+          };
+        },
       },
     },
   ],
 };
 
 export default config;
+
