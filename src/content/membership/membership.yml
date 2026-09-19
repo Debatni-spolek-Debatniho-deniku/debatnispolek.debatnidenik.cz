@@ -1,0 +1,167 @@
+hero:
+  badge: "Členství & Komunita"
+  title: "Členství ve spolku"
+  lead: >-
+    Spolek je otevřeným společenstvím lidí, kteří se podílejí na rozvoji
+    debatování v České republice — aktivních debatérů, alumni i dospělých
+    příznivců a dobrovolníků. Členství je jednotné: všichni členové mají
+    stejná práva i povinnosti.
+  primaryButtonText: "Stáhnout přihlášku"
+  primaryButtonHref: "https://debatnispolek.sharepoint.com/:f:/g/IgBrlH7R7ZqjT5gjLzBnIAd8AX2eXlCNpw2dYNgrm3DAhW0"
+  secondaryButtonText: "Jak se stát členem"
+  secondaryButtonHref: "#jak-se-stat-clenem"
+
+whoCanJoin:
+  badge: "Podmínky vstupu"
+  title: "Kdo se může stát členem?"
+  lead: >-
+    Členem spolku se může stát kdokoli, kdo souhlasí se stanovami spolku.
+    Spolek sdružuje osoby bez ohledu na věk a členství není podmíněno
+    aktivním debatováním v některém z klubů.
+  statutesLink: "https://debatnispolek.sharepoint.com/:w:/g/IQDtM__7K9K_R7ZykBDmwBxFAeIJqYEm0Q0W_tIlgEInwzY"
+  items:
+    - icon: "bi-people-fill"
+      title: "Bez ohledu na věk"
+      text: "Spolek sdružuje osoby bez ohledu na věk — od studentů středních i vysokých škol až po dospělé příznivce a alumni."
+    - icon: "bi-chat-heart-fill"
+      title: "Debatér, alumni i příznivec"
+      text: "Členství není podmíněno aktivním debatováním v klubu. Vítáni jsou všichni, kdo chtějí podpořit rozvoj debatování."
+    - icon: "bi-file-earmark-check-fill"
+      title: "Souhlas se stanovami"
+      text: "Základním předpokladem členství je seznámení se stanovami spolku a vyjádření souhlasu s jejich zněním."
+
+rights:
+  badge: "Výhody & Práva"
+  title: "Co vám členství přináší?"
+  lead: "Všichni členové mají jednotné postavení a stejná práva podílet se na chodu i aktivitách spolku."
+  items:
+    - icon: "bi-calendar-event-fill"
+      title: "Účast na aktivitách spolku"
+      text: "Právo účastnit se aktivit spolku a být včas a přednostně informován o jejich konání."
+    - icon: "bi-check2-square"
+      title: "Hlasování a rozhodování"
+      text: "Právo hlasovat na členské schůzi, předkládat na ní návrhy a podílet se na rozhodování o směřování spolku."
+    - icon: "bi-trophy-fill"
+      title: "Přednost na turnajích"
+      text: "Mít přednost při registraci a účasti na akcích a turnajích pořádaných spolkem."
+    - icon: "bi-discord"
+      title: "Interní Discord spolku"
+      text: "Vstoupit do interní komunikace na spolkovém Discordu a aktivně se zapojit do diskusí a organizace."
+    - icon: "bi-envelope-paper-fill"
+      title: "Spolkový newsletter"
+      text: "Dostávat nepravidelný spolkový newsletter se souhrnem dění, plánů a výsledků debatních aktivit."
+
+responsibilities:
+  badge: "Povinnosti člena"
+  title: "Povinnosti člena"
+  lead: "Od každého člena se očekává zodpovědný přístup k hodnotám spolku a dodržování základních pravidel:"
+  items:
+    - icon: "bi-file-earmark-lock2-fill"
+      title: "Dodržovat stanovy spolku"
+      text: "Jednat v souladu se stanovami a rozhodnutími volených orgánů spolku."
+    - icon: "bi-shield-fill-check"
+      title: "Chránit dobré jméno spolku"
+      text: "Nejednat způsobem, který by poškozoval dobré jméno a reputaci spolku na veřejnosti."
+    - icon: "bi-lightning-charge-fill"
+      title: "Zapojovat se do činnosti"
+      text: "Aktivně se dle svých možností zapojovat do činnosti a chodu debatního spolku."
+    - icon: "bi-credit-card-fill"
+      title: "Hradit členský příspěvek"
+      text: "Pravidelně a řádně hradit členský příspěvek podle platných pravidel."
+
+fees:
+  badge: "Příspěvky"
+  title: "Členský příspěvek"
+  lead: >-
+    Výši a podmínky členského příspěvku stanovuje rozhodnutí debatního výboru.
+    Příspěvek je možné platit měsíčně, nebo ročně.
+  decisionLink: "https://debatnispolek.sharepoint.com/:w:/g/IQALKzoG_DtUSIajYAErXUeGAR8pIM6uB8sepNicne3En7E"
+  decisionLinkText: "Rozhodnutí debatního výboru o členských příspěvcích"
+  monthly:
+    title: "Měsíční příspěvek"
+    amount: "od 100 Kč"
+    period: "měsíčně"
+    ks: "100"
+    note: "Měsíční příspěvek je třeba uhradit za každý jednotlivý měsíc. Není možné poslat jednorázově částku za více měsíců dopředu nebo zpětně."
+  yearly:
+    title: "Roční příspěvek"
+    amount: "od 1 000 Kč"
+    period: "ročně"
+    ks: "1000"
+    note: "Jednorázová roční platba přináší pohodlí bez nutnosti hlídat měsíční platby a představuje úsporu oproti měsíčnímu příspěvku."
+  voluntaryNote: >-
+    Členové, kteří chtějí spolek podpořit více, mohou dobrovolně platit jakoukoli vyšší částku.
+    Vyšší platba se vždy započítá jako dobrovolně navýšený příspěvek za ten měsíc, v němž byla přijata.
+
+paymentInfo:
+  title: "Platební údaje"
+  accountNumber: "107-3876090227/0100"
+  ksMonthly: "100"
+  ksYearly: "1000"
+  vsNote: "Vlastní variabilní symbol, který každý člen po přijetí dostane a pod kterým své platby posílá."
+
+howToJoin:
+  badge: "Jak se stát členem"
+  title: "Vznik členství – krok za krokem"
+  lead: "Členství vzniká podáním písemné přihlášky a jejím schválením debatním výborem."
+  formFolderUrl: "https://debatnispolek.sharepoint.com/:f:/g/IgBrlH7R7ZqjT5gjLzBnIAd8AX2eXlCNpw2dYNgrm3DAhW0"
+  formButtonText: "Otevřít složku s formulářem přihlášky"
+  steps:
+    - stepNumber: 1
+      title: "Vyplnění formuláře přihlášky"
+      text: "Stáhněte si přihlášku z oficiální složky spolku na SharePointu a pečlivě vyplňte své údaje."
+      badge: "Formulář"
+    - stepNumber: 2
+      title: "Písemný podpis přihlášky"
+      text: "Po vyplnění je třeba přihlášku odevzdat v písemné podobě. To lze provést jedním z těchto tří způsobů:"
+      badge: "Písemná forma"
+      options:
+        - title: "Fyzické předání"
+          desc: "Vytisknout, vlastnoručně podepsat a fyzicky předat členovi debatního výboru nebo organizátorovi některého z debatních klubů, který přihlášku předá dál."
+          icon: "bi-person-badge"
+        - title: "Ověření na poště (Czech POINT)"
+          desc: "Nechat podpis úředně ověřit na poště (Czech POINT) a převést přihlášku do elektronické podoby."
+          icon: "bi-building-check"
+        - title: "Kvalifikovaný elektronický podpis"
+          desc: "Podepsat vyplněný PDF dokument kvalifikovaným elektronickým podpisem (např. eObčanka nebo uznávaný certifikát)."
+          icon: "bi-pen-fill"
+    - stepNumber: 3
+      title: "Odeslání výboru a schválení"
+      text: "Přihlášky podepsané elektronicky zašlete e-mailem členům výboru. Výbor přihlášku schválí a zašle vám variabilní symbol pro platby."
+      badge: "Schválení & Přijetí"
+      contactsLink: "/contacts"
+      contactsText: "Zobrazit kontakty na členy výboru"
+
+termination:
+  badge: "Ukončení členství"
+  title: "Zánik členství"
+  lead: >-
+    Členství zaniká doručením písemného oznámení o vystoupení, nezaplacením
+    členského příspěvku v náhradní lhůtě, rozhodnutím debatního výboru nebo
+    rozhodnutím debatní schůze.
+  statutesNote: "Podrobnosti, včetně možnosti odvolání proti rozhodnutí výboru, upravují stanovy spolku."
+  statutesLink: "https://debatnispolek.sharepoint.com/:w:/g/IQDtM__7K9K_R7ZykBDmwBxFAeIJqYEm0Q0W_tIlgEInwzY"
+  statutesButtonText: "Přejít na stanovy spolku"
+  reasons:
+    - icon: "bi-envelope-x"
+      title: "Písemné vystoupení"
+      text: "Doručením písemného oznámení o vystoupení ze spolku."
+    - icon: "bi-cash-coin"
+      title: "Nezaplacení příspěvku"
+      text: "Nezaplacením členského příspěvku ani v poskytnuté náhradní lhůtě."
+    - icon: "bi-diagram-3"
+      title: "Rozhodnutí výboru"
+      text: "Rozhodnutím debatního výboru s možností odvolání dle stanov."
+    - icon: "bi-people"
+      title: "Rozhodnutí schůze"
+      text: "Rozhodnutím nejvyššího orgánu spolku — debatní schůze."
+
+ctaBanner:
+  title: "Chcete se stát členem našeho spolku?"
+  text: "Vyplňte přihlášku a přidejte se k naší debatní komunitě. Těšíme se na vás!"
+  primaryButtonText: "Stáhnout formulář přihlášky"
+  primaryButtonHref: "https://debatnispolek.sharepoint.com/:f:/g/IgBrlH7R7ZqjT5gjLzBnIAd8AX2eXlCNpw2dYNgrm3DAhW0"
+  secondaryButtonText: "Kontakty na výbor"
+  secondaryButtonHref: "/contacts"
+  discordButtonText: "Discord komunita"
+  discordHref: "https://discord.gg/qpp8v52AgP"

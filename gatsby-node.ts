@@ -44,6 +44,8 @@ const getTemplateFileFromTemplateName = (templateName: string) => {
       return path.resolve("./src/templates/Generic.tsx");
     case "club":
       return path.resolve("./src/templates/Club.tsx");
+    case "membership":
+      return path.resolve("./src/pages/membership.tsx");
     default:
       throw new Error(`Unknown template ${templateName}!`);
   }

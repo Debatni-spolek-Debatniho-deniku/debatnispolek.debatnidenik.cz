@@ -1,7 +1,7 @@
 ---
 title: Členství ve spolku
 path: /membership
-template: generic
+template: membership
 ---
 
 # Členství ve spolku
