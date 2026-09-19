@@ -436,3 +436,48 @@ h1, h2, h3, h4,
     transform: rotate(180deg);
   }
 }
+
+// =============================================================================
+// CONTACT PAGE STYLES
+// =============================================================================
+
+.contact-member-card {
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contact-member-photo {
+  width: 120px;
+  height: 120px;
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-commission-photo {
+  width: 52px;
+  height: 52px;
+}
+
+// Scroll-reveal animation (subtle fade-up)
+.contact-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.contact-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
