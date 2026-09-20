@@ -65,6 +65,8 @@ commissions:
       neformální rozhovor, kde si můžeš otevřeně promluvit o svých problémech nebo obtížích.
     icon: bi-heart
     formLink: https://docs.google.com/forms/d/e/1FAIpQLScl_z9NigelEkPCHINsEJ6YL9fx076FzZ7V3JIJ4dEBZFgJsw/viewform
+    pageLink: /equity
+    pageLinkText: Více o TEA týmu
     members:
       - name: Michael Svoboda
         role: Předseda komise
@@ -75,12 +77,12 @@ commissions:
         role: Členka komise
         discord: dawn_2002
         email: senkyrova@debatnispolek.debatnidenik.cz
-        image: ../clubs/owners/placeholder.png
+        image: ../equity/Bara.jpg
       - name: Michaela Kvapilová
         role: Členka komise
         discord: Kvapi
         email: michaela.kvapilova@debatnispolek.debatnidenik.cz
-        image: ../clubs/owners/placeholder.png
+        image: ../equity/Misa.png
 
   - name: Komise pro kvalitu debat
     description: >-

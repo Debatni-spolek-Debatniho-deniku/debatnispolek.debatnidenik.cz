@@ -1,0 +1,175 @@
+hero:
+  badge: "Tým pro Empatii a Asistenci"
+  title: "Equity – TEA"
+  lead: >-
+    Nabízíme prostor pro neformální rozhovor, kde si můžeš otevřeně
+    promluvit o svých problémech nebo obtížích. Můžeš se podělit o své
+    pocity a my ti rádi poskytneme podporu, radu nebo jiný úhel pohledu.
+
+intro:
+  badge: "Kdo jsme"
+  title: "Co pro tebe můžeme udělat?"
+  lead: >-
+    Naší rolí je naslouchat a nabídnout povzbuzení nebo praktické tipy,
+    které ti mohou pomoci v dané chvíli.
+  items:
+    - icon: "bi-chat-heart-fill"
+      title: "Nasloucháme"
+      text: "Nabízíme prostor, kde si můžeš otevřeně promluvit o čemkoliv, co tě trápí. Bez hodnocení, bez tlaku."
+    - icon: "bi-lightbulb-fill"
+      title: "Radíme"
+      text: "Poskytneme ti podporu, povzbuzení nebo jiný úhel pohledu, který ti může pomoci v dané chvíli."
+    - icon: "bi-shield-check"
+      title: "Chráníme"
+      text: "Dohlížíme na to, aby prostředí spolku a jeho akcí bylo bezpečné, respektující a férové pro všechny."
+
+disclaimer:
+  title: "Důležité upozornění"
+  text: >-
+    Naše práce nenahrazuje odbornou psychologickou ani psychiatrickou pomoc.
+    Pokud se cítíš dlouhodobě špatně, máš potíže s duševním zdravím nebo
+    procházíš krizí, doporučujeme obrátit se na kvalifikované odborníky.
+  kodexText: "Pracujeme podle našeho Kodexu"
+  kodexLink: "#kodex"
+
+contactMethods:
+  badge: "Kontakt"
+  title: "Jak se na nás můžeš obrátit?"
+  lead: "Vyber si způsob, který ti nejvíce vyhovuje. Jsme tu pro tebe."
+  items:
+    - icon: "bi-person-fill"
+      title: "Osobně"
+      text: "Přijď si popovídat přímo s některým z členů komise. Neboj se oslovit kohokoliv z nás."
+    - icon: "bi-pencil-square"
+      title: "Formulářem"
+      text: "Vyplň anonymní kontaktní formulář a my se ti ozveme."
+      buttonText: "Otevřít formulář"
+      buttonHref: "https://docs.google.com/forms/d/e/1FAIpQLScl_z9NigelEkPCHINsEJ6YL9fx076FzZ7V3JIJ4dEBZFgJsw/viewform"
+    - icon: "bi-chat-dots-fill"
+      title: "Discord nebo Instagram"
+      text: "Napiš nám přes Discord nebo Instagram – kontakty najdeš u jednotlivých členů níže."
+
+team:
+  badge: "Náš tým"
+  title: "Kdo za TEA stojí?"
+  lead: "Poznej členy našeho týmu. Každý z nás je tu pro tebe."
+  members:
+    - name: "Will"
+      image: "../clubs/owners/praha_svoboda.png"
+      bio: >-
+        Jsem nerd jak se patří – baví mě videohry, fantasy, dračák, deskovky i šerm.
+        Prostě takovej mix všeho, co má trochu dobrodružný nebo herní vibe.
+        Rád komunikuju na rovinu – občas až moc upřímně. Když se řeší nepříjemnosti,
+        nejlíp mi to jde u čaje a nebo na procházce, kde se dá v klidu popovídat
+        a něco vymyslet.
+      discord: "NerdKing Will"
+      discordNote: "jen bacha, někdy ho ignoruju"
+      instagram: "Nameless_one.exe"
+      instagramNote: "tady jsem mnohem aktivnější"
+    - name: "Bára"
+      image: ./Bara.jpg
+      bio: >-
+        Ve volném čase si užívám mátový čaj s medem, koukám na anime
+        a poslouchám true crime podcasty. Amatérská zahradnice — občas zapomenu
+        zalít květiny, a pak je zachraňuju. Mám zkušenosti ze studia i práce,
+        takže dokážu chápat problémy z různých stran. Věřím, že nikdo by neměl
+        být na svoje trápení sám. Snažím se dívat na věci z různých stran —
+        žádný problém není moc malý nebo velký.
+      discord: "dawn_2002"
+      instagram: "dpc_barb"
+      instagramHref: "https://instagram.com/dpc_barb"
+    - name: "Michaela"
+      image: ./Misa.png
+      bio: >-
+        Jsem studentkou práv a občas nesnesitelná perfekcionistka. Taky mám
+        velmi špatný odhad – a to jak na vzdálenosti, tak na množství práce,
+        kterou jsem schopná si na sebe naložit. Pokud máte podobný problém,
+        myslím, že si budeme rozumět. Ve volném čase nejraději utíkám ke sportu,
+        zejména k bojovým sportům, k pečení a knížkám. Pokud vás bude něco
+        trápit nebo si budete chtít jen popovídat, neváhejte se na mě obrátit.
+      discord: "kvapi"
+      instagram: "m.kvpl"
+
+helpResources:
+  badge: "Odborná pomoc"
+  title: "Kam se můžeš obrátit pro odbornou pomoc?"
+  lead: "Pokud potřebuješ profesionální podporu, zde je přehled ověřených kontaktů."
+  categories:
+    - title: "Krizové linky"
+      icon: "bi-telephone-fill"
+      items:
+        - name: "Linka první psychické pomoci"
+          phone: "116 123"
+          website: "https://linkapsychickepomoci.cz/"
+          websiteLabel: "linkapsychickepomoci.cz"
+        - name: "Linka bezpečí"
+          note: "děti a mladí do 26 let"
+          phone: "116 111"
+          email: "pomoc@linkabezpeci.cz"
+          website: "https://www.linkabezpeci.cz/"
+          websiteLabel: "linkabezpeci.cz"
+        - name: "Pražská linka důvěry"
+          phone: "222 580 697"
+          email: "linka.duvery@csspraha.cz"
+          website: "https://www.csspraha.cz/prazska-linka-duvery"
+          websiteLabel: "csspraha.cz"
+    - title: "Krizová centra"
+      icon: "bi-hospital-fill"
+      items:
+        - name: "KC RIAPS"
+          website: "https://www.csspraha.cz/kc-riaps"
+          websiteLabel: "csspraha.cz/kc-riaps"
+        - name: "Centrum krizové intervence Bohnice"
+          website: "https://bohnice.cz/odbornapracoviste/centrum-krizove-intervence/"
+          websiteLabel: "bohnice.cz"
+    - title: "Terapeuti spolupracující s pojišťovnami"
+      icon: "bi-heart-pulse-fill"
+      items:
+        - name: "INEP"
+          website: "https://www.inep.cz/"
+          websiteLabel: "inep.cz"
+        - name: "Clinterap"
+          website: "https://clinterap.cz/"
+          websiteLabel: "clinterap.cz"
+        - name: "Psyon"
+          website: "https://www.psyon.cz/"
+          websiteLabel: "psyon.cz"
+
+activities:
+  badge: "Aktivity"
+  title: "Naše aktivity"
+  lead: "Co všechno děláme a kde nás potkáte."
+  items:
+    - icon: "bi-trophy-fill"
+      title: "Plzeň Open 2025"
+      text: >-
+        Ve dnech 22.–23. listopadu 2025 se uskutečnil debatní turnaj Plzeň Open,
+        na kterém své debatní schopnosti poměřili debatéři z našeho spolku i účastníci
+        z dalších debatních klubů. Součástí organizačního týmu byla také equity,
+        jejíž roli na turnaji zastávaly dvě členky našeho TEA týmu – Barbora a Michaela.
+        Jejich úkolem bylo dohlížet na to, aby turnaj probíhal v respektujícím
+        a bezpečném prostředí pro všechny účastníky.
+    - icon: "bi-people-fill"
+      title: "Debatní kluby"
+      text: >-
+        Náš TEA tým dochází na pravidelně pořádané debatní kluby, kde dohlíží
+        na to, aby jejich průběh byl příjemný, bezpečný a férový pro všechny
+        účastníky. Dbáme na to, aby nikdo nebyl diskriminován, šikanován nebo
+        jinak vystaven nevhodnému chování. Zároveň jsme tu pro každého, kdo se
+        během klubu necítí dobře, potřebuje něco řešit nebo si jen chce popovídat.
+
+equityRole:
+  badge: "Equity na turnaji"
+  title: "Co dělá equity na turnaji?"
+  text: !markdown |
+    Debata je prostředí, kde se střetávají různé názory a setkávají se lidé s odlišnými zkušenostmi. **Equity tým se stará o to, aby se všichni účastníci mohli turnaje účastnit v bezpečném a respektujícím prostředí.** Řeší podněty a situace spojené například s nevhodným chováním, obtěžováním nebo diskriminací.
+
+    Equity tým není rozhodčí a neposuzuje kvalitu debat. Jeho úkolem je pomáhat řešit problémy, které mohou během turnaje nastat, a dbát na to, aby se účastníci cítili bezpečně a respektovaně. Díky tomu se mohou debatéři soustředit na to nejdůležitější — **samotnou debatu**.
+
+ctaBanner:
+  title: "Potřebuješ si promluvit?"
+  text: "Neváhej se na nás obrátit. Jsme tu pro tebe – bez hodnocení, bez tlaku, v bezpečném prostředí."
+  primaryButtonText: "Napsat přes formulář"
+  primaryButtonHref: "https://docs.google.com/forms/d/e/1FAIpQLScl_z9NigelEkPCHINsEJ6YL9fx076FzZ7V3JIJ4dEBZFgJsw/viewform"
+  discordButtonText: "Discord komunita"
+  discordHref: "https://discord.gg/qpp8v52AgP"

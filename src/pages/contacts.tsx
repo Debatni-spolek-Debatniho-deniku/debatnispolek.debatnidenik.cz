@@ -59,6 +59,8 @@ interface Commission {
   description: string;
   icon: string;
   formLink?: string;
+  pageLink?: string;
+  pageLinkText?: string;
   members: CommissionMember[];
 }
 
@@ -163,6 +165,8 @@ export default function ContactsPage({
       description: c.description,
       icon: c.icon,
       formLink: c.formLink ?? undefined,
+      pageLink: c.pageLink ?? undefined,
+      pageLinkText: c.pageLinkText ?? undefined,
       members: c.members.map((m) => {
         invariant(m, "Commission member is required");
         const image = getImage(m.image as ImageDataLike);
@@ -413,8 +417,8 @@ export default function ContactsPage({
                 </div>
               </div>
               <p className="text-muted mb-3">{commission.description}</p>
-              {commission.formLink && (
-                <p className="mb-3">
+              <div className="d-flex flex-wrap gap-2 mb-3">
+                {commission.formLink && (
                   <a
                     href={commission.formLink}
                     target="_blank"
@@ -424,8 +428,17 @@ export default function ContactsPage({
                     <i className="bi bi-pencil-square me-1"></i>
                     Kontaktovat přes formulář
                   </a>
-                </p>
-              )}
+                )}
+                {commission.pageLink && (
+                  <a
+                    href={commission.pageLink}
+                    className="btn btn-sm btn-primary"
+                  >
+                    <i className="bi bi-heart me-1"></i>
+                    {commission.pageLinkText || "Zjistit více"}
+                  </a>
+                )}
+              </div>
               <div className="row g-3">
                 {commission.members.map((member, mIndex) => (
                   <div key={mIndex} className="col-md-6 col-lg-4">
@@ -542,6 +555,8 @@ export const query = graphql`
         description
         icon
         formLink
+        pageLink
+        pageLinkText
         members {
           name
           role

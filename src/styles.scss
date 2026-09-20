@@ -554,3 +554,70 @@ h1, h2, h3, h4,
     transform: translateY(-1px);
   }
 }
+
+// =============================================================================
+// EQUITY (TEA) PAGE STYLES
+// =============================================================================
+
+.equity-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.equity-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equity-disclaimer {
+  background: linear-gradient(135deg, rgba(#ffc107, 0.10) 0%, rgba(#ffc107, 0.04) 100%);
+  border: 1.5px solid rgba(#ffc107, 0.35);
+  border-left: 4px solid #ffc107;
+  border-radius: 0.85rem;
+}
+
+.equity-team-card {
+  border-radius: 1rem !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba($primary, 0.15) !important;
+  }
+}
+
+.equity-help-card {
+  background-color: #ffffff;
+  border: 1px solid rgba($primary, 0.18);
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: rgba($primary, 0.4);
+    box-shadow: 0 4px 14px rgba($primary, 0.10);
+  }
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 12%);
+    }
+  }
+}
+
+.equity-role-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--bs-heading-color);
+  }
+}

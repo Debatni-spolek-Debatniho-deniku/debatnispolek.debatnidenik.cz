@@ -27,6 +27,8 @@
       path: /podporte-nas
     - label: Kontakty
       path: /contacts
+    - label: Equity (TEA)
+      path: /equity
     - divider: true
     - label: Solidární projekt 2025–2026
       path: /projekty/solidarni-projekt-2025-2026
