@@ -33,6 +33,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       component: getTemplateFileFromTemplateName(node.frontmatter.template),
       context: {
         markdownId: node.id, // IMPORTANT
+        clubPath: node.frontmatter.path,
       },
     });
   });

@@ -1,0 +1,147 @@
+- id: prague
+  name: Debatní klub Praha
+  city: Praha
+  path: /clubs/prague
+  icon: bi-buildings-fill
+  status:
+    label: Běžný provoz
+    type: active
+    badgeClass: bg-success
+    note: Přijímáme nováčky po celý rok
+  meeting:
+    day: Pondělí
+    time: "18:00"
+    frequency: Každé pondělí
+    fullWhen: Každé pondělí od 18:00
+  location:
+    name: ČVUT (České vysoké učení technické)
+    shortAddress: ČVUT (Thákurova 2700/9, Dejvice) / učebna 347
+    address: Thákurova 2700/9, Praha 6 – Dejvice
+    room: učebna 347 ve 2. patře
+    map: '<iframe style="border:none" src="https://mapy.com/s/musuzebacu" width="400" height="280" frameborder="0"></iframe>'
+    info:
+      - Učebna 347 ve 2. patře
+      - Thákurova 2700/9, Praha 6 – Dejvice
+  owners:
+    - name: Tomáš Vesecký
+      image: ./owners/praha_vesecky.jpeg
+      discord: thompsonm1a1
+      email: tomas.vesecky@debatnispolek.debatnidenik.cz
+      role: Vedoucí klubu
+    - name: Michael Svoboda
+      image: ./owners/praha_svoboda.png
+      discord: michaelwilliemsvoboda
+      email: michael.svoboda@debatnispolek.debatnidenik.cz
+      role: Organizátor
+    - name: Jakub Šmejkal
+      image: ./owners/praha_smejkal.png
+      discord: kuba_vojak
+      email: smejkal@debatnispolek.debatnidenik.cz
+      role: Organizátor
+    - name: Matěj Diviš
+      image: ./owners/online_divis.png
+      discord: mozekruzovej
+      email: matej.divis@debatnispolek.debatnidenik.cz
+      role: Organizátor
+
+- id: pilsen
+  name: Debatní klub Plzeň
+  city: Plzeň
+  path: /clubs/pilsen
+  icon: bi-mortarboard-fill
+  status:
+    label: Běžný provoz
+    type: active
+    badgeClass: bg-success
+    note: Na FF probíhá rekonstrukce, dbejte prosím zvýšené opatrnosti.
+  meeting:
+    day: Úterý
+    time: "18:00"
+    frequency: Každé úterý
+    fullWhen: Každé úterý od 18:00
+  location:
+    name: ZČU (Západočeská univerzita)
+    shortAddress: ZČU (Jungmannova 153/1)
+    address: Jungmannova 153/1, Plzeň 3
+    room: učebna JJ 302 / JJ 305 (3. patro)
+    map: '<iframe style="border:none" src="https://mapy.com/s/gatazenozo" width="400" height="280" frameborder="0"></iframe>'
+    info:
+      - Učebna JJ 302 / JJ 305 (3. patro)
+      - Jungmannova 153/1, Plzeň 3
+  owners:
+    - name: Tadeáš Souba
+      image: ./owners/plzen_souba.png
+      discord: tadeassouba
+      email: souba@debatnispolek.debatnidenik.cz
+      role: Vedoucí klubu
+
+- id: domazlice
+  name: Debatní klub Domažlice
+  city: Domažlice
+  path: /clubs/domazlice
+  icon: bi-geo-alt-fill
+  status:
+    label: Běžný provoz
+    type: active
+    badgeClass: bg-success
+    note: Není potřeba registrace, stačí přijít
+  meeting:
+    day: Středa
+    time: "16:30"
+    frequency: Každá středa
+    fullWhen: Každá středa od 16:30
+  location:
+    name: VOŠ, OA a SZŠ Domažlice
+    shortAddress: SZŠ (Chodské náměstí 97)
+    address: Chodské náměstí 97, Domažlice
+    room: učebna 2.ps
+    map: '<iframe style="border:none" src="https://mapy.com/s/musuzotoga" frameborder="0"></iframe>'
+    info:
+      - Učebna 2.ps
+      - Chodské náměstí 97, Domažlice
+  owners:
+    - name: Natálie Juklíčková
+      image: ./owners/domazlice_juklickova.jpg
+      discord: _natka_jukla_
+      email: natalie.juklickova@debatnispolek.debatnidenik.cz
+      role: Vedoucí klubu
+
+- id: online
+  name: Online debatní klub
+  city: Online
+  path: /clubs/online
+  icon: bi-laptop-fill
+  status:
+    label: Běžný provoz
+    type: active
+    badgeClass: bg-success
+    note: Probíhá na Discord serveru spolku
+  meeting:
+    day: Čtvrtek
+    time: "19:00"
+    frequency: Každý čtvrtek
+    fullWhen: Každý čtvrtek od 19:00
+  location:
+    name: Discord
+    shortAddress: Na Discord serveru spolku
+    address: Online (Discord server)
+    room: Debatní spolek Debatního deníku
+    map: ""
+    info:
+      - Hlasové kanály na našem Discord serveru Debatní spolek Debatního deníku
+  owners:
+    - name: Karel Krob
+      image: ./owners/online_krob.png
+      discord: krobik
+      email: karel.krob@debatnispolek.debatnidenik.cz
+      role: Organizátor
+    - name: Michal Forman
+      image: ./owners/online_forman.png
+      discord: michal_forman
+      email: michal.format@debatnispolek.debatnidenik.cz
+      role: Organizátor
+    - name: Matěj Diviš
+      image: ./owners/online_divis.png
+      discord: mozekruzovej
+      email: matej.divis@debatnispolek.debatnidenik.cz
+      role: Organizátor

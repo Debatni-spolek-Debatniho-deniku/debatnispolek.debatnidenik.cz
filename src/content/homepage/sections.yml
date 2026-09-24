@@ -42,35 +42,6 @@ clubsSection:
   title: Kde a kdy se scházíme?
   subtitle: Vyberte si pobočku, která vám nejvíce vyhovuje. Setkání probíhají pravidelně každý týden i během prázdnin.
   detailButtonText: Podrobnosti o klubu
-  clubs:
-    - name: Debatní klub Praha
-      city: Praha
-      badge: Prezenčně
-      when: Každé pondělí od 18:00
-      where: ČVUT (Thákurova 2700/9, Dejvice) / učebna 347
-      path: /clubs/prague
-      icon: bi-buildings-fill
-    - name: Debatní klub Plzeň
-      city: Plzeň
-      badge: Prezenčně
-      when: Každé úterý od 18:00
-      where: ZČU (Jungmannova 153/1)
-      path: /clubs/pilsen
-      icon: bi-mortarboard-fill
-    - name: Debatní klub Domažlice
-      city: Domažlice
-      badge: Prezenčně
-      when: Každá středa od 16:30
-      where: SZŠ (Chodské náměstí 97)
-      path: /clubs/domazlice
-      icon: bi-geo-alt-fill
-    - name: Online debatní klub
-      city: Online
-      badge: Odkudkoliv
-      when: Každý čtvrtek od 19:00
-      where: Na Discord serveru spolku
-      path: /clubs/online
-      icon: bi-laptop-fill
 
 whyDebate:
   badge: Přínosy

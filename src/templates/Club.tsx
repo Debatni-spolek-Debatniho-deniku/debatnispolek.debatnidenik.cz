@@ -9,9 +9,17 @@ import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
   const html = data.markdownRemark?.html;
   invariant(html, "html is required");
-  const locations = data.markdownRemark?.frontmatter?.locations;
+
+  const currentPath = data.markdownRemark?.frontmatter?.path;
+  const clubData = data.allClubsClubsYaml.nodes.find(
+    (club) => club.path === currentPath
+  );
+  const locations = clubData?.location
+    ? [clubData.location]
+    : data.markdownRemark?.frontmatter?.locations;
   invariant(locations, "locations is required");
-  const owners = data.markdownRemark?.frontmatter?.owners;
+
+  const owners = clubData?.owners ?? data.markdownRemark?.frontmatter?.owners;
   invariant(owners, "owners is required");
 
   return (
@@ -19,36 +27,90 @@ export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
       <article className="row">
         <MarkdownContent html={html} className="col-lg-8" />
         <aside className="col-lg-4">
-          <div className="card">
-            <div className="card-body">
-              {/* Locations Section */}
-              {locations.map((location, index) => {
-                invariant(location, "location is required");
-                return (
-                  <div key={index} className={index > 0 ? "mt-4" : ""}>
-                    <h6 className="card-title">{location.name}</h6>
-                    {location.info && (
-                      <ul className="list-unstyled mb-3">
-                        {location.info.map((line, lineIndex) => (
-                          <li key={lineIndex} className="small text-muted">
-                            {line}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {location.map && (
-                      <div
-                        className="club-map"
-                        dangerouslySetInnerHTML={{ __html: location.map }}
-                      />
-                    )}
+          <div className="card shadow-sm border-0">
+            <div className="card-body p-4">
+              {/* Status Section */}
+              {clubData?.status && (
+                <div className="mb-4 pb-3 border-bottom">
+                  <div className="d-flex align-items-center justify-content-between mb-2">
+                    <span className="small text-uppercase fw-bold text-muted">
+                      Status klubu
+                    </span>
+                    <span
+                      className={`badge ${
+                        clubData.status.badgeClass || "bg-success"
+                      } rounded-pill px-3 py-1`}
+                    >
+                      <i
+                        className="bi bi-circle-fill me-1"
+                        style={{ fontSize: "0.5rem" }}
+                      ></i>
+                      {clubData.status.label}
+                    </span>
                   </div>
-                );
-              })}
+                  {clubData.status.note && (
+                    <div className="small text-muted bg-light p-2 rounded">
+                      <i className="bi bi-info-circle me-1 text-primary"></i>
+                      {clubData.status.note}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Meeting Time Section */}
+              {clubData?.meeting && (
+                <div className="mb-4 pb-3 border-bottom">
+                  <span className="small text-uppercase fw-bold text-muted d-block mb-1">
+                    Pravidelná setkání
+                  </span>
+                  <div className="h6 fw-bold text-primary mb-0">
+                    <i className="bi bi-clock-fill me-2"></i>
+                    {clubData.meeting.fullWhen}
+                  </div>
+                </div>
+              )}
+
+              {/* Locations Section */}
+              <div className="mb-4 pb-3 border-bottom">
+                <span className="small text-uppercase fw-bold text-muted d-block mb-2">
+                  Kde se scházíme
+                </span>
+                {locations.map((location, index) => {
+                  invariant(location, "location is required");
+                  return (
+                    <div key={index} className={index > 0 ? "mt-3" : ""}>
+                      <h6 className="card-title fw-bold mb-2">
+                        {location.name}
+                      </h6>
+                      {location.info && (
+                        <ul className="list-unstyled mb-3">
+                          {location.info.map((line, lineIndex) => (
+                            <li
+                              key={lineIndex}
+                              className="small text-muted mb-1"
+                            >
+                              <i className="bi bi-geo-alt-fill me-1 text-secondary"></i>
+                              {line}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {location.map && (
+                        <div
+                          className="club-map mt-2"
+                          dangerouslySetInnerHTML={{ __html: location.map }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
 
               {/* Owners Section */}
-              <div className="mt-4">
-                <h5 className="mb-3">Odpovědné osoby</h5>
+              <div>
+                <span className="small text-uppercase fw-bold text-muted d-block mb-3">
+                  Odpovědné osoby
+                </span>
                 {(() => {
                   const isOdd = owners.length % 2 === 1;
                   const firstOwner = isOdd ? owners[0] : null;
@@ -62,6 +124,8 @@ export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
 
                     invariant(owner?.email, "owner email is required");
                     invariant(owner?.discord, "owner discord is required");
+                    const role = (owner as any)?.role;
+
                     return (
                       <div
                         key={owner.name}
@@ -73,6 +137,14 @@ export default function Club({ data }: PageProps<Queries.ClubPageQuery>) {
                           className="rounded-circle mb-2 club-owner-profile-picture"
                         />
                         <div className="fw-bold">{owner.name}</div>
+                        {role && (
+                          <div
+                            className="text-muted small mb-1"
+                            style={{ fontSize: "0.75rem" }}
+                          >
+                            {role}
+                          </div>
+                        )}
                         <a
                           href={`mailto:${owner.email}`}
                           className="d-block text-truncate"
@@ -152,6 +224,43 @@ export const query = graphql`
         }
       }
       html
+    }
+    allClubsClubsYaml {
+      nodes {
+        name
+        city
+        path
+        status {
+          label
+          type
+          badgeClass
+          note
+        }
+        meeting {
+          day
+          time
+          frequency
+          fullWhen
+        }
+        location {
+          name
+          address
+          room
+          map
+          info
+        }
+        owners {
+          name
+          email
+          discord
+          role
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 160, height: 160, placeholder: BLURRED)
+            }
+          }
+        }
+      }
     }
   }
 `;

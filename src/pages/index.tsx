@@ -84,22 +84,11 @@ interface HowToJoinData {
   items: HowToJoinItem[];
 }
 
-interface ClubItem {
-  name: string;
-  city: string;
-  badge: string;
-  when: string;
-  where: string;
-  path: string;
-  icon: string;
-}
-
 interface ClubsSectionData {
   badge: string;
   title: string;
   subtitle: string;
   detailButtonText: string;
-  clubs: ClubItem[];
 }
 
 interface WhyDebateData {
@@ -169,6 +158,8 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
   invariant(yml.hero, "Hero data is required");
   invariant(yml.howToJoin, "HowToJoin data is required");
   invariant(yml.clubsSection, "ClubsSection data is required");
+  const clubs = data.allClubsClubsYaml?.nodes;
+  invariant(clubs?.length, "Clubs from clubs.yml are required");
   invariant(yml.whyDebate, "WhyDebate data is required");
   invariant(yml.cards, "Cards data is required");
   invariant(yml.ctaBanner, "CtaBanner data is required");
@@ -346,32 +337,50 @@ export default function Home({ data }: PageProps<Queries.HomepageQuery>) {
           </div>
         </div>
         <div className="row g-4">
-          {clubsSection.clubs.map((club: ClubItem, index: number) => (
-            <div key={index} className="col-md-6 col-lg-3">
+          {clubs.map((club, index: number) => (
+            <div key={club.id || index} className="col-md-6 col-lg-3">
               <div className="card h-100 p-4 shadow-sm border-0 transition-card d-flex flex-column justify-content-between">
                 <div>
-                  <div className="d-flex justify-content-between align-items-center mb-3">
+                  <div className="d-flex justify-content-between align-items-start mb-3">
                     <div
-                      className="rounded-circle bg-primary-light text-primary d-flex align-items-center justify-content-center"
+                      className="rounded-circle bg-primary-light text-primary d-flex align-items-center justify-content-center flex-shrink-0"
                       style={{ width: "44px", height: "44px" }}
                     >
-                      <i className={`bi ${club.icon} fs-5`}></i>
+                      <i
+                        className={`bi ${
+                          club.icon || "bi-mortarboard-fill"
+                        } fs-5`}
+                      ></i>
                     </div>
-                    <span className="badge bg-secondary text-white rounded-pill">
-                      {club.badge}
-                    </span>
+                    {club.status?.label && (
+                      <span
+                        className={`badge ${
+                          club.status.badgeClass || "bg-success"
+                        } rounded-pill`}
+                        style={{ fontSize: "0.72rem" }}
+                        title={club.status.note || undefined}
+                      >
+                        <i
+                          className="bi bi-circle-fill me-1"
+                          style={{ fontSize: "0.45rem" }}
+                        ></i>
+                        {club.status.label}
+                      </span>
+                    )}
                   </div>
-                  <h5 className="fw-bold mb-2">{club.city}</h5>
+                  <h5 className="fw-bold mb-2">{club.city || club.name}</h5>
                   <div className="mb-2 text-primary fw-semibold small">
-                    <i className="bi bi-clock me-1"></i> {club.when}
+                    <i className="bi bi-clock me-1"></i>{" "}
+                    {club.meeting?.fullWhen || "Pravidelná setkání"}
                   </div>
                   <p className="text-muted small mb-3">
-                    <i className="bi bi-geo-alt me-1"></i> {club.where}
+                    <i className="bi bi-geo-alt me-1"></i>{" "}
+                    {club.location?.shortAddress || club.location?.name || club.city}
                   </p>
                 </div>
                 <div className="pt-2 border-top mt-auto">
                   <a
-                    href={club.path}
+                    href={club.path || "#"}
                     className="btn btn-outline-primary btn-sm w-100 fw-semibold"
                   >
                     {clubsSection.detailButtonText || "Podrobnosti o klubu"} &rarr;
@@ -528,15 +537,6 @@ export const query = graphql`
         title
         subtitle
         detailButtonText
-        clubs {
-          name
-          city
-          badge
-          when
-          where
-          path
-          icon
-        }
       }
       whyDebate {
         badge
@@ -587,6 +587,33 @@ export const query = graphql`
         name
       }
       supportersDisclaimer
+    }
+    allClubsClubsYaml {
+      nodes {
+        id
+        name
+        city
+        path
+        icon
+        status {
+          label
+          type
+          badgeClass
+          note
+        }
+        meeting {
+          day
+          time
+          frequency
+          fullWhen
+        }
+        location {
+          name
+          shortAddress
+          address
+          room
+        }
+      }
     }
   }
 `;
