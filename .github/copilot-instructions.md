@@ -8,7 +8,7 @@
 
 ## Key Structure
 - `src/components/`: Shared React components (see `Layout.tsx` for global structure)
-- `src/pages/`: File-based routed pages (e.g., `index.tsx`, `404.tsx`)
+- `src/pages/`: File-based routed pages (e.g., `index.tsx`, `akce.tsx`, `404.tsx`)
 - `src/templates/`: Templates for dynamic pages (e.g., `Generic.tsx`, `Club.tsx`)
 - `src/content/`: Markdown content, images, and `nav.yml` (navigation)
 - `gatsby-config.ts`, `gatsby-node.ts`: Gatsby configuration and dynamic page creation

@@ -436,3 +436,679 @@ h1, h2, h3, h4,
     transform: rotate(180deg);
   }
 }
+
+// =============================================================================
+// CONTACT PAGE STYLES
+// =============================================================================
+
+.contact-member-card {
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contact-member-photo {
+  width: 120px;
+  height: 120px;
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba($primary, 0.1);
+  color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-commission-photo {
+  width: 52px;
+  height: 52px;
+}
+
+// Scroll-reveal animation (subtle fade-up)
+.contact-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.contact-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// =============================================================================
+// MEMBERSHIP PAGE STYLES
+// =============================================================================
+
+.membership-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.membership-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.membership-pricing-card {
+  border: 1.5px solid rgba($primary, 0.2) !important;
+  background-color: #ffffff !important;
+  border-radius: 1rem;
+
+  &--featured {
+    border-color: $primary !important;
+    box-shadow: 0 6px 20px rgba($primary, 0.12) !important;
+    position: relative;
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--bs-heading-color);
+  }
+
+  .price-period {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #6c757d;
+  }
+}
+
+.membership-step-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $primary;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.membership-option-card {
+  background-color: #ffffff;
+  border: 1px solid rgba($primary, 0.15);
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+}
+
+.membership-copy-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+// =============================================================================
+// EQUITY (TEA) PAGE STYLES
+// =============================================================================
+
+.equity-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.equity-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equity-disclaimer {
+  background: linear-gradient(135deg, rgba(#ffc107, 0.10) 0%, rgba(#ffc107, 0.04) 100%);
+  border: 1.5px solid rgba(#ffc107, 0.35);
+  border-left: 4px solid #ffc107;
+  border-radius: 0.85rem;
+}
+
+.equity-team-card {
+  border-radius: 1rem !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba($primary, 0.15) !important;
+  }
+}
+
+.equity-help-card {
+  background-color: #ffffff;
+  border: 1px solid rgba($primary, 0.18);
+  border-radius: 0.75rem;
+  padding: 1.15rem;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: rgba($primary, 0.4);
+    box-shadow: 0 4px 14px rgba($primary, 0.10);
+  }
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 12%);
+    }
+  }
+}
+
+.equity-role-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: var(--bs-heading-color);
+  }
+}
+
+// =============================================================================
+// EVENTS (/AKCE) PAGE & CALENDAR STYLES
+// =============================================================================
+
+.akce-hero-lead {
+  max-width: 760px;
+}
+
+.akce-section-heading {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  min-height: 2.35rem;
+
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+.akce-count-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+}
+
+.akce-events-col > .event-card + .event-card {
+  margin-top: 1rem;
+}
+
+.akce-cta-lead {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.akce-filter-bar {
+  background-color: #ffffff !important;
+  border: 1px solid rgba($primary, 0.18) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+  .akce-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.95rem;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+    z-index: 2;
+    font-size: 0.9rem;
+  }
+
+  .akce-search-input {
+    height: 38px;
+    padding-left: 2.35rem;
+    padding-right: 2.35rem;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 50rem;
+    background-color: #ffffff;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: rgba($primary, 0.55);
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.12);
+    }
+  }
+
+  .akce-search-clear {
+    position: absolute;
+    top: 50%;
+    right: 0.65rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #6c757d;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .akce-filter-pill {
+    height: 34px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0 0.85rem;
+    border-radius: 50rem;
+    border: 1px solid rgba($primary, 0.18);
+    background-color: #ffffff;
+    color: #4b5563;
+    white-space: nowrap;
+    transition: all 0.15s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    &:hover:not(.akce-filter-pill--active) {
+      background-color: rgba($primary, 0.07);
+      border-color: rgba($primary, 0.35);
+      color: darken($primary, 15%);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.2);
+    }
+
+    &.akce-filter-pill--active {
+      background-color: $primary !important;
+      border-color: $primary !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba($primary, 0.25);
+    }
+
+    &.akce-filter-pill--tournament.akce-filter-pill--active {
+      background-color: $secondary !important;
+      border-color: $secondary !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba($secondary, 0.25);
+    }
+
+    &.akce-filter-pill--workshop.akce-filter-pill--active {
+      background-color: #f59e0b !important;
+      border-color: #f59e0b !important;
+      color: #212529 !important;
+      box-shadow: 0 2px 8px rgba(#f59e0b, 0.25);
+    }
+  }
+
+  .akce-filter-summary {
+    padding-top: 0.85rem;
+    margin-top: 0.85rem;
+    border-top: 1px solid rgba($primary, 0.12);
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+}
+
+.akce-mobile-tabs {
+  background-color: #ffffff;
+  border: 1px solid rgba($primary, 0.18);
+  border-radius: 50rem;
+  padding: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6c757d;
+    border-radius: 50rem !important;
+    padding: 0.55rem 0.75rem;
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: $primary;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba($primary, 0.25);
+    }
+
+    &:not(.active):hover {
+      background-color: rgba($primary, 0.06);
+      color: darken($primary, 10%);
+    }
+  }
+}
+
+.akce-state-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba($primary, 0.18) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+  > .bi {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+  }
+
+  > .bi-exclamation-triangle {
+    background-color: rgba($secondary, 0.1);
+    color: $secondary;
+  }
+
+  > .bi-funnel {
+    background-color: rgba($primary, 0.08);
+    color: #6c757d;
+  }
+
+  > .bi-calendar-x {
+    background-color: rgba($primary, 0.12);
+    color: $primary;
+  }
+
+  .akce-state-text {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.calendar-sticky-wrapper {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: 1.5rem;
+    z-index: 10;
+  }
+}
+
+.event-card {
+  background-color: #ffffff !important;
+  border: 1px solid rgba($primary, 0.18) !important;
+  border-left: 4px solid rgba($primary, 0.25) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+  &.event-card--debate {
+    border-left-color: $primary !important;
+  }
+  &.event-card--tournament {
+    border-left-color: $secondary !important;
+  }
+  &.event-card--workshop {
+    border-left-color: #f59e0b !important;
+  }
+  &.event-card--other {
+    border-left-color: #06b6d4 !important;
+  }
+
+  &.event-card--active {
+    border-color: $primary !important;
+    border-left-width: 5px !important;
+    box-shadow: 0 8px 24px rgba($primary, 0.18) !important;
+    background-color: #fafcff !important;
+  }
+}
+
+.event-card-location-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $primary !important;
+    text-decoration: underline !important;
+  }
+}
+
+.event-date-box {
+  width: 66px;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.65rem;
+  background-color: rgba($primary, 0.1);
+  border: 1px solid rgba($primary, 0.2);
+  color: darken($primary, 15%);
+  user-select: none;
+
+  &.event-date-box--tournament {
+    background-color: rgba($secondary, 0.08);
+    border-color: rgba($secondary, 0.22);
+    color: darken($secondary, 8%);
+  }
+
+  &.event-date-box--workshop {
+    background-color: rgba(#f59e0b, 0.1);
+    border-color: rgba(#f59e0b, 0.25);
+    color: darken(#f59e0b, 18%);
+  }
+
+  &.event-date-box--other {
+    background-color: rgba(#06b6d4, 0.1);
+    border-color: rgba(#06b6d4, 0.25);
+    color: darken(#06b6d4, 18%);
+  }
+
+  .event-date-month {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .event-date-day {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+  }
+
+  .event-date-weekday {
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+}
+
+.event-card-title {
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.event-card-desc {
+  line-height: 1.55;
+  white-space: pre-line;
+  color: #4b5563;
+}
+
+.event-card-meta {
+  row-gap: 0.35rem;
+  column-gap: 1rem;
+}
+
+.event-card-actions {
+  border-top: 1px solid rgba($primary, 0.1);
+  padding-top: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.event-card-action-btn {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-color: rgba($primary, 0.18);
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: rgba($primary, 0.35);
+    background-color: rgba($primary, 0.05);
+    color: darken($primary, 10%);
+  }
+}
+
+.text-online {
+  color: #7c3aed;
+}
+
+.custom-calendar-container {
+  background-color: #ffffff !important;
+  border: 1px solid rgba($primary, 0.18) !important;
+  border-radius: 0.85rem !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+  .calendar-month-title {
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .calendar-nav-btn {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.55rem;
+    transition: all 0.15s ease;
+  }
+
+  .calendar-day-details {
+    .calendar-day-empty {
+      background-color: rgba($primary, 0.04);
+      border: 1px dashed rgba($primary, 0.2);
+      border-radius: 0.75rem;
+    }
+  }
+}
+
+.calendar-grid-header {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+
+  .calendar-weekday {
+    padding: 0.35rem 0;
+  }
+}
+
+.calendar-grid {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+
+  .calendar-day-cell {
+    aspect-ratio: 1 / 1;
+    min-height: 36px;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1.5px solid transparent;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    padding: 2px;
+    transition: all 0.15s ease-in-out;
+    color: var(--bs-body-color);
+
+    &:hover {
+      background-color: rgba($primary, 0.08);
+      border-color: rgba($primary, 0.25);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+      border-color: $primary;
+    }
+
+    &.calendar-day--outside {
+      opacity: 0.35;
+    }
+
+    &.calendar-day--has-events {
+      background-color: rgba($primary, 0.06);
+      border-color: rgba($primary, 0.22);
+      font-weight: 600;
+
+      &:hover {
+        background-color: rgba($primary, 0.14);
+        border-color: $primary;
+      }
+    }
+
+    &.calendar-day--today {
+      font-weight: 700;
+      border-color: rgba($primary, 0.6);
+      background-color: rgba($primary, 0.06);
+    }
+
+    &.calendar-day--selected {
+      background-color: $primary !important;
+      color: #ffffff !important;
+      font-weight: 700;
+      border-color: $primary !important;
+      box-shadow: 0 4px 12px rgba($primary, 0.35);
+
+      .calendar-day-number {
+        color: #ffffff !important;
+      }
+
+      .calendar-event-dot {
+        background-color: #ffffff !important;
+      }
+    }
+
+    .calendar-day-number {
+      font-size: 0.92rem;
+      line-height: 1;
+    }
+
+    .calendar-event-dots {
+      display: flex;
+      gap: 3px;
+      margin-top: 3px;
+      height: 6px;
+    }
+
+    .calendar-event-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $primary;
+
+      &.dot-tournament {
+        background-color: $secondary;
+      }
+
+      &.dot-workshop {
+        background-color: #f59e0b;
+      }
+
+      &.dot-debate {
+        background-color: $primary;
+      }
+
+      &.dot-other {
+        background-color: #06b6d4;
+      }
+    }
+  }
+}
+

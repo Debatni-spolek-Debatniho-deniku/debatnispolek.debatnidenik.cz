@@ -25,6 +25,7 @@ src/
 │   └── Layout.tsx       # Main layout wrapper (header, nav, footer)
 ├── pages/               # Gatsby auto-routed pages
 │   ├── index.tsx        # Home page (/)
+│   ├── akce.tsx         # Events page (/akce) with Google Calendar
 │   └── 404.tsx          # Not found page
 ├── templates/           # Templates for dynamic pages
 │   ├── Generic.tsx      # Generic content template

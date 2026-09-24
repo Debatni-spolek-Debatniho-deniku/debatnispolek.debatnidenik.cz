@@ -1,0 +1,13 @@
+name = "debatni-chatbot"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://debatnispolek.debatnidenik.cz"
+CONTENT_URL = "https://debatnispolek.debatnidenik.cz/chatbot-context.json"
+CHATBOT_ENABLED = "true"
+GEMINI_MODEL = "gemini-2.0-flash"
+MAX_MESSAGE_LENGTH = "500"
+
+# GEMINI_API_KEY se ukládá jako Cloudflare Secret:
+# wrangler secret put GEMINI_API_KEY

@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 import ErrorBoundary from "./ErrorBoundary";
 import ClubPicker from "./ClubPicker";
 import NavItems from "./NavItems";
+import Chatbot from "./Chatbot";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -64,6 +65,8 @@ export default function Layout({ children }: PropsWithChildren) {
             </p>
           </div>
         </footer>
+
+        <Chatbot />
       </div>
     </ErrorBoundary>
   );

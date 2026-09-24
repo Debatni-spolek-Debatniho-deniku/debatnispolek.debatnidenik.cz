@@ -6,6 +6,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "build:knowledge": "node gatsby-node-chatbot.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
@@ -22,6 +23,7 @@
     "@types/react-dom": "^18.2.19",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
+    "fuse.js": "^7.5.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-sass": "^6.15.0",

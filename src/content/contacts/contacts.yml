@@ -1,0 +1,114 @@
+hero:
+  badge: Kontakty
+  title: Kontaktujte nás
+  lead: Máte dotazy ohledně debatního spolku? Neváhejte se na nás obrátit – rádi vám odpovíme a pomůžeme se vším, co potřebujete.
+
+contactInfo:
+  phone: "+420 705 916 285"
+  email: vybor@debatnispolek.debatnidenik.cz
+  discord: https://discord.gg/qpp8v52AgP
+  address: Zdíkovská 3322/66h, Smíchov, 150 00 Praha 5
+
+identification:
+  name: Debatní spolek Debatního deníku
+  address: Zdíkovská 3322/66h, Smíchov, 150 00 Praha 5
+  ico: "21653968"
+  vatNote: Spolek není plátcem DPH.
+
+committeeIntro: >-
+  Debatní výbor je statutárním orgánem Debatního spolku Debatního deníku volený debatní schůzí.
+  Členové debatního výboru zastupují spolek vůči třetím osobám a řídí běžný chod spolku.
+  Působnost členů debatního výboru je rozdělena do různých oblastí působení.
+  Vedoucí debatních poboček zastupují spolek v lokálních otázkách a řídí aktivity spolku v dané lokalitě.
+
+committee:
+  - name: Jakub Šmejkal
+    role: Předseda výboru
+    bio: Jakub vede debatní spolek a koordinuje jeho celkový chod. Stará se o strategické směřování spolku a zastupuje ho navenek.
+    email: smejkal@debatnispolek.debatnidenik.cz
+    discord: kuba_vojak
+    phone: "+420 705 916 285"
+    image: ../clubs/owners/praha_smejkal.png
+
+  - name: Matěj Diviš
+    role: Vedoucí debatní pobočky Praha
+    region: Hlavní město Praha a Středočeský kraj
+    bio: Matěj má na starosti pražskou pobočku debatního spolku. Organizuje pravidelná setkání a workshopy pro debatéry z Prahy a okolí.
+    email: matej.divis@debatnispolek.debatnidenik.cz
+    discord: mozekruzovej
+    image: ../clubs/owners/online_divis.png
+
+  - name: Bc. Tadeáš Souba
+    role: Vedoucí debatní pobočky Plzeň
+    region: Plzeňský kraj
+    bio: Tadeáš vede plzeňskou pobočku a buduje debatní komunitu v západních Čechách. Pomáhá nováčkům s prvními kroky v debatování.
+    email: souba@debatnispolek.debatnidenik.cz
+    discord: tadeassouba
+    image: ../clubs/owners/plzen_souba.png
+
+commissions:
+  - name: Komise pro IT administraci
+    description: Členové komise pro IT administraci zařizují a spravují IT zázemí spolku.
+    icon: bi-laptop
+    members:
+      - name: Jakub Šmejkal
+        role: Předseda komise
+        discord: kuba_vojak
+        email: smejkal@debatnispolek.debatnidenik.cz
+        image: ../clubs/owners/praha_smejkal.png
+
+  - name: Komise pro empatii a asistenci
+    description: >-
+      Komise se zabývá otázkou zajištění přátelského a bezpečného prostředí.
+      Na členy komise je možné se obrátit v případě, že jsi se dostal do nepříjemné situace
+      na akci či jinde v souvislosti s činností spolku. Komise dále nabízí prostor pro
+      neformální rozhovor, kde si můžeš otevřeně promluvit o svých problémech nebo obtížích.
+    icon: bi-heart
+    formLink: https://docs.google.com/forms/d/e/1FAIpQLScl_z9NigelEkPCHINsEJ6YL9fx076FzZ7V3JIJ4dEBZFgJsw/viewform
+    pageLink: /equity
+    pageLinkText: Více o TEA týmu
+    members:
+      - name: Michael Svoboda
+        role: Předseda komise
+        discord: michaelwilliemsvoboda
+        email: michael.svoboda@debatnispolek.debatnidenik.cz
+        image: ../clubs/owners/praha_svoboda.png
+      - name: Barbora Šenkýřová
+        role: Členka komise
+        discord: dawn_2002
+        email: senkyrova@debatnispolek.debatnidenik.cz
+        image: ../equity/Bara.jpg
+      - name: Michaela Kvapilová
+        role: Členka komise
+        discord: Kvapi
+        email: michaela.kvapilova@debatnispolek.debatnidenik.cz
+        image: ../equity/Misa.png
+
+  - name: Komise pro kvalitu debat
+    description: >-
+      Komise dohlíží na kvalitu zadávaných tezí i kvalitu debat jako celku,
+      řeší případné nedostatky a pomáhá udržovat úroveň debat napříč kluby.
+      Členy komise kontaktuj ideálně přes Discord.
+    icon: bi-trophy
+    members:
+      - name: Timofej Kožuchov
+        role: Předseda komise
+        discord: timofejkozuchov
+        email: kozuchov@debatnispolek.debatnidenik.cz
+        image: ../clubs/owners/placeholder.png
+      - name: Vít Filko
+        role: Člen komise
+        discord: haid
+        email: vit.filko@debatnispolek.debatnidenik.cz
+        image: ../clubs/owners/placeholder.png
+      - name: Orion Rowan
+        role: Člen komise
+        discord: ori3140
+        email: ori.rowan@gmail.com
+        image: ../clubs/owners/placeholder.png
+
+ctaBanner:
+  title: Chcete začít debatovat?
+  text: Přidejte se k naší komunitě. Přijďte na nejbližší setkání – nic to nestojí, poprvé se můžete jen dívat.
+  discordText: Discord komunita
+  discordHref: https://discord.gg/qpp8v52AgP

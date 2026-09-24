@@ -33,6 +33,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       component: getTemplateFileFromTemplateName(node.frontmatter.template),
       context: {
         markdownId: node.id, // IMPORTANT
+        clubPath: node.frontmatter.path,
       },
     });
   });
@@ -44,7 +45,20 @@ const getTemplateFileFromTemplateName = (templateName: string) => {
       return path.resolve("./src/templates/Generic.tsx");
     case "club":
       return path.resolve("./src/templates/Club.tsx");
+    case "membership":
+      return path.resolve("./src/pages/membership.tsx");
     default:
       throw new Error(`Unknown template ${templateName}!`);
   }
 };
+
+export const onPostBuild: GatsbyNode["onPostBuild"] = async ({ graphql, reporter }) => {
+  try {
+    const { generateChatbotContext } = require("./gatsby-node-chatbot");
+    await generateChatbotContext({ graphql, reporter });
+  } catch (err) {
+    console.error("Failed to generate chatbot context on build:", err);
+  }
+};
+
+

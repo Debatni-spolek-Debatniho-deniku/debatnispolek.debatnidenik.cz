@@ -1,14 +1,27 @@
 import React, { useState, useMemo } from "react";
 import { graphql, PageProps } from "gatsby";
 import invariant from "tiny-invariant";
+import Fuse from "fuse.js";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+
+interface FaqItem {
+  id: string;
+  category: string;
+  icon: string;
+  question: string;
+  answerHtml: string;
+  answerText: string;
+  tip?: string | null;
+  searchText: string;
+}
 
 export default function FAQPage({ data }: PageProps<Queries.FaqPageQuery>) {
   const faqData = data.faqYaml;
   invariant(faqData, "faq.yml data is required");
   invariant(faqData.categories, "categories are required");
   invariant(faqData.questions, "questions are required");
+  const rawQuestions = faqData.questions;
 
   const categories = faqData.categories.map((c) => {
     invariant(c, "Category is required");
@@ -22,22 +35,28 @@ export default function FAQPage({ data }: PageProps<Queries.FaqPageQuery>) {
     };
   });
 
-  const questions = faqData.questions.map((q) => {
-    invariant(q, "Question is required");
-    invariant(q.id, "Question id is required");
-    invariant(q.category, "Question category is required");
-    invariant(q.icon, "Question icon is required");
-    invariant(q.question, "Question title is required");
-    invariant(q.answer?.html, "Question answer html is required");
-    return {
-      id: q.id,
-      category: q.category,
-      icon: q.icon,
-      question: q.question,
-      answerHtml: q.answer.html,
-      tip: q.tip,
-    };
-  });
+  const questions: FaqItem[] = useMemo(() => {
+    return rawQuestions.map((q) => {
+      invariant(q, "Question is required");
+      invariant(q.id, "Question id is required");
+      invariant(q.category, "Question category is required");
+      invariant(q.icon, "Question icon is required");
+      invariant(q.question, "Question title is required");
+      invariant(q.answer?.html, "Question answer html is required");
+      const answerText = q.answer.html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      const tip = q.tip ?? "";
+      return {
+        id: q.id,
+        category: q.category,
+        icon: q.icon,
+        question: q.question,
+        answerHtml: q.answer.html,
+        answerText,
+        tip: q.tip,
+        searchText: `${q.question} ${answerText} ${tip}`.trim(),
+      };
+    });
+  }, [rawQuestions]);
 
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -55,21 +74,52 @@ export default function FAQPage({ data }: PageProps<Queries.FaqPageQuery>) {
     });
   };
 
-  const filteredFaqs = useMemo(() => {
-    return questions.filter((item) => {
-      const matchesCategory =
-        activeCategory === "all" || item.category === activeCategory;
-      const qLower = item.question.toLowerCase();
-      const searchLower = searchQuery.toLowerCase().trim();
-      const aText = item.answerHtml.replace(/<[^>]*>?/gm, "").toLowerCase();
-      const matchesSearch =
-        !searchLower ||
-        qLower.includes(searchLower) ||
-        aText.includes(searchLower) ||
-        Boolean(item.tip && item.tip.toLowerCase().includes(searchLower));
-      return matchesCategory && matchesSearch;
+  const fuse = useMemo(() => {
+    return new Fuse(questions, {
+      keys: [
+        { name: "question", weight: 0.7 },
+        { name: "answerText", weight: 0.25 },
+        { name: "searchText", weight: 0.05 },
+      ],
+      threshold: 0.35,
+      ignoreLocation: true,
+      ignoreFieldNorm: true,
+      ignoreDiacritics: true,
+      isCaseSensitive: false,
+      useExtendedSearch: true,
     });
-  }, [questions, activeCategory, searchQuery]);
+  }, [questions]);
+
+  const filteredFaqs = useMemo(() => {
+    const trimmed = searchQuery.trim();
+    if (!trimmed) {
+      return activeCategory === "all"
+        ? questions
+        : questions.filter((item) => item.category === activeCategory);
+    }
+
+    const clean = trimmed.replace(/[!^$='":?|\\/]/g, " ").replace(/\s+/g, " ").trim();
+    if (!clean) {
+      return activeCategory === "all"
+        ? questions
+        : questions.filter((item) => item.category === activeCategory);
+    }
+
+    let results = fuse.search(clean);
+    if (results.length === 0 && clean.includes(" ")) {
+      const words = clean.split(" ").filter((w) => w.length > 2);
+      if (words.length > 0) {
+        results = fuse.search({
+          $or: words.map((w) => ({ searchText: w })),
+        });
+      }
+    }
+
+    const matchedItems = results.map((r) => r.item);
+    return activeCategory === "all"
+      ? matchedItems
+      : matchedItems.filter((item) => item.category === activeCategory);
+  }, [questions, fuse, activeCategory, searchQuery]);
 
   const allFilteredOpen =
     filteredFaqs.length > 0 &&
