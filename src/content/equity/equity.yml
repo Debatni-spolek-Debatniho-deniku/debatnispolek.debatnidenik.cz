@@ -65,6 +65,7 @@ team:
       discord: "NerdKing Will"
       discordNote: "jen bacha, někdy ho ignoruju"
       instagram: "Nameless_one.exe"
+      instagramHref: "https://www.instagram.com/nameless_one.exe"
       instagramNote: "tady jsem mnohem aktivnější"
     - name: "Bára"
       image: ./Bara.jpg
@@ -89,6 +90,7 @@ team:
         trápit nebo si budete chtít jen popovídat, neváhejte se na mě obrátit.
       discord: "kvapi"
       instagram: "m.kvpl"
+      instagramHref: "https://instagram.com/m.kvpl"
 
 helpResources:
   badge: "Odborná pomoc"

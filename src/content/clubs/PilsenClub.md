@@ -26,12 +26,6 @@ Debatní klub v Plzni je otevřený prostor pro svobodnou kultivovanou diskuzi a
 
 
 
-## Kdy a kde se scházíme
-
-Setkáváme se každé **úterý od 18:00** v prostorách **Západočeské univerzity** (Jungmannova 153/1, Plzeň 3) ve 3. patře budovy JJ.
-
-Nejčastěji debatujeme v místnosti **JJ 302**, při větším počtu účastníků využíváme učebnu **JJ 305**. Aktuální místnost pro daný týden i případné organizační změny vždy najdete na našem Discordu v kanálu *#plzen-general*.
-
 ## Jak se k nám dostat
 
 <div class="club-transport-grid">
