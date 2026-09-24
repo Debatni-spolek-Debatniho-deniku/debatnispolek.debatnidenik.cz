@@ -30,13 +30,13 @@ committee:
     phone: "+420 705 916 285"
     image: ../clubs/owners/praha_smejkal.png
 
-  - name: Michael Svoboda
+  - name: Matěj Diviš
     role: Vedoucí debatní pobočky Praha
     region: Hlavní město Praha a Středočeský kraj
-    bio: Michael má na starosti pražskou pobočku debatního spolku. Organizuje pravidelná setkání a workshopy pro debatéry z Prahy a okolí.
-    email: michael.svoboda@debatnispolek.debatnidenik.cz
-    discord: michaelwilliemsvoboda
-    image: ../clubs/owners/praha_svoboda.png
+    bio: Matěj má na starosti pražskou pobočku debatního spolku. Organizuje pravidelná setkání a workshopy pro debatéry z Prahy a okolí.
+    email: matej.divis@debatnispolek.debatnidenik.cz
+    discord: mozekruzovej
+    image: ../clubs/owners/online_divis.png
 
   - name: Bc. Tadeáš Souba
     role: Vedoucí debatní pobočky Plzeň

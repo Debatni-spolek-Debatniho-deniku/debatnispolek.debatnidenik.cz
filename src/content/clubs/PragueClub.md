@@ -12,7 +12,7 @@ locations:
 
 owners:
   - name: Tomáš Vesecký
-    image: ./owners/placeholder.png
+    image: ./owners/praha_vesecky.jpeg
     discord: thompsonm1a1
     email: tomas.vesecky@debatnispolek.debatnidenik.cz
   - name: Michael Svoboda
@@ -44,12 +44,12 @@ Debatní klub Praha je **originálním a nejstarším klubem** našeho spolku. P
     <p class="step-desc">Založení původního klubu na Smíchovské střední průmyslové škole.</p>
   </div>
   <div class="timeline-step">
-    <div class="step-tag">2. Přesun a růst</div>
+    <div class="step-tag">2. Přesun (2025)</div>
     <div class="step-title">Lexis</div>
     <p class="step-desc">Rozvoj komunity v prostorách jazykové školy Lexis v centru Prahy.</p>
   </div>
   <div class="timeline-step current">
-    <div class="step-tag">3. Současnost</div>
+    <div class="step-tag">3. Současnost (2026)</div>
     <div class="step-title">ČVUT</div>
     <p class="step-desc">Zázemí přímo na Fakultě informačních technologií (FIT) v Dejvicích.</p>
   </div>
