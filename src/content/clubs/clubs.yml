@@ -27,7 +27,7 @@
       image: ./owners/praha_vesecky.jpeg
       discord: thompsonm1a1
       email: tomas.vesecky@debatnispolek.debatnidenik.cz
-      role: Vedoucí klubu
+      role: Organizátor
     - name: Michael Svoboda
       image: ./owners/praha_svoboda.png
       discord: michaelwilliemsvoboda
@@ -37,12 +37,12 @@
       image: ./owners/praha_smejkal.png
       discord: kuba_vojak
       email: smejkal@debatnispolek.debatnidenik.cz
-      role: Organizátor
+      role: Předseda výboru
     - name: Matěj Diviš
       image: ./owners/online_divis.png
       discord: mozekruzovej
       email: matej.divis@debatnispolek.debatnidenik.cz
-      role: Organizátor
+      role: Vedoucí pobočky Praha
 
 - id: pilsen
   name: Debatní klub Plzeň
@@ -73,7 +73,7 @@
       image: ./owners/plzen_souba.png
       discord: tadeassouba
       email: souba@debatnispolek.debatnidenik.cz
-      role: Vedoucí klubu
+      role: Vedoucí pobočky Plzeň
 
 - id: domazlice
   name: Debatní klub Domažlice

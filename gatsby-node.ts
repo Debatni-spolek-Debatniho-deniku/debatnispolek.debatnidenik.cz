@@ -51,3 +51,14 @@ const getTemplateFileFromTemplateName = (templateName: string) => {
       throw new Error(`Unknown template ${templateName}!`);
   }
 };
+
+export const onPostBuild: GatsbyNode["onPostBuild"] = async ({ graphql, reporter }) => {
+  try {
+    const { generateChatbotContext } = require("./gatsby-node-chatbot");
+    await generateChatbotContext({ graphql, reporter });
+  } catch (err) {
+    console.error("Failed to generate chatbot context on build:", err);
+  }
+};
+
+
