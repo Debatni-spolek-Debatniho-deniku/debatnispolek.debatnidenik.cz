@@ -1,4 +1,15 @@
 import type { GatsbyConfig } from "gatsby";
+import * as dotenv from "dotenv";
+
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV || "development"}`,
+});
+dotenv.config({
+  path: `.env`,
+});
+dotenv.config({
+  path: `.env.production`,
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -67,6 +78,9 @@ const config: GatsbyConfig = {
           } else if (node.path === "/faq/" || node.path === "/faq") {
             priority = 0.8;
             changefreq = "monthly";
+          } else if (node.path === "/akce/" || node.path === "/akce") {
+            priority = 0.9;
+            changefreq = "daily";
           }
           return {
             url: node.path,

@@ -1,0 +1,15 @@
+hero:
+  badge: Kalendář akcí
+  title: Nadcházející debaty a akce
+  lead: Přehled debatních setkání našich klubů, workshopů, turnajů a veřejných akcí Debatního spolku. Přijďte si vyzkoušet debatu – rádi přivítáme každého zájemce!
+
+emptyState:
+  title: Momentálně nejsou naplánované žádné akce.
+  text: Nové termíny debatních schůzek a turnajů brzy zveřejníme. Mezitím se můžete připojit na náš Discord server nebo si prohlédnout informace o našich klubech.
+  discordButtonText: Připojit se na Discord
+  discordHref: https://discord.gg/qpp8v52AgP
+
+errorState:
+  title: Akce se momentálně nepodařilo načíst.
+  text: Zkuste to prosím později.
+  retryButtonText: Zkusit znovu
