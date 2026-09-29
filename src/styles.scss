@@ -626,6 +626,15 @@ h1, h2, h3, h4,
 // EVENTS (/AKCE) PAGE & CALENDAR STYLES
 // =============================================================================
 
+// Utilities used by the events components that Bootstrap does not provide
+.min-w-0 {
+  min-width: 0;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
 .akce-hero-lead {
   max-width: 760px;
 }
@@ -757,6 +766,27 @@ h1, h2, h3, h4,
     }
   }
 
+  // On phones each pill group is a single horizontally scrollable row
+  .akce-filter-group {
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      // room for the active pill shadow, which would be clipped otherwise
+      padding: 0.25rem 0.25rem 0.5rem;
+      margin: -0.25rem -0.25rem -0.5rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .akce-filter-pill {
+        flex-shrink: 0;
+      }
+    }
+  }
+
   .akce-filter-summary {
     padding-top: 0.85rem;
     margin-top: 0.85rem;
@@ -776,6 +806,7 @@ h1, h2, h3, h4,
   .nav-link {
     font-size: 0.875rem;
     font-weight: 600;
+    white-space: nowrap;
     color: #6c757d;
     border-radius: 50rem !important;
     padding: 0.55rem 0.75rem;
@@ -880,8 +911,24 @@ h1, h2, h3, h4,
   }
 }
 
-.event-date-box {
+.event-date-box,
+.event-date-box-placeholder {
   width: 66px;
+
+  @include media-breakpoint-down(sm) {
+    width: 52px;
+  }
+}
+
+.event-date-box-placeholder {
+  height: 78px;
+
+  @include media-breakpoint-down(sm) {
+    height: 64px;
+  }
+}
+
+.event-date-box {
   padding: 0.5rem 0.25rem;
   border-radius: 0.65rem;
   background-color: rgba($primary, 0.1);
@@ -918,6 +965,11 @@ h1, h2, h3, h4,
 
   .event-date-day {
     font-size: 1.5rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.25rem;
+    }
+
     font-weight: 800;
     line-height: 1;
     margin-bottom: 0.15rem;
@@ -933,12 +985,18 @@ h1, h2, h3, h4,
 .event-card-title {
   font-size: 1.15rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.05rem;
+  }
 }
 
 .event-card-desc {
   line-height: 1.55;
   white-space: pre-line;
   color: #4b5563;
+  overflow-wrap: anywhere;
 }
 
 .event-card-meta {
@@ -1009,6 +1067,10 @@ h1, h2, h3, h4,
 .calendar-grid {
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
+
+  @include media-breakpoint-down(sm) {
+    gap: 3px;
+  }
 
   .calendar-day-cell {
     aspect-ratio: 1 / 1;

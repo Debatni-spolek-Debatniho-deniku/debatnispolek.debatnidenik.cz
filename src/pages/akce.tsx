@@ -177,11 +177,11 @@ export default function AkcePage() {
               {heroLead}
             </p>
 
-            <div className="d-flex flex-wrap justify-content-center align-items-center gap-2 gap-sm-3">
+            <div className="d-grid d-sm-flex flex-sm-wrap justify-content-sm-center align-items-center gap-2 gap-sm-3">
               {hasCalendarConfig && (
                 <button
                   type="button"
-                  className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2"
+                  className="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2"
                   onClick={() => setIsSubscribeModalOpen(true)}
                 >
                   <i className="bi bi-calendar2-check"></i>
@@ -193,7 +193,7 @@ export default function AkcePage() {
                 href={emptyDiscordHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-primary btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-outline-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2"
               >
                 <i className="bi bi-discord"></i>
                 Náš Discord
@@ -230,8 +230,8 @@ export default function AkcePage() {
             </div>
 
             <div className="col-12 col-xl-8">
-              <div className="d-flex flex-wrap align-items-center justify-content-xl-between gap-2.5">
-                <div className="d-flex flex-wrap align-items-center gap-2">
+              <div className="d-flex flex-wrap align-items-center justify-content-xl-between gap-2">
+                <div className="d-flex flex-nowrap flex-md-wrap align-items-center gap-2 akce-filter-group">
                   <button
                     type="button"
                     className={typeFilterClass("all")}
@@ -265,7 +265,7 @@ export default function AkcePage() {
                   </button>
                 </div>
 
-                <div className="d-flex flex-wrap align-items-center gap-2">
+                <div className="d-flex flex-nowrap flex-md-wrap align-items-center gap-2 akce-filter-group">
                   <span className="text-muted small fw-medium me-1 d-none d-sm-inline">
                     Místo:
                   </span>
@@ -331,7 +331,7 @@ export default function AkcePage() {
           className={`nav-link ${mobileTab === "list" ? "active" : ""}`}
           onClick={() => setMobileTab("list")}
         >
-          <i className="bi bi-list-ul me-2"></i>
+          <i className="bi bi-list-ul me-1 me-sm-2"></i>
           Seznam akcí ({filteredEvents.length})
         </button>
         <button
@@ -339,8 +339,9 @@ export default function AkcePage() {
           className={`nav-link ${mobileTab === "calendar" ? "active" : ""}`}
           onClick={() => setMobileTab("calendar")}
         >
-          <i className="bi bi-calendar3 me-2"></i>
-          Měsíční kalendář
+          <i className="bi bi-calendar3 me-1 me-sm-2"></i>
+          <span className="d-sm-none">Kalendář</span>
+          <span className="d-none d-sm-inline">Měsíční kalendář</span>
         </button>
       </nav>
 
@@ -376,11 +377,8 @@ export default function AkcePage() {
                   key={n}
                   className="card event-card p-3 p-md-4 placeholder-glow"
                 >
-                  <div className="d-flex align-items-start gap-3">
-                    <div
-                      className="rounded placeholder"
-                      style={{ width: "66px", height: "78px" }}
-                    />
+                  <div className="d-flex align-items-start gap-2 gap-sm-3">
+                    <div className="rounded placeholder event-date-box-placeholder" />
                     <div className="flex-grow-1">
                       <div className="placeholder col-4 mb-2 rounded" />
                       <div className="placeholder col-8 mb-2 d-block rounded" />
@@ -500,26 +498,26 @@ export default function AkcePage() {
         </div>
       </section>
 
-      <section className="py-5 px-4 rounded bg-primary-light mb-4 mb-lg-5 shadow-sm text-center">
+      <section className="py-4 py-md-5 px-3 px-md-4 rounded bg-primary-light mb-4 mb-lg-5 shadow-sm text-center">
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <h2 className="display-6 fw-bold mb-3">Máte dotaz nebo nápad na akci?</h2>
             <p className="lead mb-4 text-muted akce-cta-lead">
               Chcete uspořádat turnaj, workshop nebo volnočasovou aktivitu? Napište nám na Discord nebo se obraťte na vedení spolku.
             </p>
-            <div className="d-flex gap-3 justify-content-center flex-wrap">
+            <div className="d-grid d-sm-flex gap-2 gap-sm-3 justify-content-sm-center flex-sm-wrap">
               <a
                 href={emptyDiscordHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-primary btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-outline-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2"
               >
                 <i className="bi bi-discord"></i>
                 Náš Discord
               </a>
               <a
                 href="/contacts"
-                className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center gap-2"
               >
                 <i className="bi bi-envelope"></i>
                 Stránka s kontakty

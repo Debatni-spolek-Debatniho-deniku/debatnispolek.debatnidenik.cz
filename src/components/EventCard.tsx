@@ -146,7 +146,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
   return (
     <div className={cardClasses}>
-      <div className="d-flex align-items-start gap-3">
+      <div className="d-flex align-items-start gap-2 gap-sm-3">
         {/* Date block */}
         <div className={`event-date-box flex-shrink-0 text-center event-date-box--${event.type}`}>
           <div className="event-date-month">{dateBadge.monthAbbrev}</div>
@@ -194,7 +194,7 @@ const EventCard: React.FC<EventCardProps> = ({
                 href={createGoogleMapsUrl(event.location)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="event-card-location-link d-inline-flex align-items-center text-truncate"
+                className="event-card-location-link d-inline-flex align-items-center mw-100 min-w-0"
                 title={`Otevřít místo v Mapách Google: ${event.location}`}
                 onClick={(e) => e.stopPropagation()}
               >

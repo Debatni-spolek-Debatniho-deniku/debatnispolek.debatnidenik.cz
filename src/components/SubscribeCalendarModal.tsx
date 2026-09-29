@@ -118,7 +118,7 @@ const SubscribeCalendarModal: React.FC<SubscribeCalendarModalProps> = ({
             </div>
 
           {/* Modal Body */}
-          <div className="modal-body p-4">
+          <div className="modal-body p-3 p-sm-4">
             <p className="text-muted mb-4">
               Vyberte svou oblíbenou kalendářovou aplikaci. Všechny nové debatní schůzky, turnaje a workshopy se vám v ní automaticky aktualizují bez nutnosti ručního zadávání.
             </p>
