@@ -112,10 +112,10 @@
   path: /clubs/online
   icon: bi-laptop-fill
   status:
-    label: Běžný provoz
-    type: active
-    badgeClass: bg-success
-    note: Probíhá na Discord serveru spolku
+    label: Pozastaveno
+    type: inactive
+    badgeClass: bg-warning
+    note: Online klub momentálně nefunguje
   meeting:
     day: Čtvrtek
     time: "19:00"
